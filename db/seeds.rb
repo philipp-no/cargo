@@ -1,4 +1,8 @@
 require "open-uri"
+Booking.destroy_all
+Trip.destroy_all
+User.destroy_all
+
 
 user_1 = User.create!(
   first_name: "Marie",
@@ -52,9 +56,9 @@ trip1 = Trip.create!(
   start_time: "2021-09-25 04:57",
   end_time: "2021-09-25 12:57",
   start_location: "Reeperbahn 9, 20359 Hamburg, Hamburg, Germany",
-  end_location: "Frankfurter Straße 9, 34117 Kasssel, Hessen, Germany",
+  end_location: "Frankfurter Straße 9, 34117 Kassel, Hessen, Germany",
+  capacity: "Large",
   price_cents: 1500,
-  capacity: "L",
   status: 1,
   user: user_1
 )
@@ -64,8 +68,8 @@ trip2 = Trip.create!(
   end_time: "2021-09-26 11:00",
   start_location: "Torstraße 123, 10119 Berlin, Berlin, Germany",
   end_location: "Frankfurter Straße 12, 97082 Würzburg, Bayern, Germany",
+  capacity: "Small",
   price_cents: 2000,
-  capacity: "S",
   status: 1,
   user: user_2
 )
@@ -75,8 +79,8 @@ trip3 = Trip.create!(
   end_time: "2021-09-27 10:00",
   start_location: "Ottenser Hauptstraße 3, 22765 Hamburg, Germany",
   end_location: "Flensburger Str. 318109 Rostock, Mecklenburg-Vorpommern, Germany",
+  capacity: "Medium",
   price_cents: 4000,
-  capacity: "M",
   status: 1,
   user: user_3
 )
@@ -86,8 +90,8 @@ trip4 = Trip.create!(
   end_time: "2021-09-27 15:30",
   start_location: "Rostocker Str. 323970 Wismar, Mecklenburg-Vorpommern, Germany",
   end_location: "Bahnhofstraße 24, 94032 Passau, Bayern, Germany",
+  capacity: "Large",
   price_cents: 1900,
-  capacity: "L",
   status: 1,
   user: user_4
 )
