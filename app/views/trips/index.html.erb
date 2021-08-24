@@ -1,17 +1,49 @@
-<h1>Find a driver and send your item on a ride</h1>
+<div class="header-container">
+  <div class="banner">
+  </div>
+
+  <div class="header-text">
+    <h1 class="header-h1">Find a driver and send your item on a ride</h1>
+  </div>
+</div>
 
 
 <%= form_tag trips_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
+      <%= text_field_tag :start_location,
+        params[:start_location],
         class: "form-controll",
         placeholder: "From"
       %>
-      <%= text_field_tag :query,
-        params[:query],
+      <%= text_field_tag :end_location,
+        params[:end_location],
         class: "form-controll",
         placeholder: "To"
       %>
+      <%= date_field_tag :date,
+        params[:date],
+        class: "form-controll",
+        placeholder: "To"
+      %>
+        <%= select_tag(:capacity, options_for_select(Trip::SIZE, params[:capacity])) %>
       <%= submit_tag "Find a driver" %>
 
     <% end %>
+
+<% if @trips.count.positive? %>
+  <h5>Leaving</h5>
+  <div class="container">
+    <ul>
+      <% @trips.each do |trip| %>
+        <li> <%= trip.start_time %> <%= trip.start_location %></li>
+        <li> <%= trip.end_time %> <%= trip.end_location %></li>
+        <li> <%= trip.user.first_name %></li>
+        <li> </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="results-container">
+    <h5>No trips available</h5>
+    <h5>Please change your search criteria and try again!</h5>
+  </div>
+<% end %>
