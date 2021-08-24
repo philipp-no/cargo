@@ -1,29 +1,26 @@
-<div class="show-header">
-</div>
-
-<%= @trip.start_time %>
-<div>
-  <%= @trip.start_time %><%=  @trip.start_location %>
-  <%= @trip.end_time %><%= @trip.end_location %>
-</div>
-<div>
+<div class="container">
+  <h1><%= @trip.start_time.strftime("%A, %B %d") %></h1>
   <div>
-    <p>Price for one item:</p>
+    <p><%= @trip.start_time.strftime("%k:%M") %> <%=  @trip.start_location %></p>
+    <p><%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
   </div>
   <div>
-    <%= @trip.price %>
+    <div class="d-flex justify-content-between">
+      <p>Price for one item:</p>
+      <%= humanized_money_with_symbol @trip.price %>
+    </div>
   </div>
-</div>
-<div>
-  <%= @trip.user.first_name %><%= @trip.user.last_name %>
-  <%= @trip.description %>
-</div>
-<div>
-  <h3>Driver will accept</h3>
-  <i class=“far fa-check-square”></i>
-  <strong>Type of car</strong><%= @trip.user.car_type %>
-  <strong>Years driving</strong><%= @trip.user.years_driving %>
-</div>
-<div>
-  <%= link_to "Select this driver", root_path, class: "button" %>
+  <div>
+    <%= @trip.user.first_name %><%= @trip.user.last_name %>
+    <%= @trip.description %>
+  </div>
+  <div>
+    <h5>Driver will accept</h5>
+    <i class=“far fa-check-square”></i>
+    <p><strong>Type of car</strong> <%= @trip.user.car_type %></p>
+    <p><strong>Years driving</strong> <%= @trip.user.years_driving %></p>
+  </div>
+  <div>
+    <%= link_to "Select this driver", root_path, class: "btn-light" %>
+  </div>
 </div>

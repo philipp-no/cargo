@@ -9,11 +9,12 @@ class Trip < ApplicationRecord
   validates :price, presence: true
   validates :capacity, presence: true
   validates :status, presence: true
+  monetize :price_cents
 
-  include PgSearch::Model
-  pg_search_scope :search_by_start_location_and_end_location,
-  against: [ :start_location, :end_location ],
-  using: {
-    tsearch: { prefix: true }
-  }
+  # include PgSearch::Model
+  # pg_search_scope :search_by_start_location_and_end_location,
+  # against: [ :start_location, :end_location ],
+  # using: {
+  #   tsearch: { prefix: true }
+  # }
 end

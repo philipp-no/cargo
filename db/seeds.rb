@@ -53,7 +53,7 @@ trip1 = Trip.create!(
   end_time: "2021-09-25 12:57",
   start_location: "Reeperbahn 9, 20359 Hamburg, Hamburg, Germany",
   end_location: "Frankfurter Straße 9, 34117 Kasssel, Hessen, Germany",
-  price: 50,
+  price_cents: 1500,
   capacity: "L",
   status: 1,
   user: user_1
@@ -64,7 +64,7 @@ trip2 = Trip.create!(
   end_time: "2021-09-26 11:00",
   start_location: "Torstraße 123, 10119 Berlin, Berlin, Germany",
   end_location: "Frankfurter Straße 12, 97082 Würzburg, Bayern, Germany",
-  price: 60,
+  price_cents: 2000,
   capacity: "S",
   status: 1,
   user: user_2
@@ -75,7 +75,7 @@ trip3 = Trip.create!(
   end_time: "2021-09-27 10:00",
   start_location: "Ottenser Hauptstraße 3, 22765 Hamburg, Germany",
   end_location: "Flensburger Str. 318109 Rostock, Mecklenburg-Vorpommern, Germany",
-  price: 40,
+  price_cents: 4000,
   capacity: "M",
   status: 1,
   user: user_3
@@ -86,7 +86,7 @@ trip4 = Trip.create!(
   end_time: "2021-09-27 15:30",
   start_location: "Rostocker Str. 323970 Wismar, Mecklenburg-Vorpommern, Germany",
   end_location: "Bahnhofstraße 24, 94032 Passau, Bayern, Germany",
-  price: 90,
+  price_cents: 1900,
   capacity: "L",
   status: 1,
   user: user_4
@@ -95,23 +95,35 @@ trip4 = Trip.create!(
 booking1 = Booking.create!(
   user: user_1,
   trip: trip2,
-  status: 1
+  status: 1,
+  description: "Hi Marie! I would like to send my item with you.",
+  size: "small",
+  item: "Plant"
 )
 
 booking2 = Booking.create!(
   user: user_2,
   trip: trip1,
-  status: 1
+  status: 1,
+  description: "Hi Philipp! Could you take my item on your trip?",
+  size: "medium",
+  item: "Box of books"
 )
 
 booking3 = Booking.create!(
   user: user_3,
   trip: trip4,
-  status: 1
+  status: 1,
+  description: "Hi Otmar! I would like to send my item with you.",
+  size: "large",
+  item: "Bike"
 )
 
 booking4 = Booking.create!(
   user: user_4,
   trip: trip3,
-  status: 1
+  status: 1,
+  description: "Hi Jennifer! Could you take my item on your trip?",
+  size: "small",
+  item: "Plates"
 )
