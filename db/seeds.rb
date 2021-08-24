@@ -1,4 +1,4 @@
-# require "open-uri"
+require "open-uri"
 
 user_1 = User.create!(
   first_name: "Marie",
