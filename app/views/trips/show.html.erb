@@ -1,0 +1,29 @@
+<div class="show-header">
+</div>
+
+<%= @trip.start_time %>
+<div>
+  <%= @trip.start_time %><%=  @trip.start_location %>
+  <%= @trip.end_time %><%= @trip.end_location %>
+</div>
+<div>
+  <div>
+    <p>Price for one item:</p>
+  </div>
+  <div>
+    <%= @trip.price %>
+  </div>
+</div>
+<div>
+  <%= @trip.user.first_name %><%= @trip.user.last_name %>
+  <%= @trip.description %>
+</div>
+<div>
+  <h3>Driver will accept</h3>
+  <i class=“far fa-check-square”></i>
+  <strong>Type of car</strong><%= @trip.user.car_type %>
+  <strong>Years driving</strong><%= @trip.user.years_driving %>
+</div>
+<div>
+  <%= link_to "Select this driver", root_path, class: "button" %>
+</div>
