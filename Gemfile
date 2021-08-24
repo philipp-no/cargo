@@ -23,6 +23,7 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'money-rails', '~>1.12'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
