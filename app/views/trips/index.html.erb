@@ -1,0 +1,17 @@
+<h1>Find a driver and send your item on a ride</h1>
+
+
+<%= form_tag trips_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-controll",
+        placeholder: "From"
+      %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-controll",
+        placeholder: "To"
+      %>
+      <%= submit_tag "Find a driver" %>
+
+    <% end %>
