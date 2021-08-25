@@ -6,4 +6,9 @@ class BookingsController < ApplicationController
 
   def create
   end
+
+  def index
+    @trip = Trip.find(params[:trip_id])
+    @bookings = @trip.bookings
+  end
 end

@@ -5,11 +5,10 @@ class TripsController < ApplicationController
     @trips = Trip.all
     if params[:start_location].present?
       @trips = @trips.where("start_location ILIKE ?", "%#{params[:start_location]}%")
-
     end
+
     if params[:end_location].present?
       @trips = @trips.where("end_location ILIKE ?", "%#{params[:end_location]}%")
-
     end
 
     if params[:date].present?
@@ -23,10 +22,18 @@ class TripsController < ApplicationController
       if params[:capacity] == "Large"
         @trips = @trips.where(capacity: ["Large"])
       end
+
     end
   end
 
    def show
     @trip = Trip.find(params[:id])
+   end
+
+   def new
+    @trip = Trip.new
+   end
+
+   def create
    end
 end

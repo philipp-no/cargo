@@ -59,7 +59,7 @@ trip1 = Trip.create!(
   end_location: "Frankfurter Straße 9, Kassel, Hessen, Germany",
   capacity: "Large",
   price_cents: 1500,
-  status: 1,
+  status: 0,
   user: user_1
 )
 
@@ -70,7 +70,7 @@ trip2 = Trip.create!(
   end_location: "Frankfurter Straße 12, Würzburg, Bayern, Germany",
   capacity: "Small",
   price_cents: 2000,
-  status: 1,
+  status: 0,
   user: user_2
 )
 
@@ -81,7 +81,7 @@ trip3 = Trip.create!(
   end_location: "Flensburger Straße 12, Rostock, Mecklenburg-Vorpommern, Germany",
   capacity: "Medium",
   price_cents: 4000,
-  status: 1,
+  status: 0,
   user: user_3
 )
 
@@ -92,7 +92,7 @@ trip4 = Trip.create!(
   end_location: "Bahnhofstraße 24, Passau, Bayern, Germany",
   capacity: "Large",
   price_cents: 1900,
-  status: 1,
+  status: 0,
   user: user_4
 )
 

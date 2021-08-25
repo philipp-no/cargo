@@ -11,5 +11,5 @@ class Trip < ApplicationRecord
   validates :status, presence: true
   monetize :price_cents
 
-  SIZE = ["Small", "Medium", "Large"]
+  CAPACITY = ["Small", "Medium", "Large"]
 end
