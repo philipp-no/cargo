@@ -24,9 +24,8 @@
         class: "form-controll",
         placeholder: "To"
       %>
-        <%= select_tag(:capacity, options_for_select(Trip::SIZE, params[:capacity])) %>
+        <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
       <%= submit_tag "Find a driver" %>
-
     <% end %>
 
 <% if @trips.count.positive? %>
