@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: 'trips#index'
   resources :trips, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
-  end 
+  end
+
+  resources :dashboard, only: [:index, :show]
 end
