@@ -10,4 +10,6 @@ class Trip < ApplicationRecord
   validates :capacity, presence: true
   validates :status, presence: true
   monetize :price_cents
+
+  CAPACITY = ["Small", "Medium", "Large", "Extra Large"]
 end
