@@ -1,0 +1,10 @@
+<h1> <%= link_to"〈", root_path %> Your Dashboard</h1>
+
+<h5>Current trips</h5>
+
+  <% if @trips.count.positive? %>
+    <% @trips.each do |trip| %>
+      <%= link_to trip.start_location, trip_path(trip) %>
+      <%= link_to trip.bookings.where(status: 1).count, dashboard_path(trip) %>
+    <% end %>
+  <% end %>
