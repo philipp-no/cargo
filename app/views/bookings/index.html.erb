@@ -5,18 +5,27 @@
   <div class="cards d-flex flex-row justify-space-around">
     <% @bookings.each do |booking| %>
       <div class="card">
-        <p class="avatar">XX?</p>
-        <h3><%= booking.user.first_name %></h3>
-        <p><%= booking.item %></p>
-        <p><%= booking.size %></p>
-      <div>
-        <p><%= booking.description %></p>
-      </div>
-        <div class="button">
+        <div class="container card-items">
+          <div class="avatar">xx?</div>
+          <div><h3><%= booking.user.first_name %></h3></div>
         </div>
+        <div class="container">
+          <p><i class="fas fa-box-open"></i> <%= booking.item %></p>
+          <p><i class="fas fa-compress-alt"></i> <%= booking.size %></p>
+          <p><i class="far fa-heart"></i> needs to be coded</p>
+        </div>
+        <div class="container">
+          <div class="grey-field">
+            <%= booking.description %>
+          </div>
+        </div>
+        <div class="container">
+          <div class="button-position">
+            <button class="btn btn-danger">accept</button>
+          </div>
+        </div>
+        <div>
       </div>
     <% end %>
   </div>
-
-
 </div>

@@ -6,19 +6,32 @@
 }
 
 .card {
-  padding: 10px;
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  padding: 20px;
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: auto;
   width: 500px;
   border-radius: 10px;
   margin: 15px 10px;
   border-color: #707c82;
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.card-items {
   display: flex;
-  // align-items: center;
-  justify-content: space-between;
-  font-size: 25px;
-  font-weight: bolder;
-  text-decoration: none;
+  // justify-content: space-between;
+}
+
+.grey-field {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: $light-gray;
+}
+
+.button-position {
+  display: flex;
+  justify-content: flex-end;
 }
