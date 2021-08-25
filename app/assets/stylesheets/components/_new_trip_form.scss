@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
 
 .category-item {
@@ -33,32 +32,33 @@
 
 
 #trip_capacity_small + label {
-  color: #FD1015;
+  color: $gray;
+  ;
 }
 
 #trip_capacity_small:checked + label {
-  background-color: #FD1015;
-  border-color: #FD1015;
+  background-color: $blue;
+  border-color: white;
 }
 
 
 #trip_capacity_medium + label {
-  color: #FFC65A;
+  color: $gray;
 }
 
 #trip_capacity_medium:checked + label {
-  background-color: #FFC65A;
-  border-color: #FFC65A;
+  background-color: $blue;
+  border-color: white;
 }
 
 
 #trip_capacity_large + label {
-  color: #62DDF5;
+  color: $gray;
 }
 
 #trip_capacity_large:checked + label {
-  background-color: #62DDF5;
-  border-color: #62DDF5;
+  background-color: $blue;
+  border-color: white;
 }
 
 p {
@@ -70,5 +70,16 @@ p {
 }
 
 h5 {
-  margin-top: 25px;
+  margin-top: 10px;
+  text-align: center;
+  color: #7D7C82;
+}
+
+.button {
+  border: 0;
+}
+
+.button-position {
+  display:flex;
+  justify-content: center;
 }
