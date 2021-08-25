@@ -1,23 +1,22 @@
-<h1><%= @trip.start_location %> <%= @trip.start_time.strftime("%A, %B %d") %></h1>
+<div class="container">
 
-<% @bookings.each do |booking| %>
-  <div class="card">
-    <h3><%= booking.user.first_name %></h3>
-    <p><%= booking.item %></p>
-    <p><%= booking.size %></p>
-  <div>
-    <p><%= booking.description %></p>
+  <h1><%= @trip.start_location %> <%= @trip.start_time.strftime("%A, %B %d") %></h1>
+
+  <div class="cards d-flex flex-row justify-space-around">
+    <% @bookings.each do |booking| %>
+      <div class="card">
+        <p class="avatar">XX?</p>
+        <h3><%= booking.user.first_name %></h3>
+        <p><%= booking.item %></p>
+        <p><%= booking.size %></p>
+      <div>
+        <p><%= booking.description %></p>
+      </div>
+        <div class="button">
+        </div>
+      </div>
+    <% end %>
   </div>
-    <div class="button">
-    </div>
-  </div>
-<% end %>
 
 
-
-
-
-<h4><%= @trip.start_time.strftime("%A, %B %d") %></h4>
-    <p><%= @trip.start_time.strftime("%k:%M") %> <%= @trip.start_location %></p>
-    <i class="fas fa-long-arrow-alt-down"></i>
-    <p> <%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
+</div>
