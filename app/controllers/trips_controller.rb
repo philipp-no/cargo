@@ -20,14 +20,37 @@ class TripsController < ApplicationController
     end
   end
 
-   def show
+  def show
     @trip = Trip.find(params[:id])
-   end
+  end
 
-   def new
+  def new
     @trip = Trip.new
-   end
+  end
 
-   def create
-   end
+  def create
+    @trip = Trip.new(trip_params)
+    @trip.user = current_user
+    @trip.status = 0
+
+    if @trip.save
+      redirect_to trips_path(@trip)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def trip_params
+    params.require(:trip).permit(
+      :start_time,
+      :start_location,
+      :end_time,
+      :end_location,
+      :price_cents,
+      :capacity,
+      :description
+    )
+  end
 end

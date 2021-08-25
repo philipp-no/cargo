@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container">
   <div class="d-flex justify-content-around">
   <div class="mt-5">
     <h2><%= link_to"〈", root_path, class: "arrow" %>Create a trip and</h2> 
@@ -9,9 +9,10 @@
     <div class="p-4">
       <div class="new-trip-form">
         <%= simple_form_for [@trip] do |f| %>
-          <%= f.input :start_time, label: 'When will you start your trip?'  %>
           <%= f.input :start_location, label: 'Where does your trip start?' %>
+          <%= f.input :start_time, label: 'When will you leave?'  %>
           <%= f.input :end_location, label: 'Where are you going?' %>
+          <%= f.input :end_time, label: 'When do you expect to arrive?'  %>
           <fieldset class="form-group radio_buttons required trip_capacity">
             <legend class="col-form-label pt-0">How much capacity do you have? <abbr title="required">*</abbr></legend>
             <div class="category-wrapper">
@@ -57,11 +58,15 @@
                 </div>
             </div>
           </fieldset>
-          <%= f.input :price %>
+          <%= f.input :price_cents %>
           <%= f.input :description, label: 'What else does the sender need to know?' %>
-          <%= f.submit 'Publish this trip', class: "btn-light" %>
+          <div class="container">
+            <div class="button-position">
+              <%= f.submit 'Publish this trip', class: "button" %>
+            </div>
+          </div>
         <% end %>
-      <h5>What a ride!</h5>
+      <%# <h5>What a ride!</h5> %>
       </div>
     </div>
   </div>
