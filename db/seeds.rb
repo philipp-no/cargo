@@ -9,7 +9,7 @@ user_1 = User.create!(
   last_name: "Hasselberg",
   email: "marie@marie.com",
   phone_number: "01745566987",
-  address: "Hermannstraße 124, 12051 Berlin, Berlin, Germany",
+  address: "Hermannstraße 124, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Merzedes S",
   age: 25,
@@ -17,11 +17,11 @@ user_1 = User.create!(
 )
 
 user_2 = User.create!(
-  first_name: "Philip",
+  first_name: "Philipp",
   last_name: "Nordmeyer",
   email: "nordy@nordy.com",
   phone_number: "01745566988",
-  address: "Stephanstraße 24, 10559 Berlin, Berlin, Germany",
+  address: "Stephanstraße 24, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Jaguar XF",
   age: 23,
@@ -33,7 +33,7 @@ user_3 = User.create!(
   last_name: "Jenner",
   email: "otmar@otmar.com",
   phone_number: "01745566910",
-  address: "Engeldamm 52, 10179 Berlin, Berlin, Germany",
+  address: "Engeldamm 52, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Landrover Defender",
   age: 103,
@@ -45,7 +45,7 @@ user_4 = User.create!(
   last_name: "Glassmyer",
   email: "jennifer@gmail.com",
   phone_number: "01745566911",
-  address: "Frankfurter Allee 12, 10247 Berlin, Berlin, Germany",
+  address: "Frankfurter Allee 12, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Ferrari GTC4Lusso",
   age: 25,
@@ -55,8 +55,8 @@ user_4 = User.create!(
 trip1 = Trip.create!(
   start_time: "2021-09-25 04:57",
   end_time: "2021-09-25 12:57",
-  start_location: "Reeperbahn 9, 20359 Hamburg, Hamburg, Germany",
-  end_location: "Frankfurter Straße 9, 34117 Kassel, Hessen, Germany",
+  start_location: "Reeperbahn 9, Hamburg, Hamburg, Germany",
+  end_location: "Frankfurter Straße 9, Kassel, Hessen, Germany",
   capacity: "Large",
   price_cents: 1500,
   status: 0,
@@ -66,8 +66,8 @@ trip1 = Trip.create!(
 trip2 = Trip.create!(
   start_time: "2021-09-26 03:50",
   end_time: "2021-09-26 11:00",
-  start_location: "Torstraße 123, 10119 Berlin, Berlin, Germany",
-  end_location: "Frankfurter Straße 12, 97082 Würzburg, Bayern, Germany",
+  start_location: "Torstraße 123, Berlin, Berlin, Germany",
+  end_location: "Frankfurter Straße 12, Würzburg, Bayern, Germany",
   capacity: "Small",
   price_cents: 2000,
   status: 0,
@@ -77,8 +77,8 @@ trip2 = Trip.create!(
 trip3 = Trip.create!(
   start_time: "2021-09-27 02:50",
   end_time: "2021-09-27 10:00",
-  start_location: "Ottenser Hauptstraße 3, 22765 Hamburg, Germany",
-  end_location: "Flensburger Str. 318109 Rostock, Mecklenburg-Vorpommern, Germany",
+  start_location: "Ottenser Hauptstraße 3, Hamburg, Germany",
+  end_location: "Flensburger Straße 12, Rostock, Mecklenburg-Vorpommern, Germany",
   capacity: "Medium",
   price_cents: 4000,
   status: 0,
@@ -88,8 +88,8 @@ trip3 = Trip.create!(
 trip4 = Trip.create!(
   start_time: "2021-09-27 01:50",
   end_time: "2021-09-27 15:30",
-  start_location: "Rostocker Str. 323970 Wismar, Mecklenburg-Vorpommern, Germany",
-  end_location: "Bahnhofstraße 24, 94032 Passau, Bayern, Germany",
+  start_location: "Rostocker Straße 2, Wismar, Mecklenburg-Vorpommern, Germany",
+  end_location: "Bahnhofstraße 24, Passau, Bayern, Germany",
   capacity: "Large",
   price_cents: 1900,
   status: 0,
@@ -101,7 +101,7 @@ booking1 = Booking.create!(
   trip: trip2,
   status: 1,
   description: "Hi Marie! I would like to send my item with you.",
-  size: "small",
+  size: "Small",
   item: "Plant"
 )
 
@@ -110,7 +110,7 @@ booking2 = Booking.create!(
   trip: trip1,
   status: 1,
   description: "Hi Philipp! Could you take my item on your trip?",
-  size: "medium",
+  size: "Medium",
   item: "Box of books"
 )
 
@@ -119,7 +119,7 @@ booking3 = Booking.create!(
   trip: trip4,
   status: 1,
   description: "Hi Otmar! I would like to send my item with you.",
-  size: "large",
+  size: "Large",
   item: "Bike"
 )
 
@@ -128,6 +128,6 @@ booking4 = Booking.create!(
   trip: trip3,
   status: 1,
   description: "Hi Jennifer! Could you take my item on your trip?",
-  size: "small",
+  size: "Small",
   item: "Plates"
 )

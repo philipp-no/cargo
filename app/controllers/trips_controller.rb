@@ -16,7 +16,13 @@ class TripsController < ApplicationController
     end
 
     if params[:capacity].present?
-      @trips = @trips.where(capacity: params[:capacity])
+      if params[:capacity] == "Medium"
+        @trips = @trips.where(capacity: ["Medium", "Large"])
+      end
+      if params[:capacity] == "Large"
+        @trips = @trips.where(capacity: ["Large"])
+      end
+
     end
   end
 
