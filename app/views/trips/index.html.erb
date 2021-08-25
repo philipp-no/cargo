@@ -1,42 +1,40 @@
-<div class="header-container">
-  <div class="banner">
-  </div>
+<div class="banner">
 
   <div class="header-text">
-    <h1 class="header-h1">Find a driver and send your item on a ride</h1>
+    <h1>Find a driver and send your item on a ride</h1>
+      <%= form_tag trips_path, method: :get do %>
+            <%= text_field_tag :start_location,
+              params[:start_location],
+              class: "form-controll",
+              placeholder: "From"
+            %>
+            <%= text_field_tag :end_location,
+              params[:end_location],
+              class: "form-controll",
+              placeholder: "To"
+            %>
+            <%= date_field_tag :date,
+              params[:date],
+              class: "form-controll",
+              placeholder: "To"
+            %>
+              <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
+            <%= submit_tag "Find a driver" %>
+          <% end %>
   </div>
 </div>
 
-
-<%= form_tag trips_path, method: :get do %>
-      <%= text_field_tag :start_location,
-        params[:start_location],
-        class: "form-controll",
-        placeholder: "From"
-      %>
-      <%= text_field_tag :end_location,
-        params[:end_location],
-        class: "form-controll",
-        placeholder: "To"
-      %>
-      <%= date_field_tag :date,
-        params[:date],
-        class: "form-controll",
-        placeholder: "To"
-      %>
-        <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
-      <%= submit_tag "Find a driver" %>
-    <% end %>
-
 <% if @trips.count.positive? %>
-  <h5>Leaving</h5>
+  <h5>Leaving today</h5>
   <div class="container">
     <ul>
       <% @trips.each do |trip| %>
-        <li> <%= trip.start_time %> <%= trip.start_location %></li>
-        <li> <%= trip.end_time %> <%= trip.end_location %></li>
+        <li> <%= trip.start_time.strftime("%k:%M") %> <%= trip.start_location.split(',')[1] %></li>
+        <li> <%= trip.end_time.strftime("%k:%M") %> <%= trip.end_location.split(',')[1] %></li>
+        <li>Accepts <%= trip.capacity.downcase %> items</li>
         <li> <%= trip.user.first_name %></li>
-        <li> </li>
+        <li> <%= humanized_money_with_symbol trip.price %></li>
+        <br>
       <% end %>
     </ul>
   </div>
