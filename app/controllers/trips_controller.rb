@@ -18,7 +18,7 @@ class TripsController < ApplicationController
 
     if params[:capacity].present?
       @trips = @trips.where(capacity: params[:capacity])
-    
+
     end
   end
 
