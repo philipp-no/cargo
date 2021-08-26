@@ -25,18 +25,25 @@
 </div>
 
 <% if @trips.count.positive? %>
-  <h5>Leaving today</h5>
-  <div class="container">
-    <ul>
+  <h5>Trips leaving today</h5>
+  <div class="container d-flex justify-contents-around">
+    <ul class="trip-details">
       <% @trips.each do |trip| %>
-        <li> <%= trip.start_time.strftime("%k:%M") %> <%= trip.start_location.split(',')[1] %></li>
-        <li> <%= trip.end_time.strftime("%k:%M") %> <%= trip.end_location.split(',')[1] %></li>
-        <li>Accepts <%= trip.capacity.downcase %> items</li>
-        <li> <%= trip.user.first_name %></li>
-        <li> <%= humanized_money_with_symbol trip.price %></li>
-        <br>
-      <% end %>
+        <div class="card">
+          <li> <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong></li>
+          <li> <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(',')[1] %></strong></li>
+          <li class="line">Accepts <%= trip.capacity.downcase %> items</li>
+          <div class="name-price">
+            <div><li> <%= trip.user.first_name %></li></div>
+            <div><li> <strong><%= humanized_money_with_symbol trip.price %></li></strong></div>
+          </div>
+        </div>
+       <% end %>
     </ul>
+    <div id="map"
+     style="width: 100%; height: 100vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 <% else %>
   <div class="results-container">

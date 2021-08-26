@@ -22,12 +22,24 @@ class TripsController < ApplicationController
       if params[:capacity] == "Large"
         @trips = @trips.where(capacity: ["Large"])
       end
-
+    end
+    @markers = @trips.geocoded.map do |trip|
+      {
+        lat: trip.latitude,
+        lng: trip.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { trip: trip }),
+        image_url: helpers.asset_url('car-solid.svg')
+      }
     end
   end
 
   def show
     @trip = Trip.find(params[:id])
+    @markers = {
+        lat: @trip.latitude,
+        lng: @trip.longitude,
+        image_url: helpers.asset_url('car-solid.svg')
+      }
   end
 
   def new

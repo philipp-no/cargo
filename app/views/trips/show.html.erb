@@ -1,25 +1,32 @@
-<div class="container">
-  <h1><%= @trip.start_time.strftime("%A, %B %d") %></h1>
-  <div>
-    <p><%= @trip.start_time.strftime("%k:%M") %> <%=  @trip.start_location %></p>
-    <p><%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
-  </div>
-  <div>
-    <div class="d-flex justify-content-between">
-      <p>Price for one item:</p>
-      <%= humanized_money_with_symbol @trip.price %>
+<div class="d-flex justify-content-between">
+  <div class="trip-details">
+    <h1><%= @trip.start_time.strftime("%A, %B %d") %></h1>
+    <div>
+      <p><%= @trip.start_time.strftime("%k:%M") %> <%=  @trip.start_location %></p>
+      <p><%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
+    </div>
+    <div>
+      <div class="d-flex justify-content-between">
+        <p>Price for one item:</p>
+        <%= humanized_money_with_symbol @trip.price %>
+      </div>
+    </div>
+    <div>
+      <%= @trip.user.first_name %><%= @trip.user.last_name %>
+      <%= @trip.description %>
+    </div>
+    <div>
+      <h5>Driver can accept</h5>
+      <p><strong>Type of car</strong> <%= @trip.user.car_type %></p>
+      <p><strong>Years driving</strong> <%= @trip.user.years_driving %></p>
+    </div>
+    <div>
+      <%= link_to "Select this driver", root_path, class: "btn-light" %>
     </div>
   </div>
-  <div>
-    <%= @trip.user.first_name %><%= @trip.user.last_name %>
-    <%= @trip.description %>
-  </div>
-  <div>
-    <h5>Driver can accept</h5>
-    <p><strong>Type of car</strong> <%= @trip.user.car_type %></p>
-    <p><strong>Years driving</strong> <%= @trip.user.years_driving %></p>
-  </div>
-  <div>
-    <%= link_to "Select this driver", root_path, class: "btn-light" %>
+  <div id="map"
+     style="width: 100%; height: 100vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
