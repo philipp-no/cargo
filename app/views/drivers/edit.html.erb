@@ -2,10 +2,10 @@
 
 <%= simple_form_for(@user, url: update_driver_path, html: { method: :patch }) do |f| %>
   <div class="form-inputs">
-    <%= f.input :car_type, 
+    <%= f.input :car_type,
         required: true,
         label: 'What kind of car will you be driving?' %>
-    <%= f.input :years_driving, 
+    <%= f.input :years_driving,
         required: true,
         label: "How many years have you had a driver's license?"  %>
   </div>
