@@ -18,7 +18,6 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    console.log(markers)
     const multMark = markers.length > 1
     markers.forEach((marker) => {
       const element = document.createElement('div');
