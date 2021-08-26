@@ -6,7 +6,8 @@
     <% @bookings.each do |booking| %>
       <div class="card">
         <div class="container card-items">
-          <div class="avatar">xx?</div>
+          <div>
+          <%= image_tag booking.user.avatar, class: 'avatar' %></div>
           <div><h3><%= booking.user.first_name %></h3></div>
         </div>
         <div class="container">
@@ -20,9 +21,13 @@
           </div>
         </div>
         <div class="container">
-          <div class="button-position">
-            <button class="btn btn-danger">accept</button>
-          </div>
+          <% if booking.pending? %>
+            <%= link_to "Accept", accept_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller %>
+
+            <%= link_to "Decline", decline_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller, data: { confirm: 'Are you sure you want to decline this booking?' } %>
+          <% else %>
+            <p>〉request <%= booking.status %> </p>
+          <% end %>
         </div>
         <div>
       </div>
