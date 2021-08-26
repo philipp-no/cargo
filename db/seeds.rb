@@ -13,10 +13,9 @@ marie = User.create!(
   password: "123456",
   car_type: "BMW",
   birthday: 1999-05-06,
-  years_driving: 9
+  years_driving: 9,
+  avatar: "marie.png"
 )
-marie.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/marie.png')), filename: 'marie.png')
-
 
 philipp = User.create!(
   first_name: "Philipp",
@@ -27,10 +26,9 @@ philipp = User.create!(
   password: "123456",
   car_type: "Jaguar XF",
   birthday: 2000-03-17,
-  years_driving: 9
+  years_driving: 9,
+  avatar: "philipp.png"
 )
-philipp.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/philipp.png')), filename: 'philipp.png')
-
 
 otmar = User.create!(
   first_name: "Otmar",
@@ -40,11 +38,10 @@ otmar = User.create!(
   address: "Engeldamm 52, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Landrover Defender",
-  birtday: 1923-05-6,
-  years_driving: 9
+  birthday: 1923-05-6,
+  years_driving: 9,
+  avatar: "otmar.png"
 )
-otmar.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/otmar.png')), filename: 'otmar.png')
-
 
 jennifer = User.create!(
   first_name: "Jenny",
@@ -55,10 +52,9 @@ jennifer = User.create!(
   password: "123456",
   car_type: "Ferrari GTC4Lusso",
   birthday: 1999-11-16,
-  years_driving: 9
+  years_driving: 9,
+  avatar: "jennifer.png"
 )
-jennifer.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/jennifer.png')), filename: 'jennifer.png')
-
 
 trip1 = Trip.create!(
   start_time: "2021-09-25 04:57",
@@ -117,7 +113,7 @@ trip5 = Trip.create!(
 
 
 booking1 = Booking.create!(
-  user: user_1,
+  user: marie,
   trip: trip2,
   status: 1,
   description: "Hi Marie! I would like to send my item with you.",
@@ -126,7 +122,7 @@ booking1 = Booking.create!(
 )
 
 booking2 = Booking.create!(
-  user: user_2,
+  user: philipp,
   trip: trip1,
   status: 1,
   description: "Hi Philipp! Could you take my item on your trip?",
@@ -135,7 +131,7 @@ booking2 = Booking.create!(
 )
 
 booking3 = Booking.create!(
-  user: user_3,
+  user: otmar,
   trip: trip4,
   status: 1,
   description: "Hi Otmar! I would like to send my item with you.",
@@ -144,7 +140,7 @@ booking3 = Booking.create!(
 )
 
 booking4 = Booking.create!(
-  user: user_4,
+  user: jennifer,
   trip: trip3,
   status: 1,
   description: "Hi Jennifer! Could you take my item on your trip?",
