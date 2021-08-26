@@ -4,24 +4,26 @@
 <% if @trips.count.positive? %>
   <h5>Current trips</h5>
     <div class="container d-flex justify-contents-between">
-      <ul class="trip-details">
         <% @trips.each do |trip| %>
-          <div class="card">
-          <li class="line-bottom"><%= link_to trip.start_time.strftime("%A, %B %d"), trip_path(trip) %></li>
-            <li> <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong></li>
-            <li> <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(',')[1] %></strong></li>
-            <div class="name-price">
-            <li class="line-bottom">Accepts <%= trip.capacity.downcase %> items</li>
-              <div><li> <strong><%= humanized_money_with_symbol trip.price %></li></strong></div>
-            </div>
-            <% if trip.bookings.count.positive? %>
-              <div class="badge">
-                <%= link_to trip.bookings.where(status: "1").count, trip_bookings_path(trip) %>
+          <%= link_to trip_bookings_path(trip) do %>
+      <div class="trip-details">
+            <div class="card">
+              <p class="line-bottom"><%= trip.start_time.strftime("%A, %B %d") %></p>
+              <p> <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong></p>
+              <p> <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(',')[1] %></strong></p>
+              <div class="name-price">
+                <p class="line-bottom">Accepts <%= trip.capacity.downcase %> items</p>
+                <div><p> <strong><%= humanized_money_with_symbol trip.price %></p></strong></div>
               </div>
-          </div>
-            <% end %>
+              <% if trip.bookings.count.positive? %>
+                <div class="badge">
+                  <%= link_to trip.count_pending_bookings, trip_bookings_path(trip) %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+      </div>
         <% end %>
-      </ul>
 <% else %>
   <div class="results-container">
     <h5>No trips yet</h5>
