@@ -31,15 +31,16 @@ class TripsController < ApplicationController
         image_url: helpers.asset_url('car-solid.svg')
       }
     end
+    @start_addresses = @trips.map do |trip_address|
+      sanitize_address(trip_address.start_location)
+    end
+    @end_addresses = @trips.map do |trip_address|
+      sanitize_address(trip_address.end_location)
+    end
   end
 
   def show
     @trip = Trip.find(params[:id])
-    @markers = [{
-      lat: @trip.latitude,
-      lng: @trip.longitude,
-      image_url: helpers.asset_url('car-solid.svg')
-    }]
   end
 
   def new
@@ -74,5 +75,12 @@ class TripsController < ApplicationController
       :capacity,
       :description
     )
+  end
+
+  def sanitize_address(address)
+    address_array = address.split(",")
+    street_name = address_array[0].chars.reject { |char| char.match?(/\A-?\d+\Z/) }.join
+    city = address_array[1]
+    return "#{city}, #{street_name}"
   end
 end

@@ -2,9 +2,44 @@
   margin: 0 !important;
 }
 
-.trip-details {
-  width: 100%;
-  margin-top: 70px;
-  margin-right: 50px;
-  margin-left: 85px;
+.fas {
+  font-size: 40px;
+  color: #7D7C82;
+}
+
+.end-details {
+  margin-top: 10px;
+  border-bottom: 2px solid #E6E6E6;
+}
+
+.price {
+  border-bottom: 2px solid #E6E6E6;
+}
+
+.driver-details {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #E6E6E6;
+}
+
+.bigger-text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.list-items {
+  margin: 10px;
+}
+
+.button {
+  color: white;
+}
+
+.button-div {
+  margin-top: 30px;
 }

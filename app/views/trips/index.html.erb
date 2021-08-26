@@ -27,19 +27,11 @@
 <% if @trips.count.positive? %>
   <h5>Trips leaving today</h5>
   <div class="container d-flex justify-contents-between">
-    <ul class="trip-details">
-      <% @trips.each do |trip| %>
-        <div class="card">
-          <li> <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong></li>
-          <li> <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(',')[1] %></strong></li>
-          <li class="line">Accepts <%= trip.capacity.downcase %> items</li>
-          <div class="name-price">
-            <div><li> <%= trip.user.first_name %></li></div>
-            <div><li> <strong><%= humanized_money_with_symbol trip.price %></li></strong></div>
-          </div>
-        </div>
+    <div class="trip-details">
+      <% @trips.each_with_index do |trip, index| %>
+        <%=  render partial: 'show', locals: {trip: trip, index: index} %>
        <% end %>
-    </ul>
+    </div>
     <div id="map"
      style="width: 100%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
