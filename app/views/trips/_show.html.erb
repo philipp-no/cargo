@@ -1,9 +1,9 @@
 <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal<%=index%>">
-  <p><%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(‘,’)[1] %></strong></p>
-  <p> <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(‘,’)[1] %></strong></p>
+  <p><%= trip.start_time.strftime("%k:%M")%> <strong><%= trip.start_location.split(",")[1] %></strong></p>
+  <p> <%= trip.end_time.strftime("%k:%M")%> <strong><%= trip.end_location.split(",")[1] %></strong></p>
   <p class="line">Accepts <%= trip.capacity.downcase %> items</p>
   <div class="name-price">
-    <div> <%= image_tag trip.user.avatar, class: ‘avatar’ %></div>
+    <div> <%= image_tag trip.user.avatar, class: "avatar" %></div>
     <div><p> <%= trip.user.first_name %></p></div>
     <div><p> <strong><%= humanized_money_with_symbol trip.price %></p></strong></div>
   </div>
