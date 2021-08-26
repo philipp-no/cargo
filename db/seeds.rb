@@ -64,6 +64,7 @@ trip1 = Trip.create!(
   capacity: "Large",
   price_cents: 3500,
   status: 2,
+  description: "Hi, I am Marie. I will be travelling from Hamburg to Kassel and still have room to take something with me. Up to 25 kilos would be OK. Items weighing more than 10 kilos would have to be stowed in my boot by the sender himself and also lifted out by the recipient.",
   user: marie
 )
 
@@ -75,6 +76,7 @@ trip2 = Trip.create!(
   capacity: "Large",
   price_cents: 3000,
   status: 1,
+  description: "Hi, I am Marie. I will drive from Berlin to Würzburg with an empty car and take some items with me. Anything heavier than 10 kilos has to be stowed in my car by the transmitter and lifted out by the receiver. Thank you for your understanding!",
   user: marie
 )
 
@@ -86,6 +88,7 @@ trip3 = Trip.create!(
   capacity: "Medium",
   price_cents: 1000,
   status: 0,
+  description: "Hi, I am driving from Hamburg to Rostock. I can gladly take something for you on this journey.",
   user: marie
 )
 
@@ -97,6 +100,7 @@ trip4 = Trip.create!(
   capacity: "Large",
   price_cents: 3200,
   status: 2,
+  description: "Hi, I'm Otmar, driving from Wismar to Passau in a huge car. I can take anything up to the size of a bicycle. If it weighs more than 30 kilos, it would have to be lifted into the car by the sender and out again by the receiver.",
   user: otmar
 )
 
@@ -104,10 +108,11 @@ trip5 = Trip.create!(
   start_time: "2021-09-30 11:50",
   end_time: "2021-09-30 22:30",
   start_location: "Bahnhofstraße 13, Planegg, Bayern, Germany",
-  end_location: "Wiener Straße 1, Wiener Straße 1, Brandenburg, Germany",
+  end_location: "Wiener Straße 1, Brandenburg, Brandenburg, Germany",
   capacity: "Large",
   price_cents: 3100,
   status: 1,
+  description: "Hi, I'm Otmar, driving from Planegg to Brandenburg. I can take anything up to the size of a bicycle. If it weighs more than 30 kilos, it would have to be lifted into the car by the sender and out again by the receiver.",
   user: otmar
 )
 
@@ -119,6 +124,7 @@ trip6 = Trip.create!(
   capacity: "Large",
   price_cents: 1000,
   status: 0,
+  description: "Hi, I'm Otmar, driving from Bremen to Münster. Could take soem of your goods with me. Feel free to book my for this.",
   user: otmar
 )
 
@@ -130,6 +136,7 @@ trip7 = Trip.create!(
   capacity: "Medium",
   price_cents: 2800,
   status: 0,
+  description: "Hi, I'm driving from Bremen to Immenstaad at the beautiful Lake BOdensse. If you want something to be delivered there, please book this trip.",
   user: otmar
 )
 
@@ -141,6 +148,7 @@ trip8 = Trip.create!(
   capacity: "Medium",
   price_cents: 1200,
   status: 2,
+  description: "Hi, I am Jennifer. I am driving from Berlin to Rostock. I would be very happy to take some more items with me - if they are not too big. My car is already pretty full.",
   user: jennifer
 )
 
@@ -152,6 +160,7 @@ trip9 = Trip.create!(
   capacity: "Small",
   price_cents: 1000,
   status: 1,
+  description: "Hi, I am Jennifer. I will drive from Wismar to Putbus on the island of Rügen. Could take some small goods.",
   user: jennifer
 )
 
@@ -163,17 +172,19 @@ trip10 = Trip.create!(
   capacity: "Medium",
   price_cents: 2000,
   status: 0,
+  description: "Hi, I am Jennifer. I will drive from Stralsund to Hamburg. Could take a medium size item with me.",
   user: jennifer
 )
 
 trip11 = Trip.create!(
   start_time: "2021-09-30 17:00",
   end_time: "2021-09-30 23:00",
-  start_location: "Hafenstraße 11, Stralsund, Mecklenburg-Vorpommern, Germany",
+  start_location: "Hafenstraße 11, Hamburg, Hamburg, Germany",
   end_location: "Torstraße 2, Berlin, Berlin, Germany",
   capacity: "Small",
   price_cents: 2500,
   status: 0,
+  description: "Hi, I am Jennifer. My car is already pretty full but I could still take a few small items with me.",
   user: jennifer
 )
 
