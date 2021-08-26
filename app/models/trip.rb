@@ -16,4 +16,8 @@ class Trip < ApplicationRecord
   monetize :price_cents
 
   CAPACITY = ["Small", "Medium", "Large"]
+
+  def count_pending_bookings
+    Booking.where(trip: self, status: "pending").count
+  end
 end
