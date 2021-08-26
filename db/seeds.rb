@@ -4,19 +4,21 @@ Trip.destroy_all
 User.destroy_all
 
 
-user_1 = User.create!(
+marie = User.create!(
   first_name: "Marie",
   last_name: "Hasselberg",
   email: "marie@marie.com",
   phone_number: "01745566987",
   address: "Hermannstraße 124, Berlin, Berlin, Germany",
   password: "123456",
-  car_type: "Merzedes S",
-  age: 25,
+  car_type: "BMW",
+  birthday: 1999-05-06,
   years_driving: 9
 )
+marie.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/marie.png')), filename: 'marie.png')
 
-user_2 = User.create!(
+
+philipp = User.create!(
   first_name: "Philipp",
   last_name: "Nordmeyer",
   email: "nordy@nordy.com",
@@ -24,11 +26,13 @@ user_2 = User.create!(
   address: "Stephanstraße 24, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Jaguar XF",
-  age: 23,
+  birthday: 2000-03-17,
   years_driving: 9
 )
+philipp.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/philipp.png')), filename: 'philipp.png')
 
-user_3 = User.create!(
+
+otmar = User.create!(
   first_name: "Otmar",
   last_name: "Jenner",
   email: "otmar@otmar.com",
@@ -36,11 +40,13 @@ user_3 = User.create!(
   address: "Engeldamm 52, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Landrover Defender",
-  age: 103,
+  birtday: 1923-05-6,
   years_driving: 9
 )
+otmar.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/otmar.png')), filename: 'otmar.png')
 
-user_4 = User.create!(
+
+jennifer = User.create!(
   first_name: "Jenny",
   last_name: "Glassmyer",
   email: "jennifer@gmail.com",
@@ -48,9 +54,11 @@ user_4 = User.create!(
   address: "Frankfurter Allee 12, Berlin, Berlin, Germany",
   password: "123456",
   car_type: "Ferrari GTC4Lusso",
-  age: 25,
+  birthday: 1999-11-16,
   years_driving: 9
 )
+jennifer.avatar.attach(io: File.open(File.join(Rails.root, 'app/assets/images/jennifer.png')), filename: 'jennifer.png')
+
 
 trip1 = Trip.create!(
   start_time: "2021-09-25 04:57",
@@ -60,7 +68,7 @@ trip1 = Trip.create!(
   capacity: "Large",
   price_cents: 1500,
   status: 0,
-  user: user_1
+  user: marie
 )
 
 trip2 = Trip.create!(
@@ -71,7 +79,7 @@ trip2 = Trip.create!(
   capacity: "Small",
   price_cents: 2000,
   status: 0,
-  user: user_2
+  user: otmar
 )
 
 trip3 = Trip.create!(
@@ -82,7 +90,7 @@ trip3 = Trip.create!(
   capacity: "Medium",
   price_cents: 4000,
   status: 0,
-  user: user_3
+  user: jennifer
 )
 
 trip4 = Trip.create!(
@@ -93,8 +101,20 @@ trip4 = Trip.create!(
   capacity: "Large",
   price_cents: 1900,
   status: 0,
-  user: user_4
+  user: otmar
 )
+
+trip5 = Trip.create!(
+  start_time: "2021-09-27 01:50",
+  end_time: "2021-09-27 15:30",
+  start_location: "Rostocker Straße 2, Wismar, Mecklenburg-Vorpommern, Germany",
+  end_location: "Bahnhofstraße 24, Passau, Bayern, Germany",
+  capacity: "Large",
+  price_cents: 1900,
+  status: 0,
+  user: otmar
+)
+
 
 booking1 = Booking.create!(
   user: user_1,
