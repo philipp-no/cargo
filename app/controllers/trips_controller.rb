@@ -35,11 +35,11 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @markers = {
-        lat: @trip.latitude,
-        lng: @trip.longitude,
-        image_url: helpers.asset_url('car-solid.svg')
-      }
+    @markers = [{
+      lat: @trip.latitude,
+      lng: @trip.longitude,
+      image_url: helpers.asset_url('car-solid.svg')
+    }]
   end
 
   def new
