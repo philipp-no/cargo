@@ -1,0 +1,9 @@
+<%= link_to trip_path(trip) do %>
+<div class="d-flex justify-contents-between align-items-center popup-details">
+  <h4><%= humanized_money_with_symbol trip.price %></h4>
+  <div>
+    <p><%= trip.start_time.strftime("%k:%M %a, %b %e")%></p>
+    <p><%= trip.user.first_name %> <%= trip.user.last_name %></p>
+  </div>
+</div>
+<% end %>

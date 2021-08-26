@@ -26,8 +26,8 @@
 
 <% if @trips.count.positive? %>
   <h5>Leaving today</h5>
-  <div class="trip-container">
-    <ul class="list">
+  <div class="container d-flex justify-contents-around">
+    <ul class="trip-details">
       <% @trips.each do |trip| %>
         <div class="card">
           <li> <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong></li>
@@ -40,6 +40,10 @@
         </div>
        <% end %>
     </ul>
+    <div id="map"
+     style="width: 100%; height: 100vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 <% else %>
   <div class="results-container">
