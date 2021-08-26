@@ -18,6 +18,8 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers)
+    const multMark = markers.length > 1
     markers.forEach((marker) => {
       const element = document.createElement('div');
       element.className = 'marker';
@@ -26,11 +28,13 @@ const initMapbox = () => {
       element.style.width = '25px';
       element.style.height = '25px';
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-    
-      new mapboxgl.Marker(element)
+      const newMarker = new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
       .addTo(map)
-      .setPopup(popup);
+
+      if (multMark) {
+        newMarker.setPopup(popup);
+      }
     });
 
     fitMapToMarkers(map, markers);

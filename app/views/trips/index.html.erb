@@ -26,7 +26,7 @@
 
 <% if @trips.count.positive? %>
   <h5>Trips leaving today</h5>
-  <div class="container d-flex justify-contents-around">
+  <div class="container d-flex justify-contents-between">
     <ul class="trip-details">
       <% @trips.each do |trip| %>
         <div class="card">
