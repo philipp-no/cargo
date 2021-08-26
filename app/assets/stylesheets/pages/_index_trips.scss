@@ -1,7 +1,43 @@
+$dark: #292929;
+$gray: #7D7C82;
 $steel: #E8F1FD;
+$blue: #B2D1F8;
+$rose: #F55E6E;
+$light-gray: #E6E6E6;
+
 .banner {
   background-color: $steel;
-  width: auto;
+  width: 116%;
+  height: 400px;
+  margin: -50px -100px 0 -100px;
+  margin-right: -100px;
+}
+.header-text {
+  padding: 150px 100px 10px 100px;
+}
+.list {
+  list-style-type: none;
+}
+li {
+  margin: 0 0 10px 0;
+}
+.line {
+  margin: 20px 0 20px 0;
+  padding: 15px 0 15px 0;
+  border-bottom: 1px solid $gray;
+  border-top:1px solid $gray;
+  width: 250px;
+}
+.name-price {
+  width: 250px;
+  display: flex;
+  align-items: inline;
+  justify-content: space-between;
+}
+.trip-container {
+  display: flex;
+  align-items: inline;
+  justify-content: start;
 }
 
 .content {
