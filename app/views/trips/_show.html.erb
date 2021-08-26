@@ -1,0 +1,62 @@
+<div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal<%=index%>">
+  <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong>
+  <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(',')[1] %></strong>
+  <p class="line">Accepts <%= trip.capacity.downcase %> items</p>
+  <div class="name-price">
+    <div><%= trip.user.first_name %></div>
+    <div><strong><%= humanized_money_with_symbol trip.price %></strong></div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal<%=index%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><%= trip.start_time.strftime("%A, %B %d") %></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="trip-details">
+          <div>
+            <p><%= trip.start_time.strftime("%k:%M") %>  <%= @start_addresses[index] %></p>
+            <i class="fas fa-long-arrow-alt-down"></i>
+            <p class="end-details"><%= trip.end_time.strftime("%k:%M") %> <%= @end_addresses[index] %></p>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between price">
+              <p>Price for one item:</p>
+              <%= humanized_money_with_symbol trip.price %>
+            </div>
+          </div>
+          <%= link_to root_path do %>
+            <div class="driver-details">
+              <%= image_tag trip.user.avatar, class: 'avatar' %>
+              <%= trip.user.first_name %> <%=trip.user.last_name%>
+              <%= trip.description %>
+            </div>
+          <% end %>
+          <div>
+            <p class="bigger-text">Driver will accept</h5>
+            <% if trip.capacity == "Large" %>
+              <%  sizes = ["Small Items", "Medium Items", "Large Items"] %>
+            <% elsif trip.capacity == "Medium" %>
+              <% sizes = ["Small Items", "Medium Items"] %>
+            <% else %>
+              <% sizes = ["Small Items"] %>
+            <% end %>
+            <ul>
+            <% sizes.each do |size| %>
+              <li class="list-items"><i class="far fa-check-square"></i> <%= size %></li>
+            <% end %>
+            </ul>
+            <p><strong>Type of car</strong> <%= trip.user.car_type %></p>
+            <p><strong>Years driving</strong> <%= trip.user.years_driving %></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Select this driver", root_path, class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
