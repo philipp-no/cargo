@@ -12,10 +12,14 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Create a Trip", "#", class: "nav-link" %>
+          <% if current_user.driver %>
+            <%= link_to "Create a Trip", new_trip_path, class: "nav-link" %>
+          <% else %>
+            <%= link_to "Become a Driver", become_driver_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Find a Driver", "#", class: "nav-link" %>
+          <%= link_to "Find a Driver", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%# if current_user.photo.attached? %>
@@ -31,10 +35,10 @@
         </li>
       <% else %>
         <li class="nav-item active">
-          <%= link_to "Become a Driver", "#", class: "nav-link" %>
+          <%= link_to "Become a Driver", become_driver_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Find a Driver", "#", class: "nav-link" %>
+          <%= link_to "Find a Driver", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Log In", new_user_session_path, class: "nav-link" %>

@@ -43,7 +43,11 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new
+    if current_user.driver == true
+      @trip = Trip.new
+    else
+      redirect_to become_driver_path
+    end
   end
 
   def create
