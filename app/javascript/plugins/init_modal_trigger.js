@@ -4,9 +4,11 @@ const initModalTrigger = () => {
   const modalTrigger = () => {
     modal.classList.toggle('modal-hidden')
   }
-  button.addEventListener('click', () => {
-    modalTrigger()
-  }, false) 
+  if (button) {
+    button.addEventListener('click', () => {
+      modalTrigger()
+    }, false) 
+  }
 }
 
 export { initModalTrigger }

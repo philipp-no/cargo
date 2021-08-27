@@ -58,7 +58,7 @@ class TripsController < ApplicationController
     @trip.price_cents = @trip.price_cents * 100
 
     if @trip.save
-      redirect_to trips_path(@trip)
+      redirect_to dashboard_index_path, notice: 'Your trip was created!'
     else
       render :new
     end
