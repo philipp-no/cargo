@@ -29,7 +29,7 @@
               <%= humanized_money_with_symbol trip.price %>
             </div>
           </div>
-          <%= link_to root_path do %>
+          <%= link_to root_path, class: "block-link-text" do %>
             <div class="driver-details">
               <%= image_tag trip.user.avatar, class: 'avatar' %>
               <%= trip.user.first_name %> <%=trip.user.last_name%>

@@ -14,20 +14,12 @@ a:hover {
   color: $light-gray;
 }
 
-h1 {
-  font-weight: 600;
-  font-size: 40px;
-  color: $dark;
+.block-link-text:hover {
+  color: $blue;
 }
 
-h2, h3, h4, h5 {
-  color: $dark;
-}
-
-.content {
-  background-color: white;
+.block-link-text {
   color: $gray;
-  margin: 50px 100px 10px 100px;
 }
 
 body {
@@ -41,4 +33,22 @@ body {
   border-radius: 10px;
   margin-bottom: 20px;
   margin-top: 5px;
+}
+
+.content {
+  background-color: white;
+  color: $gray;
+  // margin: 50px 100px 10px 100px;
+}
+
+h1 {
+  margin: 50px 100px 10px 100px;
+  font-weight: 600;
+  font-size: 40px;
+  color: $dark;
+}
+
+h2, h3, h4, h5 {
+  // margin-left: 50px;
+  color: $dark;
 }
