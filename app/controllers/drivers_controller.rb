@@ -16,6 +16,6 @@ class DriversController < ApplicationController
   private
 
   def driver_params
-    params.require(:user).permit(:car_type, :years_driving, :photo)
+    params.require(:user).permit(:car_type, :years_driving, :avatar)
   end
 end
