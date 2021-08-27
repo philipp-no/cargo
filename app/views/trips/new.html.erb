@@ -22,7 +22,7 @@
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_small">
                     <div>
                       <p>Small</p> 
-                      <div>
+                      <div class="size-examples">
                         <i class="fas fa-book"></i>
                         <i class="far fa-futbol"></i>
                         <i class="fas fa-laptop"></i>
@@ -35,7 +35,7 @@
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium">
                     <div>
                       <p>Medium</p>
-                      <div>
+                      <div class="size-examples">
                         <i class="fas fa-box-open"></i>
                         <i class="fas fa-guitar"></i>
                         <i class="fas fa-suitcase"></i>
@@ -48,7 +48,7 @@
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_large">
                     <div>
                       <p>Large</p>
-                      <div> 
+                      <div class="size-examples"> 
                         <i class="fas fa-baby-carriage"></i>
                         <i class="fas fa-bed"></i>
                         <i class="fas fa-couch"></i>
@@ -58,7 +58,15 @@
                 </div>
             </div>
           </fieldset>
-          <%# <%= f.input :price_cents %> %>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend input-group-text">
+              <span>€</span>
+            </div>
+            <%= f.input :price, as: :float, label: false, wrapper: false %>
+            <div class="input-group-append input-group-text">
+              <span>.00</span>
+            </div>
+          </div>
           <%= f.input :description, label: 'What else does the sender need to know?' %>
           <div class="container">
             <div class="button-position">
@@ -66,7 +74,6 @@
             </div>
           </div>
         <% end %>
-      <%# <h5>What a ride!</h5> %>
       </div>
     </div>
   </div>

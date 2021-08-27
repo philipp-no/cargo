@@ -27,3 +27,30 @@ li {
   align-items: inline;
   justify-content: start;
 }
+
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0, .8);
+}
+
+.modal-inner {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+
+.modal-text {
+
+}
+
+.modal-buttons {
+
+}
