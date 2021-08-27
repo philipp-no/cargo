@@ -56,6 +56,18 @@ jennifer = User.create!(
   avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/cargo-team/jennifer_akgt9o.png"
 )
 
+paul = User.create!(
+  first_name: "Paul",
+  last_name: "Intveen",
+  email: "paul@paul.com",
+  phone_number: "01745566911",
+  address: "Friedrichstraße 32, Berlin, Berlin, Germany",
+  password: "123456",
+  car_type: "Audi A6",
+  birthday: 1999-11-16,
+  years_driving: 5,
+  avatar: "philipp.png"
+)
 trip1 = Trip.create!(
   start_time: "2021-09-26 04:57",
   end_time: "2021-09-26 12:57",
@@ -181,6 +193,42 @@ trip11 = Trip.create!(
   end_time: "2021-09-30 23:00",
   start_location: "Hafenstraße 11, Hamburg, Hamburg, Germany",
   end_location: "Torstraße 2, Berlin, Berlin, Germany",
+  capacity: "Large",
+  price_cents: 2500,
+  status: 0,
+  description: "Hi, I am Jennifer. My car is already pretty full but I could still take a few small items with me.",
+  user: jennifer
+)
+
+trip12 = Trip.create!(
+  start_time: "2021-09-30 12:00",
+  end_time: "2021-09-30 15:00",
+  start_location: "Friedrichstraße 11, Hamburg, Hamburg, Germany",
+  end_location: "Stephanstraße 2, Berlin, Berlin, Germany",
+  capacity: "Large",
+  price_cents: 2900,
+  status: 0,
+  description: "Hi, I am Marie. My car is nearly empty, so i can take a few items with me.",
+  user: marie
+)
+
+trip13 = Trip.create!(
+  start_time: "2021-09-30 10:00",
+  end_time: "2021-09-30 13:00",
+  start_location: "Kantstraße 11, Hamburg, Hamburg, Germany",
+  end_location: "Münzstraße 2, Berlin, Berlin, Germany",
+  capacity: "Medium",
+  price_cents: 3000,
+  status: 0,
+  description: "Hi, I am Otmar. My car is already pretty full but I could still take a few small items with me.",
+  user: otmar
+)
+
+trip14 = Trip.create!(
+  start_time: "2021-09-30 9:00",
+  end_time: "2021-09-30 12:00",
+  start_location: "Roßberg 4, Hamburg, Hamburg, Germany",
+  end_location: "Maximilianstraße 42, Berlin, Berlin, Germany",
   capacity: "Small",
   price_cents: 2500,
   status: 0,
@@ -188,6 +236,41 @@ trip11 = Trip.create!(
   user: jennifer
 )
 
+trip15 = Trip.create!(
+  start_time: "2021-09-30 7:00",
+  end_time: "2021-09-30 10:00",
+  start_location: "Holstenwall 11, Hamburg, Hamburg, Germany",
+  end_location: "Charlottenstraße 52, Berlin, Berlin, Germany",
+  capacity: "Small",
+  price_cents: 2600,
+  status: 0,
+  description: "Hi, I am Marie. My car is already pretty full but I could still take a few small items with me.",
+  user: marie
+)
+
+trip16 = Trip.create!(
+  start_time: "2021-09-30 18:00",
+  end_time: "2021-09-30 21:00",
+  start_location: "Kreuzweg 19, Hamburg, Hamburg, Germany",
+  end_location: "Kantstraße 9, Berlin, Berlin, Germany",
+  capacity: "Large",
+  price_cents: 2700,
+  status: 0,
+  description: "Hi, I am Otmar. My car is nearly empty, so i can take a few items with me.",
+  user: otmar
+)
+
+trip17 = Trip.create!(
+  start_time: "2021-09-30 7:00",
+  end_time: "2021-09-30 10:00",
+  start_location: "Kreuzweg 19, Berlin, Berlin, Germany",
+  end_location: "Kantstraße 9, Hamburg, Hamburg, Germany",
+  capacity: "Medium",
+  price_cents: 2700,
+  status: 0,
+  description: "Hi, I am Paul. My car is nearly empty, so i can take a few items with me.",
+  user: paul
+)
 
 booking1 = Booking.create!(
   user: philipp,
@@ -286,4 +369,49 @@ booking11 = Booking.create!(
   description: "Hi Jenny! As a musician I urgently need my vibraphone in Berlin. Could you pick it?",
   size: "Large",
   item: "Vibraphone"
+)
+
+booking12 = Booking.create!(
+  user: marie,
+  trip: trip12,
+  status: 0,
+  description: "Hi Jenny! I need to water my Monstera, but now stay longer in Berlin. Can you take it for me?",
+  size: "Large",
+  item: "Monstera"
+)
+
+booking13 = Booking.create!(
+  user: philipp,
+  trip: trip11,
+  status: 0,
+  description: "Hi Jenny! I forgot my field hockey bag in Hamburg. Now I met a cool field hockey team through Sporty and would like to play more often. Could you pick it?",
+  size: "Medium",
+  item: "Hockeybag"
+)
+
+booking14 = Booking.create!(
+  user: philipp,
+  trip: trip11,
+  status: 0,
+  description: "Hi Jenny! I bought a sound system on Ebay-Kleinanzeigen and don't have a car to pick it up right now. If you bring it to me an invitation to the party awaits you",
+  size: "Large",
+  item: "Sound System"
+)
+
+booking15 = Booking.create!(
+  user: paul,
+  trip: trip11,
+  status: 0,
+  description: "Hi Jenny! My roommate unfortunately lost her key. So I send her mine. Can you take it with you to Berlin?",
+  size: "Small",
+  item: "Key"
+)
+
+booking16 = Booking.create!(
+  user: paul,
+  trip: trip11,
+  status: 0,
+  description: "Hi Jenny! I had one box left over when I moved. Could you still bring it to me?",
+  size: "Medium",
+  item: "Key"
 )
