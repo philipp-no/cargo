@@ -201,7 +201,7 @@ trip11 = Trip.create!(
   end_location: "Torstraße 2, Berlin, Berlin, Germany",
   capacity: "Large",
   price_cents: 2500,
-  status: 0,
+  status: 1,
   description: "Hi, I am Jennifer. My car is already pretty full but I could still take a few small items with me.",
   user: jennifer
 )
@@ -213,7 +213,7 @@ trip12 = Trip.create!(
   end_location: "Stephanstraße 2, Berlin, Berlin, Germany",
   capacity: "Large",
   price_cents: 2900,
-  status: 0,
+  status: 1,
   description: "Hi, I am Marie. My car is nearly empty, so i can take a few items with me.",
   user: marie
 )
@@ -381,7 +381,7 @@ booking12 = Booking.create!(
   user: marie,
   trip: trip12,
   status: 0,
-  description: "Hi Jenny! I need to water my Monstera, but now stay longer in Berlin. Can you take it for me?",
+  description: "Hi Marie! I need to water my Monstera, but now stay longer in Berlin. Can you take it for me?",
   size: "Large",
   item: "Monstera"
 )
