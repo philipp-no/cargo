@@ -31,7 +31,7 @@
           </div>
           <%= link_to root_path, class: "block-link-text" do %>
             <div class="driver-details">
-              <%= image_tag trip.user.avatar, class: 'avatar' %>
+              <%= cl_image_tag trip.user.avatar.key, class: 'avatar' %>
               <%= trip.user.first_name %> <%=trip.user.last_name%>
               <%= trip.description %>
             </div>

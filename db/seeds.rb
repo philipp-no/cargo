@@ -13,9 +13,11 @@ marie = User.create!(
   password: "123456",
   car_type: "BMW",
   birthday: 1999-05-06,
-  years_driving: 9,
-  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/cargo-team/marie_gxsobj.png"
+  years_driving: 9
 )
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/cargo-team/marie_gxsobj.png")
+marie.avatar.attach(io: file, filename: 'marie.png', content_type: 'image/png')
+
 
 philipp = User.create!(
   first_name: "Philipp",
@@ -26,9 +28,11 @@ philipp = User.create!(
   password: "123456",
   car_type: "Jaguar XF",
   birthday: 2000-03-17,
-  years_driving: 9,
-  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png"
+  years_driving: 9
 )
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
+philipp.avatar.attach(io: file, filename: 'philipp.png', content_type: 'image/png')
+
 
 otmar = User.create!(
   first_name: "Otmar",
@@ -39,9 +43,10 @@ otmar = User.create!(
   password: "123456",
   car_type: "Landrover Defender",
   birthday: 1923-05-6,
-  years_driving: 42,
-  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058542/cargo-team/otmar_iqnd3e.png"
+  years_driving: 42
 )
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058542/cargo-team/otmar_iqnd3e.png")
+otmar.avatar.attach(io: file, filename: 'otmar.png', content_type: 'image/png')
 
 jennifer = User.create!(
   first_name: "Jenny",
@@ -52,9 +57,10 @@ jennifer = User.create!(
   password: "123456",
   car_type: "Ferrari GTC4Lusso",
   birthday: 1999-11-16,
-  years_driving: 9,
-  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/cargo-team/jennifer_akgt9o.png"
+  years_driving: 9
 )
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/cargo-team/jennifer_akgt9o.png")
+jennifer.avatar.attach(io: file, filename: 'jenny.png', content_type: 'image/png')
 
 trip1 = Trip.create!(
   start_time: "2021-09-26 04:57",
