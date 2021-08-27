@@ -1,0 +1,89 @@
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0.25em 0.4em;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50rem !important;
+  background-color: $rose;
+  // position: absolute !important;
+  // top: 5%;
+  // right: 4%;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.count {
+  color: white;
+}
+
+.count:hover {
+  color: $steel;
+}
+
+.list {
+  list-style-type: none;
+}
+li {
+  margin: 0 0 10px 0;
+}
+.line {
+  margin: 20px 0 20px 0;
+  padding: 15px 0 15px 0;
+  border-bottom: 1px solid $gray;
+  border-top:1px solid $gray;
+  width: 250px;
+  border-color:$light-gray;
+}
+.name-price {
+  width: 250px;
+  display: flex;
+  align-items: inline;
+  justify-content: space-between;
+  border-bottom: 1px solid $light-gray;
+}
+.dash-container {
+  display: flex;
+  align-items: inline;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0, .8);
+}
+.modal-inner {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+
+.dash-trip-card {
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: 300px;
+  border-radius: 10px;
+  margin:0 0 10px 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.underline {
+  border-bottom: 1px solid $light-gray;
+  color: $dark;
+  font-weight: bold;
+}
