@@ -65,15 +65,10 @@ p {
   margin-bottom: 10px;
 }
 
-.fas  {
-  font-size: 30px;
+.size-examples  {
+  font-size: 15px;
 }
 
-h5 {
-  margin-top: 10px;
-  text-align: center;
-  color: #7D7C82;
-}
 
 .button {
   border: 0;
@@ -82,4 +77,10 @@ h5 {
 .button-position {
   display:flex;
   justify-content: center;
+}
+
+.new-trip-form {
+  .form-control {
+    margin-bottom: 10px;
+  }
 }
