@@ -25,7 +25,7 @@ gem 'money-rails', '~>1.12'
 gem 'pg_search', '~> 2.3.0'
 
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'popper_js', '~> 2.9.3'
 gem 'geocoder', '~> 1.6', '>= 1.6.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
