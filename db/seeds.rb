@@ -14,7 +14,7 @@ marie = User.create!(
   car_type: "BMW",
   birthday: 1999-05-06,
   years_driving: 9,
-  avatar: "marie.png"
+  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/cargo-team/marie_gxsobj.png"
 )
 
 philipp = User.create!(
@@ -27,7 +27,7 @@ philipp = User.create!(
   car_type: "Jaguar XF",
   birthday: 2000-03-17,
   years_driving: 9,
-  avatar: "philipp.png"
+  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png"
 )
 
 otmar = User.create!(
@@ -40,7 +40,7 @@ otmar = User.create!(
   car_type: "Landrover Defender",
   birthday: 1923-05-6,
   years_driving: 42,
-  avatar: "otmar.png"
+  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058542/cargo-team/otmar_iqnd3e.png"
 )
 
 jennifer = User.create!(
@@ -53,7 +53,7 @@ jennifer = User.create!(
   car_type: "Ferrari GTC4Lusso",
   birthday: 1999-11-16,
   years_driving: 9,
-  avatar: "jennifer.png"
+  avatar: "https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/cargo-team/jennifer_akgt9o.png"
 )
 
 trip1 = Trip.create!(
