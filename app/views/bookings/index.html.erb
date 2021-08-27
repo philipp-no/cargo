@@ -22,15 +22,34 @@
         </div>
         <div class="container">
           <% if booking.pending? %>
-            <%= link_to "Accept", accept_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller %>
-
-            <%= link_to "Decline", decline_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller, data: { confirm: 'Are you sure you want to decline this booking?' } %>
+            <%= link_to "Accept", accept_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller, 
+                data: { toggle: "modal", target:"#exampleModal" } %>
+            <%= link_to "Decline", decline_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller, 
+                data: { confirm: 'Are you sure you want to decline this booking?' } %>
           <% else %>
-            <p>〉request <%= booking.status %> </p>
+            <p> 〉Request <%= booking.status.capitalize %> </p>
           <% end %>
         </div>
         <div>
       </div>
+
+      <% if booking.accepted? %>
+        <div class="modal-container">
+          <div class="modal-inner">
+            <div class="modal-text">
+              <p>
+                You listed your trip capacity as <%= @trip.capacity %>. Would you like to leave your trip listed and accept more bookings, or have you reached capacity?
+              </p>
+            </div>
+            <div class="modal-buttons">
+              <button class="btn btn-secondary">Close</button>
+              <button class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     <% end %>
   </div>
 </div>
+
