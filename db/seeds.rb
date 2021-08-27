@@ -71,9 +71,12 @@ paul = User.create!(
   password: "123456",
   car_type: "Audi A6",
   birthday: 1999-11-16,
-  years_driving: 5,
-  avatar: "philipp.png"
+  years_driving: 5
 )
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
+paul.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
+
+
 trip1 = Trip.create!(
   start_time: "2021-09-26 04:57",
   end_time: "2021-09-26 12:57",
