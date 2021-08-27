@@ -2,7 +2,7 @@
 
   <div class="header-text">
     <h1>Find a driver and send your item on a ride</h1>
-      <%= form_tag trips_path, method: :get do %>
+      <%= form_tag trips_path, class: "form", method: :get do %>
             <%= text_field_tag :start_location,
               params[:start_location],
               class: "form-controll",
@@ -33,7 +33,7 @@
        <% end %>
     </div>
     <div id="map"
-     style="width: 100%; height: 100vh;"
+     style="width: 50%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>

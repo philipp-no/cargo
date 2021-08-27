@@ -1,31 +1,35 @@
 <h1> <%# <%= link_to"〈", root_path, class: "arrow" %> Your dashboard</h1>
 
-
-<% if @trips.count.positive? %>
-  <h5>Current trips</h5>
-    <div class="container d-flex justify-contents-between">
-        <% @trips.each do |trip| %>
-          <%= link_to trip_bookings_path(trip) do %>
-      <div class="trip-details">
-            <div class="card">
-              <p class="line-bottom"><%= trip.start_time.strftime("%A, %B %d") %></p>
-              <p> <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong></p>
-              <p> <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(',')[1] %></strong></p>
-              <div class="name-price">
-                <p class="line-bottom">Accepts <%= trip.capacity.downcase %> items</p>
-                <div><p> <strong><%= humanized_money_with_symbol trip.price %></p></strong></div>
-              </div>
-              <% if trip.bookings.count.positive? %>
-                <div class="badge">
-                  <%= link_to trip.count_pending_bookings, trip_bookings_path(trip) %>
+<%# <% if current_user.driver %>
+    <% if @trips.count.positive? %>
+      <h5>Current trips</h5>
+        <div class="container d-flex justify-contents-between">
+            <% @trips.each do |trip| %>
+              <%= link_to trip_bookings_path(trip), class: "block-link-text" do %>
+          <div class="trip-details">
+              <div class="card">
+                <p class="line-bottom"><%= trip.start_time.strftime("%A, %B %d") %></p>
+                <p> <%= trip.start_time.strftime("%k:%M") %> <strong><%= trip.start_location.split(',')[1] %></strong></p>
+                <p> <%= trip.end_time.strftime("%k:%M") %> <strong><%= trip.end_location.split(',')[1] %></strong></p>
+                <div class="name-price">
+                  <p class="line-bottom">Accepts <%= trip.capacity.downcase %> items</p>
+                  <div><p> <strong><%= humanized_money_with_symbol trip.price %></p></strong></div>
+                </div>
+                <% if trip.bookings.count.positive? %>
+                  <div class="badge">
+                    <%= link_to trip.count_pending_bookings, trip_bookings_path(trip) %>
+                  </div>
+                <% end %>
                 </div>
               <% end %>
-            </div>
-          <% end %>
+          </div>
+            <% end %>
+    <% else %>
+      <div class="results-container">
+        <h5>No trips yet</h5>
       </div>
-        <% end %>
-<% else %>
-  <div class="results-container">
-    <h5>No trips yet</h5>
-  </div>
-<% end %>
+    <% end %>
+  <%# <% else %>
+   <%# <h5>Your requests</h5> %>
+
+<%# <% end %>

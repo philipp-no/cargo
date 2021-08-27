@@ -1,12 +1,16 @@
 .banner {
   background-color: $steel;
-  width: 116%;
-  height: 400px;
-  margin: -50px -100px 0 -100px;
-  margin-right: -100px;
+  width: auto;
+  height: 300px;
+//   margin: -50px -100px 0 -100px;
+//   margin-right: -100px;
+}
+
+.form {
+  margin-left: 100px;
 }
 .header-text {
-  padding: 150px 100px 10px 100px;
+  padding: 50px 00px 10px 0px;
 }
 .list {
   list-style-type: none;
@@ -19,20 +23,29 @@ li {
   padding: 15px 0 15px 0;
   border-bottom: 1px solid $gray;
   border-top:1px solid $gray;
-  width: 250px;
+  width: 230px;
 }
+
 .name-price {
-  width: 250px;
+  width: 230px;
   display: flex;
   align-items: inline;
   justify-content: space-between;
 }
+
 .trip-container {
   display: flex;
   align-items: inline;
   justify-content: start;
 }
 
-.not-red {
-  color: $gray;
+.trip-details {
+  flex-grow: 1;
+  display: grid;
+  padding-left: 0;
+  grid-template-columns: 1fr 1fr;
 }
+
+// .not-red {
+//   color: $gray;
+// }
