@@ -1,4 +1,4 @@
-<h1> <%# <%= link_to"〈", root_path, class: "arrow" %> Your dashboard</h1>
+<h1><%= link_to"〈", root_path, class: "arrow" %> Your dashboard</h1>
 <% if current_user.driver %>
     <% if @trips.count.positive? %>
       <h5>Current trips</h5>
