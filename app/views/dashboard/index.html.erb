@@ -1,6 +1,5 @@
 <h1> <%# <%= link_to"〈", root_path, class: "arrow" %> Your dashboard</h1>
-
-<%# <% if current_user.driver %>
+<% if current_user.driver %>
     <% if @trips.count.positive? %>
       <h5>Current trips</h5>
         <div class="container d-flex justify-contents-between">
@@ -28,7 +27,42 @@
         <h5>No trips yet</h5>
       </div>
     <% end %>
-  <%# <% else %>
-   <%# <h5>Your requests</h5> %>
+    <% if @bookings.count.positive? %>
+        <h5>Your bookings</h5>
+          <% @bookings.each do |booking| %>
+                <div class="card">
+                  <p class="line-bottom"><%= booking.trip.start_time.strftime("%B %d") %></p>
+                  <p> <%= booking.trip.start_time.strftime("%k:%M") %> <strong><%= booking.trip.start_location.split(',')[1] %></strong></p>
+                  <p> <%= booking.trip.end_time.strftime("%k:%M") %> <strong><%= booking.trip.end_location.split(',')[1] %></strong></p>
+                  <div class="name-price">
+                    <p class="line-bottom"><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
+                    <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                  </div>
+                  <p> <strong>Item</strong> <%= booking.item %></p>
+                  <p> <strong>Status</strong> <%= booking.status.capitalize %> </p>
+                </div>
+          <% end %>
+    <% else %>
+        <h5>You don't have any bookings. Book now a trip < button?</h5>
+    <% end %>
 
-<%# <% end %>
+<% else %>
+    <% if @bookings.count.positive? %>
+        <h5>Your bookings</h5>
+          <% @bookings.each do |booking| %>
+                <div class="card">
+                  <p class="line-bottom"><%= booking.trip.start_time.strftime("%B %d") %></p>
+                  <p> <%= booking.trip.start_time.strftime("%k:%M") %> <strong><%= booking.trip.start_location.split(',')[1] %></strong></p>
+                  <p> <%= booking.trip.end_time.strftime("%k:%M") %> <strong><%= booking.trip.end_location.split(',')[1] %></strong></p>
+                  <div class="name-price">
+                    <p class="line-bottom"><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
+                    <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                  </div>
+                  <p> <strong>Item</strong> <%= booking.item %></p>
+                  <p> <strong>Status</strong> <%= booking.status.capitalize %> </p>
+                </div>
+          <% end %>
+    <% else %>
+        <h5>You don't have any bookings. Book now a trip < button?</h5>
+    <% end %>
+<% end %>
