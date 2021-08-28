@@ -34,8 +34,6 @@
         </div>
         <div>
       </div>
-
-      
         <div class="modal-container modal-hidden" id="accept-modal">
           <div class="modal-inner">
             <div class="modal-text">
@@ -44,13 +42,11 @@
               </p>
             </div>
             <div class="modal-buttons">
-              <%= link_to "Keep Listing", accept_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller %>
-              <%= link_to "Remove Listing", accept_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller %>
+              <%= link_to "Keep Listing", accept_path(booking.trip.id, remove_listing: false), class: "button", method: :patch, controller: :bookings_controller %>
+              <%= link_to "Remove Listing", accept_path(booking.trip.id, remove_listing: true), class: "button", method: :patch, controller: :bookings_controller %>
             </div>
           </div>
         </div>
-      
-
     <% end %>
   </div>
 </div>

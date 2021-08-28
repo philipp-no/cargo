@@ -5,7 +5,7 @@ class Trip < ApplicationRecord
   geocoded_by :start_location
   after_validation :geocode, if: :will_save_change_to_start_location?
 
-  enum status: [:accepting_bookings, :fully_booked, :completed]
+  enum status: [:Accepting_Bookings, :Fully_Booked, :Completed]
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :start_location, presence: true
