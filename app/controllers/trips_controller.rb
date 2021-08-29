@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @trips = Trip.where(status: "Accepting Bookings")
+    @trips = Trip.where(status: 0).where.not(user: current_user)
     if params[:start_location].present?
       @trips = @trips.where("start_location ILIKE ?", "%#{params[:start_location]}%")
     end
