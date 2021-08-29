@@ -34,7 +34,7 @@
                       <p> <strong><%= humanized_money_with_symbol trip.price %></p></strong>
                     </div>
                     <p><strong>Trip Is</strong> <%= trip.status %></p> 
-                    <% if trip.bookings.count.positive? %>
+                    <% if trip.count_pending_bookings.positive? %>
                       <div class="badge">
                         <%= link_to trip.count_pending_bookings, trip_bookings_path(trip), class: "count" %>
                       </div>
