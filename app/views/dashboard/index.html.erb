@@ -78,8 +78,9 @@
                   <p class="underline"><%= past_trip.start_time.strftime("%A, %B %d") %></p>
                   <p> <strong><%= past_trip.start_time.strftime("%k:%M") %> </strong> <%= past_trip.start_location.split(',')[1] %></p>
                   <p> <strong><%= past_trip.end_time.strftime("%k:%M") %> </strong> <%= past_trip.end_location.split(',')[1] %></p>
+                  <p> <strong>Capacity</strong>  <%= past_trip.capacity.downcase %></p>
                   <div class="name-price">
-                    <p> <strong>Capacity</strong>  <%= past_trip.capacity.downcase %></p>
+                    <p><strong>Earnings</strong></p>
                     <p> <strong><%= humanized_money_with_symbol past_trip.price %></p></strong>
                   </div>
                   <p><strong>Trip Is</strong> <%= past_trip.status %></p> 
