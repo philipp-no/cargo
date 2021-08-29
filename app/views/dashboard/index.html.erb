@@ -18,8 +18,16 @@
                         <%= link_to trip.count_pending_bookings, trip_bookings_path(trip), class: "count" %>
                       </div>
                     <% end %>
+                    <button class="button" id="modal-trigger-button">Edit Trip</button> | <button class="button" id="modal-trigger-button">Cancel Trip</button>
                   </div>
                 <% end %>
+                <div class="modal-container modal-hidden" id="accept-modal">
+                  <div class="modal-inner">
+                    <div class="modal-text">
+                      <%=  render partial: 'edit', locals: {trip: trip} %>
+                    </div>
+                  </div>
+                </div>
             <% end %>
         </div>
     <% else %>
@@ -66,3 +74,7 @@
         <h5>You don't have any bookings. Book now a trip < button?</h5>
     <% end %>
 <% end %>
+
+
+
+
