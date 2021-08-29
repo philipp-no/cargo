@@ -28,7 +28,6 @@ class BookingsController < ApplicationController
     @booking.accepted!
     if params[:remove_listing]
       @trip = @booking.trip
-      raise
       @trip.status = 1
       redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed! Your trip is fully booked.'
     else

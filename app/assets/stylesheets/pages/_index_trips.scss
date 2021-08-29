@@ -2,15 +2,13 @@
   background-color: $steel;
   width: auto;
   height: 300px;
-//   margin: -50px -100px 0 -100px;
-//   margin-right: -100px;
 }
 
 .form {
   margin-left: 100px;
 }
 .header-text {
-  padding: 50px 00px 10px 0px;
+  padding: 20px 40px 20px 40px;
 }
 .list {
   list-style-type: none;
@@ -47,6 +45,10 @@ li {
 }
 
 .search-field {
-  width: 150px;
+  width: 200px;
+}
+
+#search-bar input {
+  display: inline-block
 }
 
