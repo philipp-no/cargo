@@ -5,17 +5,17 @@
       <%= form_tag trips_path, class: "form", method: :get do %>
             <%= text_field_tag :start_location,
               params[:start_location],
-              class: "form-controll",
+              class: "form-control",
               placeholder: "From"
             %>
             <%= text_field_tag :end_location,
               params[:end_location],
-              class: "form-controll",
+              class: "form-control",
               placeholder: "To"
             %>
             <%= date_field_tag :date,
               params[:date],
-              class: "form-controll",
+              class: "form-control",
               placeholder: "To"
             %>
               <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
