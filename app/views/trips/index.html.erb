@@ -1,22 +1,26 @@
-<div class="home-container">
-  <div class="banner">
-    <div class="header-text">
-      <h1>Find a driver and send your item on a ride</h1>
-        <%= form_tag trips_path, class: "form", method: :get do %>
-        <div class="row g-3">
-          <div clas="col">
+<div class="banner">
+
+  <div class="header-text">
+    <h5>Forgot your laptop charger at your parent's house in Munich and you live in Berlin? Found the perfect piece of furniture on Ebay Kleinanzeigen but it's in Hamburg and you live in Cologne?</h4>
+    <h1>Find a driver and send your item on a ride</h1>
+      <%= form_tag trips_path, class: "form", id: "search-bar", method: :get do %>
             <%= text_field_tag :start_location,
                 params[:start_location],
                 class: "form-control search-field",
                 placeholder: "Where is your item?"
             %>
-          </div>
-          <div clas="col">
             <%= text_field_tag :end_location,
                 params[:end_location],
                 class: "form-control search-field",
                 placeholder: "Where is it going?"
             %>
+            <%= date_field_tag :date,
+                Date.today,
+                class: "form-control search-field"
+            %>
+            <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity]), prompt: "Select item size") %>
+            <%= submit_tag "Find a Driver", class: "button" %>
+      <% end %>
           </div>
           <div clas="col">
             <%= date_field_tag :date,
@@ -35,24 +39,30 @@
     </div>
   </div>
 
-  <% if @trips.count.positive? %>
-    <h5>Trips leaving today</h5>
-    <div class="container d-flex justify-contents-between">
-      <div class="trip-details">
-        <% @trips.each_with_index do |trip, index| %>
-          <%=  render partial: 'show', locals: {trip: trip, index: index} %>
-        <% end %>
-      </div>
-      <div id="map"
-      style="width: 50%; height: 100vh;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
+<% if @trips.count.positive? %>
+  <% if params[:date] %>
+    <% date = Date.parse(params[:date]) %>
+    <h5>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
   <% else %>
-    <div class="results-container">
-      <h5>No trips available</h5>
-      <h5>Please change your search criteria and try again!</h5>
-    </div>
+    <h5>Trips leaving today</h5>
   <% end %>
-</div>
+  <div class="container d-flex justify-contents-between">
+    <div class="trip-details">
+      <% @trips.each_with_index do |trip, index| %>
+        <%=  render partial: 'show', locals: {trip: trip, index: index} %>
+       <% end %>
+    </div>
+    <% if params[:start_location] || params[:end_location] || params[:date] || params[:capacity] %>
+      <div id="map"
+        style="width: 50%; height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="results-container">
+    <h5>No upcoming trips match your search criteria</h5>
+    <h5>Please change your criteria and try again!</h5>
+  </div>
+<% end %>
