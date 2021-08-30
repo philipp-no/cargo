@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :index, :destroy]
   end
   resources :dashboard, only: [:index]
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show, :create] do
     resources :messages, only: :create
   end
   get 'become_driver', to: "drivers#edit", as: :become_driver
