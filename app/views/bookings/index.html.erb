@@ -3,7 +3,7 @@
   <h1><%= @trip.start_location %> <%= @trip.start_time.strftime("%A, %B %d") %></h1>
 
   <div class="cards d-flex flex-row justify-space-around flex-wrap">
-    <% @bookings.each do |booking| %>
+    <% @bookings.each_with_index do |booking, index| %>
       <div class="card">
         <div class="container card-items">
           <div><%= image_tag booking.user.avatar, class: 'avatar' %></div>
@@ -21,7 +21,7 @@
         </div>
         <div class="container">
           <% if booking.pending? %>
-            <button class="button" id="modal-trigger-button">Accept</button>
+            <button class="button" id="modal-trigger-button" data-tracker="<%=index%>">Accept</button>
             <%= link_to "Decline", decline_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller, 
                 data: { confirm: 'Are you sure you want to decline this booking?' } %>
           <% else %>
