@@ -1,7 +1,9 @@
 .banner {
-  background-color: $steel;
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(to right, $rose, #F99FA8);
   width: auto;
-  height: 300px;
+  height: 400px;
 }
 
 .form {
@@ -10,18 +12,47 @@
 .header-text {
   padding: 20px 40px 20px 40px;
 }
-.list {
-  list-style-type: none;
+
+.img-banner {
+  width: 300px;
+  margin-top: 160px;
 }
+
+.index-h1 {
+  color: white;
+  margin: 100px 100px 10px 100px;
+}
+
+.index-p {
+  color: white;
+  margin:0 100px 10px 100px;
+}
+
+.index-button {
+  background:white;
+  color: $rose;
+  font-weight: bold;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: 0;
+}
+
 li {
   margin: 0 0 10px 0;
 }
+
 .line {
   margin: 20px 0 20px 0;
   padding: 15px 0 15px 0;
   border-bottom: 1px solid $gray;
   border-top:1px solid $gray;
   width: 230px;
+}
+
+.list {
+  list-style-type: none;
 }
 
 .name-price {
@@ -35,33 +66,53 @@ li {
   display: flex;
   align-items: inline;
   justify-content: start;
+  flex-wrap: wrap;
+  margin-left: 0;
 }
 
 .trip-details {
   flex-grow: 1;
   display: grid;
   padding-left: 0;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
-.search-field {
-  width: 200px;
-}
-
-
 
 #search-bar {
   display: flex;
-  
+  border-radius: 10px;
+  height: 50px;
+  width: 900px;
+  background-color: white;
+  margin-bottom: 0;
+
+  .location {
+    margin-top: 5px;
+  }
+
   span {
     width: auto;
   }
 
   .form-control {
     display: inline-block;
+    border: white;
   }
 
-  .button {
-    margin-bottom: 0;
+  .index-button {
+    margin: 0;
   }
+}
+
+.search-field {
+  width: 200px;
+  padding: 14px 24px;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.search-separator {
+  margin-top: 12px;
+  color: lightgray;
 }

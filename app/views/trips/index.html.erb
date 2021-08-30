@@ -1,25 +1,32 @@
-<div class="banner">
+<div class="banner" id="index-banner">
+  <div class="index-illu">
+    <%= image_tag 'scooter.png', class: 'img-banner' %>
+  </div>
 
   <div class="header-text">
-    <h5>Forgot your laptop charger at your parent's house in Munich and you live in Berlin? Found the perfect piece of furniture on Ebay Kleinanzeigen but it's in Hamburg and you live in Cologne?</h4>
-    <h1>Find a driver and send your item on a ride</h1>
+    <h1 class="index-h1">Find a driver and send your item on a ride</h1>
+    <p class="index-p">Forgot your laptop charger at your parent's house in Munich and you live in Berlin? Found the perfect piece of furniture on Ebay Kleinanzeigen but it's in Hamburg and you live in Cologne?</p>
+
       <%= form_tag trips_path, class: "form", id: "search-bar", method: :get do %>
         <%= text_field_tag :start_location,
             params[:start_location],
-            class: "form-control search-field",
+            class: "form-control search-field location",
             placeholder: "Where is your item?"
         %>
+        <p class="search-separator">|</p>
         <%= text_field_tag :end_location,
             params[:end_location],
-            class: "form-control search-field",
+            class: "form-control search-field location",
             placeholder: "Where is it going?"
         %>
+         <p class="search-separator">|</p>
         <%= date_field_tag :date,
             Date.today,
             class: "form-control search-field"
         %>
-        <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity]), prompt: "Select item size") %>
-        <%= submit_tag "Find a Driver", class: "button" %>
+         <p class="search-separator">|</p>
+        <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity]),class: "form-control search-field",  prompt: "Select item size ▾") %>
+        <%= submit_tag "Find a Driver", class: "index-button" %>
     <% end %>
   </div>
 </div>
@@ -27,11 +34,11 @@
 <% if @trips.count.positive? %>
   <% if params[:date] %>
     <% date = Date.parse(params[:date]) %>
-    <h5>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
+    <p>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
   <% else %>
-    <h5>Trips leaving today</h5>
+    <h5>All the trips</h5>
   <% end %>
-  <div class="container d-flex justify-contents-between">
+  <div class="trip-container">
     <div class="trip-details">
       <% @trips.each_with_index do |trip, index| %>
         <%=  render partial: 'show', locals: {trip: trip, index: index} %>

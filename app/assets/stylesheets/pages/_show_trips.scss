@@ -1,39 +1,6 @@
-.content {
-  margin: 0 !important;
-}
-
-.fa-check-square {
-  font-size: 20px;
-  color: #7D7C82;
-}
-
-.end-details {
-  margin-top: 10px;
-  border-bottom: 2px solid #E6E6E6;
-}
-
-.price {
-  border-bottom: 2px solid #E6E6E6;
-}
-
-.driver-details {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #E6E6E6;
-}
-
 .bigger-text {
   font-size: 20px;
   font-weight: 600;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0px;
-}
-
-.list-items {
-  margin: 10px;
 }
 
 .button {
@@ -42,4 +9,46 @@ ul {
 
 .button-div {
   margin-top: 30px;
+}
+
+.content {
+  margin: 0 !important;
+}
+
+.driver-details {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #E6E6E6;
+}
+
+.end-details {
+  margin-top: 10px;
+  border-bottom: 2px solid #E6E6E6;
+}
+
+.fa-check-square {
+  font-size: 20px;
+  color: #7D7C82;
+}
+
+.index-card {
+  padding: 20px;
+  height: auto;
+  width: 300px;
+  border-radius: 10px;
+  margin: 0 0 10px 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.list-items {
+  margin: 10px;
+}
+
+.price {
+  border-bottom: 2px solid #E6E6E6;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
 }

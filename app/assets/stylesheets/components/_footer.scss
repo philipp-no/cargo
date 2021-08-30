@@ -1,26 +1,27 @@
 .footer {
-  background: #e8f1fd;
+  background: $light-gray;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color:#707c82;
+  height: 40px;
+  padding: 10px 50px;
+  color: $gray;
+  margin-top: 20px;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: $dark;
+  color: $gray;
   text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+  font-size: 16px;
+  padding: 10px 10px;
 }
 .footer-links a:hover {
   color: $rose;
 }
 .footer .fa-heart {
   font-size: 15px;
-  color: $rose;
+  color: $gray;
 }
