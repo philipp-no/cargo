@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find_by(trip_id: params[:trip_id])
     @booking.accepted!
-    if params[:remove_listing]
+    if params[:remove_listing] == true
       @trip = @booking.trip
       @trip.status = 1
       @trip.bookings.each do |booking|
