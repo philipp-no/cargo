@@ -1,0 +1,36 @@
+.box-login {
+  padding-top: 90px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.login-header {
+  color: $dark;
+  margin: 0 auto;
+}
+#login-form {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  // border: 2px solid $rose;
+  // border-radius: 50px;
+  margin-bottom: 40px;
+  width: 500px;
+  margin: 0 auto;
+}
+.login-button {
+  width: 100%;
+}
+.login-btn {
+  display: flex;
+  width: 100%;
+}
+.login-categories {
+  color: $dark;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.registration-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: inline;
+  width: 100%;
+}
