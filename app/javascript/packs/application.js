@@ -34,7 +34,7 @@ import { initModalTrigger } from '../plugins/init_modal_trigger'
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  if (window.location.pathname == "/users/sign_up" || window.location.pathname == "/trips/new") {
+  if (window.location.pathname == "/users/sign_up" || window.location.pathname == "/trips/new" || window.location.pathname == "/") {
   initAutocomplete();
   }
   initModalTrigger();

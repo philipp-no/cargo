@@ -1,45 +1,58 @@
-<div class="banner">
-
-  <div class="header-text">
-    <h1>Find a driver and send your item on a ride</h1>
-      <%= form_tag trips_path, class: "form", method: :get do %>
+<div class="home-container">
+  <div class="banner">
+    <div class="header-text">
+      <h1>Find a driver and send your item on a ride</h1>
+        <%= form_tag trips_path, class: "form", method: :get do %>
+        <div class="row g-3">
+          <div clas="col">
             <%= text_field_tag :start_location,
-              params[:start_location],
-              class: "form-controll",
-              placeholder: "From"
+                params[:start_location],
+                class: "form-control search-field",
+                placeholder: "Where is your item?"
             %>
+          </div>
+          <div clas="col">
             <%= text_field_tag :end_location,
-              params[:end_location],
-              class: "form-controll",
-              placeholder: "To"
+                params[:end_location],
+                class: "form-control search-field",
+                placeholder: "Where is it going?"
             %>
+          </div>
+          <div clas="col">
             <%= date_field_tag :date,
-              params[:date],
-              class: "form-controll",
-              placeholder: "To"
+                params[:date],
+                class: "form-control search-field"
             %>
-              <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
-            <%= submit_tag "Find a driver" %>
-          <% end %>
-  </div>
-</div>
-
-<% if @trips.count.positive? %>
-  <h5>Trips leaving today</h5>
-  <div class="container d-flex justify-contents-between">
-    <div class="trip-details">
-      <% @trips.each_with_index do |trip, index| %>
-        <%=  render partial: 'show', locals: {trip: trip, index: index} %>
-       <% end %>
+          </div>
+          <div clas="col">
+            <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
+          </div>
+          <div clas="col">
+            <%= submit_tag "Find a driver", class: "button" %>
+          </div>
+        </div>
+        <% end %>
     </div>
-    <div id="map"
-     style="width: 50%; height: 100vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-<% else %>
-  <div class="results-container">
-    <h5>No trips available</h5>
-    <h5>Please change your search criteria and try again!</h5>
-  </div>
-<% end %>
+
+  <% if @trips.count.positive? %>
+    <h5>Trips leaving today</h5>
+    <div class="container d-flex justify-contents-between">
+      <div class="trip-details">
+        <% @trips.each_with_index do |trip, index| %>
+          <%=  render partial: 'show', locals: {trip: trip, index: index} %>
+        <% end %>
+      </div>
+      <div id="map"
+      style="width: 50%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  <% else %>
+    <div class="results-container">
+      <h5>No trips available</h5>
+      <h5>Please change your search criteria and try again!</h5>
+    </div>
+  <% end %>
+</div>

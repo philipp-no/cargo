@@ -2,8 +2,6 @@
   background-color: $steel;
   width: auto;
   height: 300px;
-//   margin: -50px -100px 0 -100px;
-//   margin-right: -100px;
 }
 
 .form {
@@ -46,6 +44,6 @@ li {
   grid-template-columns: 1fr 1fr;
 }
 
-// .not-red {
-//   color: $gray;
-// }
+.search-field {
+  width: 150px;
+
