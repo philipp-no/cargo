@@ -1,4 +1,12 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit Your Profile</h2>
+<h5>You are registered as a sender
+<% if current_user.driver %>
+  and a driver.</h5>
+<% else %>
+  </h5>
+  <%= link_to "Become a Driver", become_driver_path %>
+<% end %>
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -11,21 +19,41 @@
     <% end %>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                placeholder: "Leave blank if you don't need to change your password.",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                placeholder: "We need your current password to confirm your changes.",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :first_name,
+                required: false,
+                input_html: { autocomplete: "given-name" } %>
+    <%= f.input :last_name,
+                  required: false,
+                  input_html: { autocomplete: "family-name" } %>
+    <%= f.input :address,
+                  input_html: { id: "address_input" } %>
+    <%= f.input :phone_number,
+                  input_html: { id: "tel" } %>
+    <%= f.input :birthday,
+                  input_html: { id: "bday" } %>
+    <% if current_user.driver %>
+      <%= f.input :car_type,
+        required: true,
+        label: 'What kind of car will you be driving?' %>
+      <%= f.input :years_driving,
+        required: true,
+        label: "How many years have you had a driver's license?"  %>
+    <% end %>
     <%= f.input :avatar, as: :file %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update Your Profile" %>
   </div>
 <% end %>
 
