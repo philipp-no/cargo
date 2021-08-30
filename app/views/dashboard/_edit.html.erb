@@ -1,0 +1,66 @@
+<%= simple_form_for(trip, url: dashboard_path(trip.id)) do |f| %>
+          <%= f.input :start_location, label: 'Where does your trip start?' %>
+          <%= f.input :start_time, label: 'When will you leave?'  %>
+          <%= f.input :end_location, label: 'Where are you going?' %>
+          <%= f.input :end_time, label: 'When do you expect to arrive?'  %>
+          <fieldset class="form-group radio_buttons required trip_capacity">
+            <legend class="col-form-label pt-0">How much capacity do you have? <abbr title="required">*</abbr></legend>
+            <div class="category-wrapper">
+              <input type="hidden" name="trip[capacity]" value="">
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="trip[capacity]" id="trip_capacity_small">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_small">
+                    <div>
+                      <p>Small</p> 
+                      <div class="size-examples">
+                        <i class="fas fa-book"></i>
+                        <i class="far fa-futbol"></i>
+                        <i class="fas fa-laptop"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Medium" name="trip[capacity]" id="trip_capacity_medium">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium">
+                    <div>
+                      <p>Medium</p>
+                      <div class="size-examples">
+                        <i class="fas fa-box-open"></i>
+                        <i class="fas fa-guitar"></i>
+                        <i class="fas fa-suitcase"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Large" name="trip[capacity]" id="trip_capacity_large">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_large">
+                    <div>
+                      <p>Large</p>
+                      <div class="size-examples"> 
+                        <i class="fas fa-baby-carriage"></i>
+                        <i class="fas fa-bed"></i>
+                        <i class="fas fa-couch"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+            </div>
+          </fieldset>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend input-group-text">
+              <span>€</span>
+            </div>
+            <%= f.input :price_cents, as: :float, label: false, wrapper: false %>
+            <div class="input-group-append input-group-text">
+              <span>.00</span>
+            </div>
+          </div>
+          <%= f.input :description, label: 'What else does the sender need to know?' %>
+          <div class="container">
+            <div class="button-position">
+              <%= f.submit 'Save Changes', class: "button" %>
+            </div>
+          </div>
+        <% end %>

@@ -1,8 +1,28 @@
 class DashboardController < ApplicationController
   def index
-    @trips = Trip.where(user: current_user).where.not(status: 2)
-    @past_trips = Trip.where(user: current_user, status: 2)
-    @bookings = Booking.where(user: current_user).where.not(status: 2)
-    @past_bookings = Booking.where(user: current_user, status: 2)
+  @trips = Trip.where(user: current_user).where.not(status: 2)
+  @past_trips = Trip.where(user: current_user, status: 2)
+  @bookings = Booking.where(user: current_user).where.not(status: 2)
+  @past_bookings = Booking.where(user: current_user, status: 2)
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip_params)
+    redirect_to dashboard_index_path, notice: 'Your trip was updated!'
+  end
+
+  private
+
+  def trip_params
+    params.require(:trip).permit(
+      :start_time,
+      :start_location,
+      :end_time,
+      :end_location,
+      :price_cents,
+      :capacity,
+      :description
+    )
   end
 end

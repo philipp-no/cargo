@@ -6,17 +6,11 @@
   text-align: center;
 }
 
-// h4 {
-//   color: #7D7C82 !important;
-// }
-
 #map {
-  // overflow: visible !important;
   margin-top: 0;
   border-radius: 10px;
+  position: sticky;
+  top: 0px;
 }
 
-// .mapboxgl-canvas {
-//     margin-top: 40px;
-//     border-radius: 10px;
-// }
+
