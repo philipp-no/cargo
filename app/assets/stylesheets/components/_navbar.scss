@@ -1,10 +1,21 @@
-// .navbar {
-//   position: fixed;
-// }
+#after-banner-anchor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 500px;
+  left: 0;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: $steel;
-  padding-top: 11px;
+  background: linear-gradient(to right, $rose, #F99FA8);
+  height: 60px;
+  position: fixed;
+  top: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
 }
 
 .navbar-brand {
@@ -21,4 +32,26 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 70px;
+}
+
+.navbar-logo-white {
+  width: 70px;
+  height: 30px;
+  background-image: image-url("cargo-logo-white");
+  background-size: cover;
+}
+
+.navbar-logo-color {
+  width: 70px;
+  height: 30px;
+  background-image: image-url("cargo-logo-new2.png");
+  background-size: cover;
+}
+
+.past-scroll {
+  background: white;
+}
+
+.z-index {
+  z-index: 3;
 }

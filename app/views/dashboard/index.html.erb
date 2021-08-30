@@ -4,15 +4,31 @@
         <h5>Items You Are Sending</h5>
           <% @bookings.each do |booking| %>
               <div class="dash-trip-card">
+                <div class="pending-declined-place">
+                  <% if booking.status == "accepted" || "declined" %>
+                    <div class="pending-declined">
+                        <%=  booking.status.capitalize %>
+                    </div>
+                    <% end %>
+                </div>
                 <p class="underline"><strong><%= booking.item.capitalize%></strong></p>
                 <p><%= booking.trip.start_time.strftime("%A, %B %d") %></p>
                 <p> <strong> <%= booking.trip.start_time.strftime("%k:%M") %> </strong> <%= booking.trip.start_location.split(',')[1] %></p>
                 <p> <strong> <%= booking.trip.end_time.strftime("%k:%M") %></strong><%= booking.trip.end_location.split(',')[1] %></p>
-                <div class="name-price">
-                  <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
-                  <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                <div>
+                  <% if booking.status == "accepted" %>
+                    <div class="name-price-accepted">
+                      <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
+                      <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                    </div>
+                      <%= link_to "Chat", "#", class: "button-chat" %>
+                  <% else %>
+                    <div class="name-price-else">
+                      <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
+                      <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                    </div>
+                  <% end %>
                 </div>
-                <p> <strong>Booking Is</strong> <%= booking.status.capitalize %> </p>
               </div>
           <% end %>
     <% else %>
@@ -41,9 +57,16 @@
     <% if @trips.count.positive? %>
       <h5>Your Upcoming Trips</h5>
         <div class="dash-container">
-            <% @trips.each do |trip| %>
+            <% @trips.each_with_index do |trip, index| %>
               <%= link_to trip_bookings_path(trip), class: "block-link-text" do %>
                   <div class="dash-trip-card">
+                    <div class="badge-place">
+                      <% if trip.count_pending_bookings.positive? %>
+                        <div class="badge">
+                           <%=  trip.count_pending_bookings %>
+                        </div>
+                      <% end %>
+                    </div>
                     <p class="underline"><%= trip.start_time.strftime("%A, %B %d") %></p>
                     <p> <strong><%= trip.start_time.strftime("%k:%M") %> </strong> <%= trip.start_location.split(',')[1] %></p>
                     <p> <strong><%= trip.end_time.strftime("%k:%M") %> </strong> <%= trip.end_location.split(',')[1] %></p>
@@ -51,16 +74,14 @@
                       <p> <strong>Capacity</strong>  <%= trip.capacity.downcase %></p>
                       <p> <strong><%= humanized_money_with_symbol trip.price %></p></strong>
                     </div>
-                    <p><strong>Trip Is</strong> <%= trip.status %></p> 
-                    <% if trip.count_pending_bookings.positive? %>
-                      <div class="badge">
-                        <%= link_to trip.count_pending_bookings, trip_bookings_path(trip), class: "count" %>
-                      </div>
-                    <% end %>
+                      <p><strong>Trip Is</strong> <%= trip.status %></p>
                 <% end %>
-                  <button class="button" id="modal-trigger-button">Edit Trip</button> | <button class="button" id="modal-trigger-button">Cancel Trip</button>
+                  <div class="button-place">
+                    <button class="button-edit-cancel" id="modal-trigger-button" data-tracker="<%=index%>">Edit Trip</button>
+                    <%= link_to "Cancel Trip", trip_path(trip), method: :delete, data: { confirm: "Are you sure you want to cancel this trip? This will decline any pending booking requests and cannot be undone." }, class: "button-edit-cancel" %>
+                  </div>
                 </div>
-                <div class="modal-container modal-hidden" id="accept-modal">
+                <div class="modal-container modal-<%=index%> modal-hidden" id="accept-modal">
                   <div class="modal-inner">
                     <div class="modal-text">
                       <%=  render partial: 'edit', locals: {trip: trip} %>
@@ -76,7 +97,7 @@
         <%= link_to "Create a Trip",  new_trip_path %>
       </div>
     <% end %>
-  
+
   <% if @past_trips.count.positive? %>
     <h5>Trips You've Completed</h5>
     <div class="dash-container">
@@ -87,11 +108,11 @@
                   <p> <strong><%= past_trip.start_time.strftime("%k:%M") %> </strong> <%= past_trip.start_location.split(',')[1] %></p>
                   <p> <strong><%= past_trip.end_time.strftime("%k:%M") %> </strong> <%= past_trip.end_location.split(',')[1] %></p>
                   <p> <strong>Capacity</strong>  <%= past_trip.capacity.downcase %></p>
-                  <div class="name-price">
+                  <div class="name-price-completed">
                     <p><strong>Earnings</strong></p>
                     <p> <strong><%= humanized_money_with_symbol past_trip.price %></p></strong>
                   </div>
-                  <p><strong>Trip Is</strong> <%= past_trip.status %></p> 
+                    <%= link_to "Chat", "#", class: "button-chat" %>
                 </div>
               <% end %>
             <% end %>
@@ -137,4 +158,3 @@
       <% end %>
     <% end %>
 <% end %>
-

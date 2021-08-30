@@ -1,50 +1,71 @@
 .badge {
   display: inline-block;
-  margin-top: 10px;
-  padding: 0.25em 0.4em;
+  // padding: 0.25em 0.4em;
   font-size: 15px;
   font-weight: 700;
-  line-height: 1;
+  width: 25px;
+  height: 25px;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 50rem !important;
+  border-radius: 50%;
   background-color: $rose;
-  // position: absolute !important;
-  // top: 5%;
-  // right: 4%;
-  border-radius: 2px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: -30px;
 }
-
-.count {
-  color: white;
+.badge-place {
+  margin-left: 255px;
 }
-
-.count:hover {
-  color: $steel;
+.button-chat {
+  background-color: $rose;
+  color:white;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid $rose;
 }
-
-.list {
-  list-style-type: none;
+.button-chat:hover {
+  background-color: white;
+  color: $rose;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid $rose;
 }
-li {
-  margin: 0 0 10px 0;
+.button-edit-cancel {
+  background-color: white;
+  color: $rose;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid $rose;
 }
-.line {
-  margin: 20px 0 20px 0;
-  padding: 15px 0 15px 0;
-  border-bottom: 1px solid $gray;
-  border-top:1px solid $gray;
-  width: 250px;
-  border-color:$light-gray;
+.button-edit-cancel:hover {
+  background-color: $rose;
+  color:white;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid $rose;
 }
-.name-price {
-  width: 250px;
+.button-place {
+  border-top: 1px solid $light-gray;
   display: flex;
-  align-items: inline;
   justify-content: space-between;
-  border-bottom: 1px solid $light-gray;
 }
 .dash-container {
   display: flex;
@@ -52,29 +73,23 @@ li {
   justify-content: start;
   flex-wrap: wrap;
 }
-
-.modal-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0, .5);
-  z-index: 999;
-}
-
-.modal-inner {
-  width: 400px;
+.dash-trip-card {
+  padding: 20px 20px 15px 20px;
+  background-size: cover;
+  background-position: center;
   height: auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
+  width: 300px;
+  border-radius: 10px;
+  margin:0 0 10px 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  position: relative;
 }
 
-.modal-hidden {
-  display: none;
+.dash-container {
+  display: flex;
+  align-items: inline;
+  justify-content: start;
+  flex-wrap: wrap;
 }
 
 .dash-trip-card {
@@ -88,6 +103,79 @@ li {
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
 }
 
+li {
+  margin: 0 0 10px 0;
+}
+
+.line {
+  margin: 20px 0 20px 0;
+  padding: 15px 0 15px 0;
+  border-bottom: 1px solid $gray;
+  border-top:1px solid $gray;
+  width: 250px;
+  border-color:$light-gray;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0, .5);
+  z-index: 999;
+}
+.modal-hidden {
+  display: none;
+}
+.modal-inner {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+
+.name-price-accepted {
+  width: 250px;
+  display: flex;
+  align-items: inline;
+  justify-content: space-between;
+  border-bottom: 1px solid $light-gray;
+  margin-bottom: 15px;
+}
+.name-price-completed {
+  display: flex;
+  border-bottom: 1px solid $light-gray;
+  align-items: inline;
+  justify-content: space-between;
+    margin-bottom: 15px;
+}
+.name-price-else {
+  width: 250px;
+  display: flex;
+  align-items: inline;
+  justify-content: space-between;
+  // border-bottom: 1px solid $light-gray;
+}
+.p {
+  margin-bottom: 0px;
+}
+.pending-declined {
+  color: $rose;
+  position: absolute;
+  font-weight: 700;
+  margin-top: -15px;
+}
+.pending-declined-place {
+    margin-left: 200px;
+}
 .underline {
   border-bottom: 1px solid $light-gray;
   color: $dark;
