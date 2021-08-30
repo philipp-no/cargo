@@ -1,4 +1,4 @@
-<%= simple_form_for(trip, url: dashboard_path(trip.id)) do |f| %>
+<%= simple_form_for(trip) do |f| %>
           <%= f.input :start_location, label: 'Where does your trip start?' %>
           <%= f.input :start_time, label: 'When will you leave?'  %>
           <%= f.input :end_location, label: 'Where are you going?' %>

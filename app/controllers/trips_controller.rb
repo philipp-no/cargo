@@ -63,6 +63,18 @@ class TripsController < ApplicationController
     end
   end
 
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip_params)
+    redirect_to dashboard_index_path, notice: 'Your trip was updated!'
+  end
+
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+    redirect_to dashboard_index_path, notice: 'Your trip was canceled. This cannot be undone.'
+  end
+
   private
 
   def trip_params
