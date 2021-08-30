@@ -4,15 +4,31 @@
         <h5>Items You Are Sending</h5>
           <% @bookings.each do |booking| %>
               <div class="dash-trip-card">
+                <div class="pending-declined-place">
+                  <% if booking.status == "accepted" || "declined" %>
+                    <div class="pending-declined">
+                        <%=  booking.status.capitalize %>
+                    </div>
+                    <% end %>
+                </div>
                 <p class="underline"><strong><%= booking.item.capitalize%></strong></p>
                 <p><%= booking.trip.start_time.strftime("%A, %B %d") %></p>
                 <p> <strong> <%= booking.trip.start_time.strftime("%k:%M") %> </strong> <%= booking.trip.start_location.split(',')[1] %></p>
                 <p> <strong> <%= booking.trip.end_time.strftime("%k:%M") %></strong><%= booking.trip.end_location.split(',')[1] %></p>
-                <div class="name-price">
-                  <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
-                  <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                <div>
+                  <% if booking.status == "accepted" %>
+                    <div class="name-price-accepted">
+                      <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
+                      <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                    </div>
+                      <%= link_to "Chat", "#", class: "button-chat" %>
+                  <% else %>
+                    <div class="name-price-else">
+                      <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
+                      <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
+                    </div>
+                  <% end %>
                 </div>
-                <p> <strong>Booking Is</strong> <%= booking.status.capitalize %> </p>
               </div>
           <% end %>
     <% else %>
@@ -92,11 +108,11 @@
                   <p> <strong><%= past_trip.start_time.strftime("%k:%M") %> </strong> <%= past_trip.start_location.split(',')[1] %></p>
                   <p> <strong><%= past_trip.end_time.strftime("%k:%M") %> </strong> <%= past_trip.end_location.split(',')[1] %></p>
                   <p> <strong>Capacity</strong>  <%= past_trip.capacity.downcase %></p>
-                  <div class="name-price">
+                  <div class="name-price-completed">
                     <p><strong>Earnings</strong></p>
                     <p> <strong><%= humanized_money_with_symbol past_trip.price %></p></strong>
                   </div>
-                  <p><strong>Trip Is</strong> <%= past_trip.status %></p>
+                    <%= link_to "Chat", "#", class: "button-chat" %>
                 </div>
               <% end %>
             <% end %>
