@@ -34,7 +34,7 @@
 <% if @trips.count.positive? %>
   <% if params[:date] %>
     <% date = Date.parse(params[:date]) %>
-    <p>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
+    <h5>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
   <% else %>
     <h5>All the trips</h5>
   <% end %>
@@ -46,15 +46,14 @@
     </div>
     <% if params[:start_location] || params[:end_location] || params[:date] || params[:capacity] %>
       <div id="map"
-        style="width: 50%; height: 100vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     <% end %>
+    <% else %>
+      <div class="results-container">
+        <h5>No upcoming trips match your search criteria</h5>
+        <h5>Please change your criteria and try again!</h5>
+      </div>
+    <% end %>
   </div>
-<% else %>
-  <div class="results-container">
-    <h5>No upcoming trips match your search criteria</h5>
-    <h5>Please change your criteria and try again!</h5>
-  </div>
-<% end %>

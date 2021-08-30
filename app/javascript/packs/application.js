@@ -34,7 +34,7 @@ import { initNavbarScroll } from '../plugins/init_navbar_scroll';
 
 
 document.addEventListener('turbolinks:load', () => {
-  initMapbox();
+  setTimeout(initMapbox, 100)
   if (window.location.pathname == "/users/sign_up" || window.location.pathname == "/trips/new" || window.location.pathname == "/") {
   initAutocomplete();
   }

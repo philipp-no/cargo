@@ -37,6 +37,7 @@ const initMapbox = () => {
     });
 
     fitMapToMarkers(map, markers);
+    map.resize();
   }
 };
 
