@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.trip = @trip
     @booking.pending!
     if @booking.save
-      redirect_to dashboard_index_path, notice: 'Your requested was received and you will be notified when the driver accepts!'
+      redirect_to dashboard_index_path, notice: 'Your request was received and you will be notified when the driver accepts!'
     else
       render :new
     end
@@ -30,8 +30,13 @@ class BookingsController < ApplicationController
     if params[:remove_listing]
       @trip = @booking.trip
       @trip.status = 1
+      @trip.bookings.each do |booking|
+        if booking.status.zero?
+          booking.status = 2
+        end
+      end
       @trip.save
-      redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed! Your trip is fully booked.'
+      redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed! Your trip is fully booked and all other requests have been declined.'
     else
       redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed! Your trip is still accepting bookings.'
     end
@@ -42,6 +47,7 @@ class BookingsController < ApplicationController
     @booking.declined!
     redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking declined!'
   end
+
 
   private 
 

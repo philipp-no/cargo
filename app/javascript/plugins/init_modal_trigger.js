@@ -1,14 +1,17 @@
 const initModalTrigger = () => {
-  const button = document.getElementById('modal-trigger-button')
-  const modal = document.getElementById('accept-modal')
-  const modalTrigger = () => {
-    modal.classList.toggle('modal-hidden')
+  const buttons = document.querySelectorAll('#modal-trigger-button')
+  const modals = document.querySelectorAll('#accept-modal')
+  const modalTrigger = (button) => {
+    let buttonsData = button.dataset.tracker;
+    modals[buttonsData].classList.toggle("modal-hidden")
   }
-  if (button) {
-    button.addEventListener('click', () => {
-      modalTrigger()
-    }, false) 
+  if (buttons) {
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        modalTrigger(button)
+      }, false) 
+    })
   }
-}
+};
 
 export { initModalTrigger }
