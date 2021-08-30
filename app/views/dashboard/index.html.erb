@@ -65,7 +65,7 @@
                     <%= link_to "Cancel Trip", trip_path(trip), method: :delete, data: { confirm: "Are you sure you want to cancel this trip? This will decline any pending booking requests and cannot be undone." }, class: "button-edit-cancel" %>
                   </div>
                 </div>
-                <div class="modal-container modal-hidden" id="accept-modal">
+                <div class="modal-container modal-<%=index%> modal-hidden" id="accept-modal">
                   <div class="modal-inner">
                     <div class="modal-text">
                       <%=  render partial: 'edit', locals: {trip: trip} %>
