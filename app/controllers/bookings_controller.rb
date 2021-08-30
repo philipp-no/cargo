@@ -30,11 +30,11 @@ class BookingsController < ApplicationController
     if params[:remove_listing]
       @trip = @booking.trip
       @trip.status = 1
-      @trip.bookings.each do |booking|
-        if booking.status.zero?
-          booking.status = 2
-        end
-      end
+      # @trip.bookings.each do |booking|
+      #   if booking.status == 0
+      #     booking.status = 2
+      #   end
+      # end
       @trip.save
       redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed! Your trip is fully booked and all other requests have been declined.'
     else

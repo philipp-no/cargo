@@ -84,12 +84,29 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
   position: relative;
 }
-.list {
-  list-style-type: none;
+
+.dash-container {
+  display: flex;
+  align-items: inline;
+  justify-content: start;
+  flex-wrap: wrap;
 }
+
+.dash-trip-card {
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: 300px;
+  border-radius: 10px;
+  margin:0 0 10px 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
 li {
   margin: 0 0 10px 0;
 }
+
 .line {
   margin: 20px 0 20px 0;
   padding: 15px 0 15px 0;
@@ -98,6 +115,11 @@ li {
   width: 250px;
   border-color:$light-gray;
 }
+
+.list {
+  list-style-type: none;
+}
+
 .modal-container {
   position: fixed;
   left: 0;
@@ -119,6 +141,7 @@ li {
   transform: translate(-50%, -50%);
   background: white;
 }
+
 .name-price-accepted {
   width: 250px;
   display: flex;
