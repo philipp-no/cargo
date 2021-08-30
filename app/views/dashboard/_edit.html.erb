@@ -6,9 +6,9 @@
           <fieldset class="form-group radio_buttons required trip_capacity">
             <legend class="col-form-label pt-0">How much capacity do you have? <abbr title="required">*</abbr></legend>
             <div class="category-wrapper">
-              <input type="hidden" name="trip[capacity]" value="">
+              <input type="hidden" name="trip[capacity]" value=" <%= trip.capacity %>">
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="trip[capacity]" id="trip_capacity_small">
+                  <input class="form-check-input radio_buttons required category-selector <%= trip.capacity == "Small" ? "checked-capacity" : "" %>" type="radio" value="Small" name="trip[capacity]" id="trip_capacity_small">
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_small">
                     <div>
                       <p>Small</p> 
@@ -21,7 +21,7 @@
                   </label>
                 </div>
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Medium" name="trip[capacity]" id="trip_capacity_medium">
+                  <input class="form-check-input radio_buttons required category-selector <%= trip.capacity == "Medium" ? "checked-capacity" : "" %>" type="radio" value="Medium" name="trip[capacity]" id="trip_capacity_medium">
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium">
                     <div>
                       <p>Medium</p>
@@ -34,7 +34,7 @@
                   </label>
                 </div>
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Large" name="trip[capacity]" id="trip_capacity_large">
+                  <input class="form-check-input radio_buttons required category-selector <%= trip.capacity == "Large" ? "checked-capacity" : "" %>" type="radio" value="Large" name="trip[capacity]" id="trip_capacity_large">
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_large">
                     <div>
                       <p>Large</p>
