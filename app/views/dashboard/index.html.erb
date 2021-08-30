@@ -41,7 +41,7 @@
     <% if @trips.count.positive? %>
       <h5>Your Upcoming Trips</h5>
         <div class="dash-container">
-            <% @trips.each do |trip| %>
+            <% @trips.each_with_index do |trip, index| %>
               <%= link_to trip_bookings_path(trip), class: "block-link-text" do %>
                   <div class="dash-trip-card">
                     <div class="badge-place">
@@ -62,6 +62,11 @@
                     <div class="button-place"><button class="button-edit-cancel" id="modal-trigger-button">Edit Trip</button> <button class="button-edit-cancel" id="modal-trigger-button">Cancel Trip</button></div>
                   </div>
                 <% end %>
+                  <div class="button-place">
+                    <button class="button-edit-cancel" id="modal-trigger-button" data-tracker="<%=index%>">Edit Trip</button>
+                    <%= link_to "Cancel Trip", trip_path(trip), method: :delete, data: { confirm: "Are you sure you want to cancel this trip? This will decline any pending booking requests and cannot be undone." }, class: "button-edit-cancel" %>
+                  </div>
+                </div>
                 <div class="modal-container modal-hidden" id="accept-modal">
                   <div class="modal-inner">
                     <div class="modal-text">

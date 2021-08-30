@@ -16,7 +16,7 @@
     </div>
     <div>
       <%= simple_form_for [@trip, @booking] do |f| %>
-        <%= f.input :size, as: :radio_buttons, collection: [:small, :medium, :large], label: 'What size is your item?', include_hidden: false  %>
+        <%= f.input :size, as: :radio_buttons, collection: [:small, :medium, :large], label: 'What size is your item?', include_hidden: false, checked: params[:size].downcase.to_sym %>
         <%= f.input :item, label: 'What item are you sending?' %>
         <%= f.input :description, label: 'What does the driver need to know?' %>
         <%= f.submit 'Book this trip' %>
