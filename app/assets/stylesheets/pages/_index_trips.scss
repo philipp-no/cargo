@@ -48,6 +48,20 @@ li {
   width: 200px;
 }
 
-#search-bar input {
-  display: inline-block
+
+
+#search-bar {
+  display: flex;
+  
+  span {
+    width: auto;
+  }
+
+  .form-control {
+    display: inline-block;
+  }
+
+  .button {
+    margin-bottom: 0;
+  }
 }
