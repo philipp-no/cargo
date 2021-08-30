@@ -20,9 +20,10 @@
             placeholder: "Where is it going?"
         %>
          <p class="search-separator">|</p>
-        <%= date_field_tag :date,
+        <%= text_field_tag :date,
             Date.today,
-            class: "form-control search-field"
+            class: "form-control search-field datepicker"
+            # input_html: {class: "datepicker"}
         %>
          <p class="search-separator">|</p>
         <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity]),class: "form-control search-field",  prompt: "Select item size ▾") %>

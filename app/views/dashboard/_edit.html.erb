@@ -1,8 +1,8 @@
 <%= simple_form_for(trip) do |f| %>
           <%= f.input :start_location, label: 'Where does your trip start?' %>
-          <%= f.input :start_time, label: 'When will you leave?'  %>
+          <%= f.input :start_time, as: :string, label: 'When will you leave?', input_html: {class: "datepicker"}  %>
           <%= f.input :end_location, label: 'Where are you going?' %>
-          <%= f.input :end_time, label: 'When do you expect to arrive?'  %>
+          <%= f.input :end_time, as: :string, label: 'When do you expect to arrive?', input_html: {class: "datepicker"}  %>
           <fieldset class="form-group radio_buttons required trip_capacity">
             <legend class="col-form-label pt-0">How much capacity do you have? <abbr title="required">*</abbr></legend>
             <div class="category-wrapper">
