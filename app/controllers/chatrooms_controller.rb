@@ -25,6 +25,5 @@ class ChatroomsController < ApplicationController
 
   def chatroom_params
     params.require(:chatroom).permit(:name, :driver, :sender)
-
   end
 end
