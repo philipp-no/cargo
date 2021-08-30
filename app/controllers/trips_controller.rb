@@ -63,6 +63,12 @@ class TripsController < ApplicationController
     end
   end
 
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip_params)
+    redirect_to dashboard_index_path, notice: 'Your trip was updated!'
+  end
+
   private
 
   def trip_params
