@@ -26,7 +26,14 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find_by(trip_id: params[:trip_id])
     @booking.accepted!
-    redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed!'
+    if params[:remove_listing]
+      @trip = @booking.trip
+      raise
+      @trip.status = 1
+      redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed! Your trip is fully booked.'
+    else
+      redirect_to trip_bookings_path(params[:trip_id]), notice: 'Booking confirmed! Your trip is still accepting bookings.'
+    end
   end
 
   def decline

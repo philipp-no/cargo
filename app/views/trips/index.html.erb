@@ -3,24 +3,35 @@
   <div class="header-text">
     <h1>Find a driver and send your item on a ride</h1>
       <%= form_tag trips_path, class: "form", method: :get do %>
-            <%= text_field_tag :start_location,
+      <div class="row g-3">
+        <div clas="col">
+          <%= text_field_tag :start_location,
               params[:start_location],
-              class: "form-controll",
-              placeholder: "From"
-            %>
-            <%= text_field_tag :end_location,
+              class: "form-control search-field",
+              placeholder: "Where is your item?"
+          %>
+        </div>
+        <div clas="col">
+          <%= text_field_tag :end_location,
               params[:end_location],
-              class: "form-controll",
-              placeholder: "To"
-            %>
-            <%= date_field_tag :date,
+              class: "form-control search-field",
+              placeholder: "Where is it going?"
+          %>
+        </div>
+        <div clas="col">
+          <%= date_field_tag :date,
               params[:date],
-              class: "form-controll",
-              placeholder: "To"
-            %>
-              <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
-            <%= submit_tag "Find a driver" %>
-          <% end %>
+              class: "form-control search-field"
+          %>
+        </div>
+        <div clas="col">
+          <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity])) %>
+        </div>
+        <div clas="col">
+          <%= submit_tag "Find a driver", class: "button" %>
+        </div>
+      </div>
+        <% end %>
   </div>
 </div>
 
