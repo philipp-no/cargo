@@ -44,12 +44,13 @@
             <% @trips.each_with_index do |trip, index| %>
               <%= link_to trip_bookings_path(trip), class: "block-link-text" do %>
                   <div class="dash-trip-card">
-                    <% if trip.count_pending_bookings.positive? %>
-                      <div class="badge">
-                        <%= trip.count_pending_bookings%>
-                        </p>
-                      </div>
-                    <% end %>
+                    <div class="badge-place">
+                      <% if trip.count_pending_bookings.positive? %>
+                        <div class="badge">
+                           <%=  trip.count_pending_bookings %>
+                        </div>
+                      <% end %>
+                    </div>
                     <p class="underline"><%= trip.start_time.strftime("%A, %B %d") %></p>
                     <p> <strong><%= trip.start_time.strftime("%k:%M") %> </strong> <%= trip.start_location.split(',')[1] %></p>
                     <p> <strong><%= trip.end_time.strftime("%k:%M") %> </strong> <%= trip.end_location.split(',')[1] %></p>
@@ -57,10 +58,12 @@
                       <p> <strong>Capacity</strong>  <%= trip.capacity.downcase %></p>
                       <p> <strong><%= humanized_money_with_symbol trip.price %></p></strong>
                     </div>
-                    <p><strong>Trip Is</strong> <%= trip.status %></p> 
+                      <p><strong>Trip Is</strong> <%= trip.status %></p>
+                    <div class="button-place"><button class="button-edit-cancel" id="modal-trigger-button">Edit Trip</button> <button class="button-edit-cancel" id="modal-trigger-button">Cancel Trip</button></div>
+                  </div>
                 <% end %>
                   <div class="button-place">
-                    <button class="button-edit-cancel" id="modal-trigger-button" data-tracker="<%=index%>">Edit Trip</button> 
+                    <button class="button-edit-cancel" id="modal-trigger-button" data-tracker="<%=index%>">Edit Trip</button>
                     <%= link_to "Cancel Trip", trip_path(trip), method: :delete, data: { confirm: "Are you sure you want to cancel this trip? This will decline any pending booking requests and cannot be undone." }, class: "button-edit-cancel" %>
                   </div>
                 </div>
@@ -80,7 +83,7 @@
         <%= link_to "Create a Trip",  new_trip_path %>
       </div>
     <% end %>
-  
+
   <% if @past_trips.count.positive? %>
     <h5>Trips You've Completed</h5>
     <div class="dash-container">
@@ -95,7 +98,7 @@
                     <p><strong>Earnings</strong></p>
                     <p> <strong><%= humanized_money_with_symbol past_trip.price %></p></strong>
                   </div>
-                  <p><strong>Trip Is</strong> <%= past_trip.status %></p> 
+                  <p><strong>Trip Is</strong> <%= past_trip.status %></p>
                 </div>
               <% end %>
             <% end %>
@@ -141,4 +144,3 @@
       <% end %>
     <% end %>
 <% end %>
-
