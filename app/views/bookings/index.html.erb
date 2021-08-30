@@ -2,14 +2,12 @@
 
   <h1><%= @trip.start_location %> <%= @trip.start_time.strftime("%A, %B %d") %></h1>
 
-  <div class="cards d-flex flex-row justify-space-around">
+  <div class="cards d-flex flex-row justify-space-around flex-wrap">
     <% @bookings.each do |booking| %>
       <div class="card">
         <div class="container card-items">
-          <div>
-          <%= image_tag booking.user.avatar, class: 'avatar' %>
-          </div>
-          <div><h3><%= booking.user.first_name %></h3></div>
+          <div><%= image_tag booking.user.avatar, class: 'avatar' %></div>
+          <h3><%= booking.user.first_name %></h3>
         </div>
         <div class="container">
           <p><i class="fas fa-box-open"></i> <%= booking.item %></p>
@@ -23,19 +21,15 @@
         </div>
         <div class="container">
           <% if booking.pending? %>
-            <button class="button" id="modal-trigger-button">
-              Accept
-            </button>
+            <button class="button" id="modal-trigger-button">Accept</button>
             <%= link_to "Decline", decline_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller, 
                 data: { confirm: 'Are you sure you want to decline this booking?' } %>
           <% else %>
             <p> 〉Request <%= booking.status.capitalize %> </p>
           <% end %>
         </div>
-        <div>
       </div>
 
-      
         <div class="modal-container modal-hidden" id="accept-modal">
           <div class="modal-inner">
             <div class="modal-text">
@@ -44,13 +38,11 @@
               </p>
             </div>
             <div class="modal-buttons">
-              <%= link_to "Keep Listing", accept_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller %>
-              <%= link_to "Remove Listing", accept_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller %>
+              <%= link_to "Keep Listing", accept_path(booking.trip.id, remove_listing: false), class: "button", method: :patch, controller: :bookings_controller %>
+              <%= link_to "Remove Listing", accept_path(booking.trip.id, remove_listing: true), class: "button", method: :patch, controller: :bookings_controller %>
             </div>
           </div>
         </div>
-      
-
     <% end %>
   </div>
 </div>

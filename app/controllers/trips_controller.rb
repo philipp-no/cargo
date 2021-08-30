@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @trips = Trip.all
+    @trips = Trip.where(status: 0).where.not(user: current_user)
     if params[:start_location].present?
       @trips = @trips.where("start_location ILIKE ?", "%#{params[:start_location]}%")
     end
@@ -56,7 +56,6 @@ class TripsController < ApplicationController
     @trip.user = current_user
     @trip.status = 0
     @trip.price_cents = @trip.price_cents * 100
-
     if @trip.save
       redirect_to dashboard_index_path, notice: 'Your trip was created!'
     else
