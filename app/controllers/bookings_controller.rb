@@ -49,7 +49,6 @@ class BookingsController < ApplicationController
     redirect_to trip_bookings_path(@booking.trip), notice: 'Booking declined!'
   end
 
-
   private
 
   def booking_params
