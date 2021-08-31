@@ -36,7 +36,9 @@
 }
 
 .category-selector:checked + label {
-  color: white !important;
+  background-color: $blue;
+  color: white;
+  border-color: white;
 }
 
 .new-trip-form {
@@ -60,6 +62,7 @@ p {
 
 #trip_capacity_small:checked + label {
   background-color: $blue;
+  color: white;
   border-color: white;
 }
 
@@ -76,6 +79,7 @@ p {
 
 #trip_capacity_medium:checked + label {
   background-color: $blue;
+  color: white;
   border-color: white;
 }
 
@@ -85,5 +89,6 @@ p {
 
 #trip_capacity_large:checked + label {
   background-color: $blue;
+  color: white;
   border-color: white;
 }
