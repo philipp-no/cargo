@@ -33,27 +33,31 @@
 
 <% if @trips.count.positive? %>
   <% if params[:date] %>
-    <% date = Date.parse(params[:date]) %>
-    <h5>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
-  <% else %>
-    <h5>All the trips</h5>
-  <% end %>
-  <div class="trip-container">
-    <div class="trip-details">
-      <% @trips.each_with_index do |trip, index| %>
-        <%=  render partial: 'show', locals: {trip: trip, index: index} %>
-       <% end %>
-    </div>
-    <% if params[:start_location] || params[:end_location] || params[:date] || params[:capacity] %>
-      <div id="map"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="trip-container">
+      <div class="trip-header-cards">
+        <div class="trip-header">
+          <% date = Date.parse(params[:date]) %>
+          <h5>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
+        </div>
+          <% else %>
+            <h5>Upcoming trips</h5>
+          <% end %>
+            <div class="trip-details">
+              <% @trips.each_with_index do |trip, index| %>
+                <%=  render partial: 'show', locals: {trip: trip, index: index} %>
+              <% end %>
+            </div>
       </div>
-    <% end %>
+        <% if params[:start_location] || params[:end_location] || params[:date] || params[:capacity] %>
+          <div id="map"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+      <% end %>
+    </div>
     <% else %>
       <div class="results-container">
         <h5>No upcoming trips match your search criteria</h5>
         <h5>Please change your criteria and try again!</h5>
       </div>
     <% end %>
-  </div>
