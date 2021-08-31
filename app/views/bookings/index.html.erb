@@ -1,7 +1,9 @@
 <div class="container">
-
-  <h1><%= @trip.start_location %> <%= @trip.start_time.strftime("%A, %B %d") %></h1>
-
+<div class="d-flex align-items-center p-2">
+  <%= link_to :back, class: "back-arrow" do %> 
+    <i class="fas fa-chevron-left"></i>
+  <% end %> <h2 class="back-arrow-text">Booking Requests for your trip from</h2>
+  </div>
   <div class="cards d-flex flex-row justify-space-around flex-wrap">
     <% @bookings.each_with_index do |booking, index| %>
       <div class="card">

@@ -76,6 +76,13 @@ class TripsController < ApplicationController
 
   private
 
+  def sanitize_address(address)
+    address_array = address.split(",")
+    street_name = address_array[0].chars.reject { |char| char.match?(/\A-?\d+\Z/) }.join
+    city = address_array[1]
+    return "#{city}, #{street_name}"
+  end
+  
   def trip_params
     params.require(:trip).permit(
       :start_time,
@@ -88,10 +95,4 @@ class TripsController < ApplicationController
     )
   end
 
-  def sanitize_address(address)
-    address_array = address.split(",")
-    street_name = address_array[0].chars.reject { |char| char.match?(/\A-?\d+\Z/) }.join
-    city = address_array[1]
-    return "#{city}, #{street_name}"
-  end
 end
