@@ -399,7 +399,7 @@ booking2 = Booking.create!(
 booking3 = Booking.create!(
   user: philipp,
   trip: trip3,
-  status: 1,
+  status: 0,
   description: "Hi Marie! Could you please pick up my suitcase?.",
   size: "Medium",
   item: "Suitcase"
@@ -408,7 +408,7 @@ booking3 = Booking.create!(
 booking4 = Booking.create!(
   user: philipp,
   trip: trip4,
-  status: 1,
+  status: 0,
   description: "Hi Otmar! Can you please take my little shipment?",
   size: "Small",
   item: "Plates"
@@ -417,7 +417,7 @@ booking4 = Booking.create!(
 booking5 = Booking.create!(
   user: philipp,
   trip: trip5,
-  status: 2,
+  status: 0,
   description: "Hi Otmar! Would be nice if you could manage to take my bike with you.",
   size: "Large",
   item: "Bike"
@@ -444,7 +444,7 @@ booking7 = Booking.create!(
 booking8 = Booking.create!(
   user: marie,
   trip: trip8,
-  status: 1,
+  status: 0,
   description: "Hi Jenny! Could you take an expensive item with you and also deliver it?",
   size: "Small",
   item: "Expensive wristwatch"
@@ -453,7 +453,7 @@ booking8 = Booking.create!(
 booking9 = Booking.create!(
   user: otmar,
   trip: trip9,
-  status: 2,
+  status: 0,
   description: "Hi Jenny! I left my computer at my friend's house. Can you take it with you?",
   size: "Medium",
   item: "Notebook Computer"
