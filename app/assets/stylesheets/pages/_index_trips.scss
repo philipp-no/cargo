@@ -34,8 +34,7 @@
   font-weight: bold;
   padding: 10px 30px 10px 30px;
   border-radius: 10px;
-  margin-bottom: 20px;
-  margin-top: 5px;
+  margin: 5px 0 20px 50px;
   border: 0;
 }
 
@@ -109,6 +108,7 @@ li {
 .trip-details {
   display: flex;
   flex-wrap: wrap;
+  margin: 20px 0 20px 30px;
 //   flex-grow: 1;
 //   display: grid;
 //   padding-left: 0;
