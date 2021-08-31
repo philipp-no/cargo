@@ -20,7 +20,7 @@
         <p>Price for one item:</p>
         <%= humanized_money_with_symbol @trip.price %> 
       </div>
-      <div>
+      <div class="new-trip-form">
         <%= simple_form_for [@trip, @booking] do |f| %>
           <% if params[:size] %>
             <%= f.input :size, as: :radio_buttons, collection: [:small, :medium, :large], label: 'What size is your item?', include_hidden: false, checked: params[:size].downcase.to_sym   %>
@@ -29,7 +29,9 @@
           <% end %>
           <%= f.input :item, label: 'What item are you sending?' %>
           <%= f.input :description, label: 'What does the driver need to know?' %>
-          <%= f.submit 'Book this trip' %>
+          <div class="button-position">
+            <%= f.submit 'Book this trip', class: "button" %>
+          </div>
         <% end %>
       </div>
     </div>
