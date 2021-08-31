@@ -14,8 +14,8 @@
   top: 0;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: white;
+.nav-link {
+  color: white !important;
 }
 
 .navbar-brand {
@@ -50,6 +50,10 @@
 
 .past-scroll {
   background: white;
+}
+
+.scroll-text {
+  color: $gray !important;
 }
 
 .z-index {

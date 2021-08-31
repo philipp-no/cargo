@@ -22,7 +22,8 @@ body {
 }
 
 .button {
-  background: linear-gradient(to bottom right, $purple, $rose);
+  // background: linear-gradient(to bottom right, $blue, $steel);
+  background-color: $rose;
   color:white;
   padding: 10px 30px 10px 30px;
   border-radius: 10px;
@@ -31,6 +32,7 @@ body {
 }
 
 .content {
+  padding-top: 100px;
   background-color: white;
   color: $gray;
   // margin: 50px 100px 10px 100px;
