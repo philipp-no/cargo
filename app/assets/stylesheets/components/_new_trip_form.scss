@@ -47,10 +47,6 @@
   }
 }
 
-p {
-  margin-bottom: 10px;
-}
-
 .size-examples  {
   font-size: 15px;
 }
@@ -91,4 +87,21 @@ p {
   background-color: $blue;
   color: white;
   border-color: white;
+}
+
+.price-container {
+  margin-top: 15px;
+}
+
+#trip_price {
+  margin-bottom: 0px ;
+}
+
+.booking_item {
+  margin-top: 8px;
+}
+
+.fa-long-arrow-alt-down {
+  margin-bottom: 15px;
+  font-size: 20px;
 }
