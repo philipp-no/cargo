@@ -1,0 +1,29 @@
+.modal-container {
+  width: 1500px;
+  height: 1000px;
+
+}
+
+.modal-inner {
+  border-radius: 10px;
+  top: 30%;
+  left: 50%;
+  width: 450px;
+  height: auto;
+}
+
+.modal-text {
+  padding: 40px;
+  text-align: left;
+}
+
+.modal-text h5 {
+  padding: 60px 0 80px 40px;
+  margin: -40px;
+  text-align: left;
+}
+
+.modal-buttons {
+  margin-left: 158px;
+  padding-bottom: 20px;
+}
