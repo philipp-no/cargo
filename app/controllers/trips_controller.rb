@@ -55,7 +55,6 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     @trip.status = 0
-    @trip.price_cents = @trip.price_cents * 100
     if @trip.save
       redirect_to dashboard_index_path, notice: 'Your trip was created!'
     else

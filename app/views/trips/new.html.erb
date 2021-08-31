@@ -62,10 +62,7 @@
             <div class="input-group-prepend input-group-text">
               <span>€</span>
             </div>
-            <%= f.input :price_cents, as: :float, label: false, wrapper: false %>
-            <div class="input-group-append input-group-text">
-              <span>.00</span>
-            </div>
+            <%= f.input :price, as: :float, label: false, wrapper: false %>
           </div>
           <%= f.input :description, label: 'What else does the sender need to know?' %>
           <div class="container">
