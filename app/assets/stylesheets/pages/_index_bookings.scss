@@ -1,3 +1,8 @@
+.accepted-tag {
+  color: $rose;
+  position: absolute;
+  font-weight: 700;
+}
 .button-booking {
   background-color: white;
   color: $rose;
@@ -63,7 +68,6 @@
     margin: 0 0 0 16px;
   }
 }
-
 .grey-field {
   height: 120px;
   overflow: scroll;
