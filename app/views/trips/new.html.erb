@@ -12,7 +12,7 @@
           <%= f.input :start_location, label: 'Where does your trip start?' %>
           <%= f.input :start_time, as: :string, label: 'When will you leave?', input_html: {class: "datepicker"}  %>
           <%= f.input :end_location, as: :string, label: 'Where are you going?' %>
-          <%= f.input :end_time, label: 'When do you expect to arrive?', input_html: {class: "datepicker"}  %>
+          <%= f.input :end_time, as: :string, label: 'When do you expect to arrive?', input_html: {class: "datepicker"}  %>
           <fieldset class="form-group radio_buttons required trip_capacity">
             <legend class="col-form-label pt-0">How much capacity do you have? <abbr title="required">*</abbr></legend>
             <div class="category-wrapper">
@@ -62,10 +62,7 @@
             <div class="input-group-prepend input-group-text">
               <span>€</span>
             </div>
-            <%= f.input :price_cents, as: :float, label: false, wrapper: false %>
-            <div class="input-group-append input-group-text">
-              <span>.00</span>
-            </div>
+            <%= f.input :price, as: :float, label: false, wrapper: false %>
           </div>
           <%= f.input :description, label: 'What else does the sender need to know?' %>
           <div class="container">

@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @trip =Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:trip_id])
     @booking = Booking.new(booking_params)
     @booking.size = params[:booking][:size][0]
     @booking.user = current_user
