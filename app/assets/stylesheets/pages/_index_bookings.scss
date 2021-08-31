@@ -1,7 +1,28 @@
+.booking-cards {
+  display: flex;
+  align-items: inline;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-left: 0;
+}
+
+.booking-card {
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: 300px;
+  border-radius: 10px;
+  margin:0 0 10px 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.card-items {
+  align-items: center;
+}
 .modal-container {
   width: 1500px;
   height: 1000px;
-
 }
 
 .modal-inner {
@@ -26,4 +47,8 @@
 .modal-buttons {
   margin-left: 158px;
   padding-bottom: 20px;
+}
+
+.name {
+  margin: 0;
 }

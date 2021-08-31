@@ -1,13 +1,12 @@
 <div class="container">
 
-  <h1><%= @trip.start_location %> <%= @trip.start_time.strftime("%A, %B %d") %></h1>
-
-  <div class="cards d-flex flex-row justify-space-around flex-wrap">
+  <h1>Your trip form <%= @trip.start_location.split(",")[1] %> to <%= @trip.end_location.split(",")[1] %> on <%= @trip.start_time.strftime("%A, %B %d") %></h1>
+  <div class="booking-cards">
     <% @bookings.each_with_index do |booking, index| %>
-      <div class="card">
-        <div class="container card-items">
+      <div class="booking-card">
+        <div class="card-items">
           <div><%= image_tag booking.user.avatar, class: 'avatar' %></div>
-          <h3><%= booking.user.first_name %></h3>
+          <h3 id="name"><%= booking.user.first_name %></h3>
         </div>
         <div class="container">
           <p><i class="fas fa-box-open"></i> <%= booking.item %></p>
