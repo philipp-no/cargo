@@ -21,9 +21,8 @@
         %>
          <p class="search-separator">|</p>
         <%= text_field_tag :date,
-            Date.today,
+            params[:date] || Date.today,
             class: "form-control search-field datepicker"
-            # input_html: {class: "datepicker"}
         %>
          <p class="search-separator">|</p>
         <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity]),class: "form-control search-field",  prompt: "Select item size ▾") %>
