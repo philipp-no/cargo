@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
   def accept
     @booking = Booking.find(params[:id])
     @booking.accepted!
-    @booking.save
+    Chatroom.create(booking: @booking)
     if params[:remove_listing] == true
       @trip = @booking.trip
       @trip.status = 1
