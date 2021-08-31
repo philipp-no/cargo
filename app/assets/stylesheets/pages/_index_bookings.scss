@@ -1,3 +1,78 @@
+.accepted-tag {
+  color: $rose;
+  position: absolute;
+  font-weight: 700;
+}
+.button-booking {
+  background-color: white;
+  color: $rose;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid $rose;
+}
+.button-booking:hover {
+  background-color: $rose;
+  color:white;
+  padding: 5px 20px 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid $rose;
+}
+.booking-cards {
+  display: flex;
+  margin-left: 0;
+  .booking-header {
+    margin: 2px 0 24px 8px;
+  }
+}
+
+.booking-card {
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: 300px;
+  border-radius: 10px;
+  margin:0 0 30px 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  .container {
+    p {
+      i {
+        width: 20px;
+      }
+    }
+  }
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  a {
+    margin: 0;
+    &:hover {
+      margin: 0;
+    }
+  }
+}
+.card-items {
+  align-items: center;
+  margin-bottom: 16px;
+  h3 {
+    margin: 0 0 0 16px;
+  }
+}
+.grey-field {
+  height: 120px;
+  overflow: scroll;
+  margin-bottom: 16px;
+}
 .modal-container {
   width: 1500px;
   height: 1000px;
@@ -25,4 +100,8 @@
 .modal-buttons {
   margin-left: 158px;
   padding-bottom: 20px;
+}
+
+.name {
+  margin: 0;
 }
