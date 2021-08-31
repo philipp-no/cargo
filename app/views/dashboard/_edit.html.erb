@@ -1,17 +1,17 @@
 <%= simple_form_for(trip) do |f| %>
-          <%= f.input :start_location, label: 'Where does your trip start?' %>
-          <%= f.input :start_time, as: :string, label: 'When will you leave?', input_html: {class: "datepicker"}  %>
-          <%= f.input :end_location, label: 'Where are you going?' %>
-          <%= f.input :end_time, as: :string, label: 'When do you expect to arrive?', input_html: {class: "datepicker"}  %>
+          <%= f.input :start_location, label: 'Where does your trip start?', input_html: {id: "start_location_#{trip.id}"} %>
+          <%= f.input :start_time, as: :string, label: 'When will you leave?', input_html: {id: "start_time_#{trip.id}", class: "datepicker"}  %>
+          <%= f.input :end_location, label: 'Where are you going?', input_html: {id: "end_location_#{trip.id}"} %>
+          <%= f.input :end_time, as: :string, label: 'When do you expect to arrive?', input_html: {id: "end_time_#{trip.id}", class: "datepicker"}  %>
           <fieldset class="form-group radio_buttons required trip_capacity">
             <legend class="col-form-label pt-0">How much capacity do you have? <abbr title="required">*</abbr></legend>
             <div class="category-wrapper">
               <input type="hidden" name="trip[capacity]" value=" <%= trip.capacity %>">
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector <%= trip.capacity == "Small" ? "checked-capacity" : "" %>" type="radio" value="Small" name="trip[capacity]" id="trip_capacity_small">
-                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_small">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="trip[capacity]" id="trip_capacity_small_<%= trip.id %>" <%= "checked" if trip.capacity == "Small" %>>
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_small_<%= trip.id %>">
                     <div>
-                      <p>Small</p> 
+                      <p>Small</p>
                       <div class="size-examples">
                         <i class="fas fa-book"></i>
                         <i class="far fa-futbol"></i>
@@ -21,8 +21,8 @@
                   </label>
                 </div>
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector <%= trip.capacity == "Medium" ? "checked-capacity" : "" %>" type="radio" value="Medium" name="trip[capacity]" id="trip_capacity_medium">
-                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Medium" name="trip[capacity]" id="trip_capacity_medium_<%= trip.id %>" <%= "checked" if trip.capacity == "Medium" %>>
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium_<%= trip.id %>">
                     <div>
                       <p>Medium</p>
                       <div class="size-examples">
@@ -34,11 +34,11 @@
                   </label>
                 </div>
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector <%= trip.capacity == "Large" ? "checked-capacity" : "" %>" type="radio" value="Large" name="trip[capacity]" id="trip_capacity_large">
-                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_large">
+                  <input class="form-check-input radio_buttons required category-selector" <%= "checked" if trip.capacity == "Large" %> type="radio" value="Large" name="trip[capacity]" id="trip_capacity_large_<%= trip.id %>">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_large_<%= trip.id %>">
                     <div>
                       <p>Large</p>
-                      <div class="size-examples"> 
+                      <div class="size-examples">
                         <i class="fas fa-baby-carriage"></i>
                         <i class="fas fa-bed"></i>
                         <i class="fas fa-couch"></i>
@@ -52,9 +52,9 @@
             <div class="input-group-prepend input-group-text">
               <span>€</span>
             </div>
-            <%= f.input :price, as: :float, label: false, wrapper: false %>
+            <%= f.input :price, as: :float, label: false, wrapper: false, input_html: { id: "trip_price_#{trip.id}" } %>
           </div>
-          <%= f.input :description, label: 'What else does the sender need to know?' %>
+          <%= f.input :description, label: 'What else does the sender need to know?', input_html: { id: "trip_description_#{trip.id}" } %>
           <div class="container">
             <div class="button-position">
               <%= f.submit 'Save Changes', class: "button" %>
