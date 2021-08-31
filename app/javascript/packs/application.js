@@ -27,11 +27,13 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete} from '../plugins/init_autocomplete';
 import { initModalTrigger } from '../plugins/init_modal_trigger';
 import { initNavbarScroll } from '../plugins/init_navbar_scroll';
 import { initFlatpickr } from "../plugins/flatpickr";
+
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,6 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   }
   initModalTrigger();
+  initChatroomCable();
   initNavbarScroll();
   initFlatpickr();
 });

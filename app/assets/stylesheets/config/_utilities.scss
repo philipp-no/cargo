@@ -47,3 +47,6 @@ h2, h3, h4, h5 {
   color: $dark;
   font-family: Quicksand;
 }
+.content {
+  min-height: calc(100vh - 62px);
+}

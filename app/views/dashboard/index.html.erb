@@ -56,7 +56,7 @@
 
     <% if @trips.count.positive? %>
       <h5>Your Upcoming Trips</h5>
-        <div class="dash-container">
+        <div class="dash-container dash-details">
             <% @trips.each_with_index do |trip, index| %>
               <%= link_to trip_bookings_path(trip), class: "block-link-text" do %>
                   <div class="dash-trip-card">
@@ -112,7 +112,6 @@
                     <p><strong>Earnings</strong></p>
                     <p> <strong><%= humanized_money_with_symbol past_trip.price %></p></strong>
                   </div>
-                    <%= link_to "Chat", "#", class: "button-chat" %>
                 </div>
               <% end %>
             <% end %>
