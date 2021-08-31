@@ -1,1 +1,28 @@
-// 
+.button-position {
+  margin-top: 15px;
+}
+
+.dash-modal-body {
+  background-color: white;
+  border-radius: 10px;
+  top: 30%;
+  left: 15%;
+  width: 500px;
+  height: 550px;
+  margin: 20px 0 0 500px;
+  overflow-y: scroll;
+}
+
+.dash-modal-content {
+  padding: 40px 40px 0 40px;
+  text-align: left;
+}
+
+.form-group {
+  padding-bottom: 10px;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: $light-gray;
+  background-image: url();
+}

@@ -1,3 +1,4 @@
+<h5 class="modal-text h5">Edit your trip</h5>
 <%= simple_form_for(trip) do |f| %>
           <%= f.input :start_location, label: 'Where does your trip start?', input_html: {id: "start_location_#{trip.id}"} %>
           <%= f.input :start_time, as: :string, label: 'When will you leave?', input_html: {id: "start_time_#{trip.id}", class: "datepicker"}  %>
