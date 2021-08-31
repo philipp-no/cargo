@@ -2,10 +2,10 @@
   <div class="card chat-margin">
     <div>
       <h5 class="h-position">Chat with
-      <% if current_user.driver? %>
-      <%= @chatroom.booking.user.first_name %>
-      <% else %>
+      <% if current_user.first_name == @chatroom.booking.user.first_name %>
       <%= @chatroom.booking.trip.user.first_name %>
+      <% else %>
+      <%= @chatroom.booking.user.first_name %>
       <% end %></h5>
     </div>
 

@@ -21,7 +21,7 @@
                       <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
                       <p> <strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
                     </div>
-                      <%= link_to "Chat", "#", class: "button-chat" %>
+                      <%= link_to "Chat", chatroom_path(booking.chatroom), class: "button-chat" %>
                   <% else %>
                     <div class="name-price-else">
                       <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
