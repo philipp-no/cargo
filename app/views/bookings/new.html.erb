@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-around">
 <div>
-  <h2>Book a trip and send your </h2> 
+  <h2>Book a trip and send your </h2>
   <h2>plant on a ride</h2>
-  <%= image_tag('undraw_fast_car_p4cu.png', width: "500", height: "400") %>
+  <%= image_tag('mini2.png', width: "500", height: "400") %>
 </div>
 
   <div>
@@ -10,9 +10,9 @@
     <p><%= @trip.start_time.strftime("%k:%M") %> <%= @trip.start_location %></p>
     <i class="fas fa-long-arrow-alt-down"></i>
     <p> <%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
-    <div class="d-flex justify-content-between"> 
+    <div class="d-flex justify-content-between">
       <p>Price for one item:</p>
-      <%= humanized_money_with_symbol @trip.price %> 
+      <%= humanized_money_with_symbol @trip.price %>
     </div>
     <div>
       <%= simple_form_for [@trip, @booking] do |f| %>
