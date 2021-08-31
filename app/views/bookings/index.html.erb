@@ -37,13 +37,15 @@
         <div class="modal-container modal-<%=index%> modal-hidden" id="accept-modal">
           <div class="modal-inner">
             <div class="modal-text">
+              <h5>You are accepting <%= booking.user.first_name %>'s booking. <i class="fas fa-check"></i></h5>
+              <p><strong>Is your car full now?</strong></p>
               <p>
                 You listed your trip capacity as <%= @trip.capacity %>. Would you like to leave your trip listed and accept more bookings, or have you reached capacity?
               </p>
             </div>
             <div class="modal-buttons">
-              <%= link_to "Keep Listing", accept_path(booking, remove_listing: false), class: "button", method: :patch, controller: :bookings_controller %>
-              <%= link_to "Remove Listing", accept_path(booking, remove_listing: true), class: "button", method: :patch, controller: :bookings_controller %>
+              <%= link_to "My car is full", accept_path(booking, remove_listing: true), method: :patch, controller: :bookings_controller %>
+              <%= link_to "I can take more", accept_path(booking, remove_listing: false), class: "button", method: :patch, controller: :bookings_controller %>
             </div>
           </div>
         </div>

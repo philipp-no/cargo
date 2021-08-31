@@ -22,13 +22,11 @@ body {
 }
 
 .button {
-  // background: linear-gradient(to bottom right, $blue, $steel);
   background-color: $rose;
   color:white;
   padding: 10px 30px 10px 30px;
   border-radius: 10px;
-  margin-bottom: 20px;
-  margin-top: 5px;
+  margin: 5px 0 20px 5px;
 }
 
 .content {
