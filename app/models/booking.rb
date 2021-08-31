@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
   belongs_to :trip
   belongs_to :user
   enum status: [:pending, :accepted, :declined]
