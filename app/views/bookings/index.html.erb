@@ -22,12 +22,16 @@
         <div class="container">
           <% if booking.pending? %>
             <button class="button" id="modal-trigger-button" data-tracker="<%=index%>">Accept</button>
-            <%= link_to "Decline", decline_path(booking.trip.id), class: "button", method: :patch, controller: :bookings_controller, 
+            <%= link_to "Decline", decline_path(booking), class: "button", method: :patch, controller: :bookings_controller,
                 data: { confirm: 'Are you sure you want to decline this booking?' } %>
           <% else %>
-            <p> 〉Request <%= booking.status.capitalize %> </p>
+            <p>Request <%= booking.status.capitalize %> </p>
+            <% if booking.accepted? %>
+              <%= link_to "Chat", chatroom_path(booking.chatroom), class: "button-chat" %>
+            <% end %>
           <% end %>
         </div>
+
       </div>
 
         <div class="modal-container modal-<%=index%> modal-hidden" id="accept-modal">
@@ -38,8 +42,8 @@
               </p>
             </div>
             <div class="modal-buttons">
-              <%= link_to "Keep Listing", accept_path(booking.trip.id, remove_listing: false), class: "button", method: :patch, controller: :bookings_controller %>
-              <%= link_to "Remove Listing", accept_path(booking.trip.id, remove_listing: true), class: "button", method: :patch, controller: :bookings_controller %>
+              <%= link_to "Keep Listing", accept_path(booking, remove_listing: false), class: "button", method: :patch, controller: :bookings_controller %>
+              <%= link_to "Remove Listing", accept_path(booking, remove_listing: true), class: "button", method: :patch, controller: :bookings_controller %>
             </div>
           </div>
         </div>
