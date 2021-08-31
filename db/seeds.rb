@@ -82,204 +82,204 @@ paul.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
 
 
 trip1 = Trip.create!(
-  start_time: "2021-09-26 04:57",
-  end_time: "2021-09-26 12:57",
+  start_time: "2021-09-03 21:00",
+  end_time: "2021-09-03 11:59",
   start_location: "Reeperbahn 9, Hamburg, Hamburg, Germany",
-  end_location: "Frankfurter Straße 9, Kassel, Hessen, Germany",
+  end_location: "Am Schokoladenmuseum 1a, Cologne, North Rhine-Westphalia, Germany",
   capacity: "Large",
-  price_cents: 3500,
-  status: 2,
-  description: "Hi, I am Marie. I will be travelling from Hamburg to Kassel and still have room to take something with me. Up to 25 kilos would be OK. Items weighing more than 10 kilos would have to be stowed in my boot by the sender himself and also lifted out by the recipient.",
+  price_cents: 1500,
+  status: 0,
+  description: "I will be travelling from Hamburg to Cologne and still have room to take something with me. Up to 25 kilos would be OK. Items weighing more than 10 kilos would have to be stowed in my boot by the sender himself and also lifted out by the recipient.",
   user: marie
 )
 
 trip2 = Trip.create!(
-  start_time: "2021-09-29 11:50",
-  end_time: "2021-09-29 18:00",
+  start_time: "2021-09-04 11:00",
+  end_time: "2021-09-04 18:00",
   start_location: "Torstraße 123, Berlin, Berlin, Germany",
-  end_location: "Frankfurter Straße 12, Würzburg, Bayern, Germany",
+  end_location: "Riehler Strasse 173, Cologne, North Rhine-Westphalia, Germany",
   capacity: "Large",
-  price_cents: 3000,
-  status: 1,
-  description: "Hi, I am Marie. I will drive from Berlin to Würzburg with an empty car and take some items with me. Anything heavier than 10 kilos has to be stowed in my car by the transmitter and lifted out by the receiver. Thank you for your understanding!",
+  price_cents: 1800,
+  status: 0,
+  description: "I will drive from Berlin to Cologne with an empty car and take some items with me. Anything heavier than 10 kilos has to be stowed in my car by the transmitter and lifted out by the receiver. Thank you for your understanding!",
   user: marie
 )
 
 trip3 = Trip.create!(
-  start_time: "2021-09-30 7:50",
-  end_time: "2021-09-27 10:00",
+  start_time: "2021-09-04 7:00",
+  end_time: "2021-09-04 10:00",
   start_location: "Ottenser Hauptstraße 3, Hamburg, Germany",
-  end_location: "Flensburger Straße 12, Rostock, Mecklenburg-Vorpommern, Germany",
+  end_location: "Pariser Platz, Berlin, Berlin, Germany",
   capacity: "Medium",
   price_cents: 1000,
   status: 0,
-  description: "Hi, I am driving from Hamburg to Rostock. I can gladly take something for you on this journey.",
+  description: "Hi, I am driving from Hamburg to Berlin. I can gladly take something for you on this journey. No pets, no smoking car.",
   user: marie
 )
 
 trip4 = Trip.create!(
-  start_time: "2021-09-26 07:50",
-  end_time: "2021-09-26 17:30",
-  start_location: "Rostocker Straße 2, Wismar, Mecklenburg-Vorpommern, Germany",
-  end_location: "Bahnhofstraße 24, Passau, Bayern, Germany",
+  start_time: "2021-09-04 09:00",
+  end_time: "2021-09-04 17:30",
+  start_location: "Frankfurter Allee 12, Berlin, Germany",
+  end_location: "Domkloster 4, Cologne, North Rhine-Westphalia, Germany",
   capacity: "Large",
   price_cents: 3200,
-  status: 2,
-  description: "Hi, I'm Otmar, driving from Wismar to Passau in a huge car. I can take anything up to the size of a bicycle. If it weighs more than 30 kilos, it would have to be lifted into the car by the sender and out again by the receiver.",
+  status: 0,
+  description: "Hi, I'm driving from Berlin to Cologne in a huge car. I can take anything up to the size of a bicycle. If it weighs more than 30 kilos, it would have to be lifted into the car by the sender and out again by the receiver.",
   user: otmar
 )
 
 trip5 = Trip.create!(
-  start_time: "2021-09-30 11:50",
-  end_time: "2021-09-30 22:30",
-  start_location: "Bahnhofstraße 13, Planegg, Bayern, Germany",
-  end_location: "Wiener Straße 1, Brandenburg, Brandenburg, Germany",
+  start_time: "2021-09-04 11:30",
+  end_time: "2021-09-04 22:30",
+  start_location: "Panoramastraße 1A, Berlin, Berlin, Germany",
+  end_location: "Boberger Furt 50, Hamburg, Hamburg Germany",
   capacity: "Large",
-  price_cents: 3100,
-  status: 1,
-  description: "Hi, I'm Otmar, driving from Planegg to Brandenburg. I can take anything up to the size of a bicycle. If it weighs more than 30 kilos, it would have to be lifted into the car by the sender and out again by the receiver.",
+  price_cents: 1200,
+  status: 0,
+  description: "Hi, I'm Otmar, driving from Berlin to Hamburg. I can take anything up to the size of a bicycle. If it weighs more than 30 kilos, it would have to be lifted into the car by the sender and out again by the receiver.",
   user: otmar
 )
 
 trip6 = Trip.create!(
-  start_time: "2021-09-31 12:30",
-  end_time: "2021-09-31 21:20",
-  start_location: "Elbstraße 27, Bremen, Bremen, Germany",
-  end_location: "Hauptstraße 4, Münster, Hessen, Germany",
+  start_time: "2021-09-04 12:30",
+  end_time: "2021-09-04 21:20",
+  start_location: "Friedrichstraße 43, Berlin, Berlin, Germany",
+  end_location: "Am Genter Ufer 9, Hamburg, Hamburg, Germany",
   capacity: "Large",
   price_cents: 1000,
   status: 0,
-  description: "Hi, I'm Otmar, driving from Bremen to Münster. Could take soem of your goods with me. Feel free to book my for this.",
+  description: "Hi, I'm Otmar, driving from Berlin to Hamburg. Could take some of your goods with me. Feel free to book my trip for this.",
   user: otmar
 )
 
 trip7 = Trip.create!(
-  start_time: "2021-10-01 12:30",
-  end_time: "2021-10-01 21:20",
-  start_location: "Elbstraße 27, Bremen, Bremen, Germany",
-  end_location: "Seestraße-West 4, Immenstaad, Baden-Würtemberg, Germany",
+  start_time: "2021-09-05 09:30",
+  end_time: "2021-09-05 21:20",
+  start_location: "Am Tierpark 125, Berlin, Berlin, Germany",
+  end_location: "Auenweg Rheinpark, Cologne, North Rhine-Westphalia, Germany",
   capacity: "Medium",
   price_cents: 2800,
   status: 0,
-  description: "Hi, I'm driving from Bremen to Immenstaad at the beautiful Lake BOdensse. If you want something to be delivered there, please book this trip.",
+  description: "Hi, I'm driving from Berlin to Cologne. If you want something to be delivered there, please book this trip.",
   user: otmar
 )
 
 trip8 = Trip.create!(
-  start_time: "2021-09-26 07:30",
-  end_time: "2021-09-26 10:20",
+  start_time: "2021-09-05 07:30",
+  end_time: "2021-09-05 10:30",
   start_location: "Oranienstraße 4, Berlin, Berlin, Germany",
-  end_location: "Seestraße 10, Rostock, Mecklenburg-Vorpommern, Germany",
+  end_location: "Glockengießerwall 5, Hamburg, Hamburg, Germany",
   capacity: "Medium",
   price_cents: 1200,
-  status: 2,
-  description: "Hi, I am Jennifer. I am driving from Berlin to Rostock. I would be very happy to take some more items with me - if they are not too big. My car is already pretty full.",
+  status: 0,
+  description: "Hi, I am Jennifer. I am driving from Berlin to Hamburg. I would be very happy to take some more items with me - if they are not too big. My car is already pretty full.",
   user: jennifer
 )
 
 trip9 = Trip.create!(
-  start_time: "2021-09-29 08:30",
-  end_time: "2021-09-29 11:20",
-  start_location: "Kleine Hohe Str. 13, Wismar, Mecklenburg-Vorpommern, Germany",
-  end_location: "Bahnstraße 10, Putbus, Mecklenburg-Vorpommern, Germany",
+  start_time: "2021-09-05 08:30",
+  end_time: "2021-09-05 20:20",
+  start_location: "Ostmerheimer Strasse 200, Cologne, North Rhine-Westphalia, Germany",
+  end_location: "Kehrwieder 2, Hamburg, Hamburg, Germany",
   capacity: "Small",
   price_cents: 1000,
-  status: 1,
-  description: "Hi, I am Jennifer. I will drive from Wismar to Putbus on the island of Rügen. Could take some small goods.",
+  status: 0,
+  description: "Hi, I am Jennifer. I will drive from Cologne to Hamburg for work. Could take some small goods.",
   user: jennifer
 )
 
 trip10 = Trip.create!(
-  start_time: "2021-09-30 09:00",
-  end_time: "2021-09-30 15:20",
-  start_location: "Hafenstraße 11, Stralsund, Mecklenburg-Vorpommern, Germany",
+  start_time: "2021-09-05 09:00",
+  end_time: "2021-09-05 15:20",
+  start_location: "Herrfurthstraße 21, Berlin, Berlin, Germany",
   end_location: "Bahnhofstraße 5, Hamburg, Hamburg, Germany",
   capacity: "Medium",
   price_cents: 2000,
   status: 0,
-  description: "Hi, I am Jennifer. I will drive from Stralsund to Hamburg. Could take a medium size item with me.",
+  description: "Hi, I am Jennifer. I will drive from Berlin to Hamburg and make some stops along the way. Could take a medium size item with me.",
   user: jennifer
 )
 
 trip11 = Trip.create!(
-  start_time: "2021-09-30 17:00",
-  end_time: "2021-09-30 23:00",
+  start_time: "2021-09-05 17:00",
+  end_time: "2021-09-05 23:00",
   start_location: "Hafenstraße 11, Hamburg, Hamburg, Germany",
   end_location: "Torstraße 2, Berlin, Berlin, Germany",
   capacity: "Large",
   price_cents: 2500,
-  status: 1,
-  description: "Hi, I am Jennifer. My car is already pretty full but I could still take a few small items with me.",
+  status: 0,
+  description: "Driving from Hamburg to Berlin and can take large items such as furniture. I can also help with loading/unloading.",
   user: jennifer
 )
 
 trip12 = Trip.create!(
-  start_time: "2021-09-30 12:00",
-  end_time: "2021-09-30 15:00",
+  start_time: "2021-09-04 12:00",
+  end_time: "2021-09-04 15:00",
   start_location: "Friedrichstraße 11, Hamburg, Hamburg, Germany",
   end_location: "Stephanstraße 2, Berlin, Berlin, Germany",
   capacity: "Large",
-  price_cents: 2900,
-  status: 1,
-  description: "Hi, I am Marie. My car is nearly empty, so i can take a few items with me.",
+  price_cents: 1200,
+  status: 0,
+  description: "Hi, I am Marie. My car is nearly empty, so i can take a few items with me. I am a smoker so you must be alright with that.",
   user: marie
 )
 
 trip13 = Trip.create!(
-  start_time: "2021-09-30 10:00",
-  end_time: "2021-09-30 13:00",
+  start_time: "2021-09-04 10:00",
+  end_time: "2021-09-04 13:00",
   start_location: "Kantstraße 11, Hamburg, Hamburg, Germany",
   end_location: "Münzstraße 2, Berlin, Berlin, Germany",
   capacity: "Medium",
-  price_cents: 3000,
+  price_cents: 1800,
   status: 0,
-  description: "Hi, I am Otmar. My car is already pretty full but I could still take a few small items with me.",
+  description: "Hi, I am Otmar. My car is already pretty full but I could still take a few small items or one medium iten with me.",
   user: otmar
 )
 
 trip14 = Trip.create!(
-  start_time: "2021-09-30 9:00",
-  end_time: "2021-09-30 12:00",
+  start_time: "2021-09-03 9:00",
+  end_time: "2021-09-03 12:00",
   start_location: "Roßberg 4, Hamburg, Hamburg, Germany",
   end_location: "Maximilianstraße 42, Berlin, Berlin, Germany",
   capacity: "Small",
-  price_cents: 2500,
+  price_cents: 1200,
   status: 0,
-  description: "Hi, I am Jennifer. My car is already pretty full but I could still take a few small items with me.",
+  description: "Hi, I am Jennifer. My car is already pretty full but I could still take a few small items with me. I will also have my dog with me.",
   user: jennifer
 )
 
 trip15 = Trip.create!(
-  start_time: "2021-09-30 7:00",
-  end_time: "2021-09-30 10:00",
+  start_time: "2021-09-04 7:00",
+  end_time: "2021-09-04 10:00",
   start_location: "Holstenwall 11, Hamburg, Hamburg, Germany",
   end_location: "Charlottenstraße 52, Berlin, Berlin, Germany",
   capacity: "Small",
-  price_cents: 2600,
+  price_cents: 1000,
   status: 0,
-  description: "Hi, I am Marie. My car is already pretty full but I could still take a few small items with me.",
+  description: "Hi, I am Marie. My car is already pretty full but I could still take a small item with me.",
   user: marie
 )
 
 trip16 = Trip.create!(
-  start_time: "2021-09-30 18:00",
-  end_time: "2021-09-30 21:00",
+  start_time: "2021-09-05 18:00",
+  end_time: "2021-09-05 21:00",
   start_location: "Kreuzweg 19, Hamburg, Hamburg, Germany",
   end_location: "Kantstraße 9, Berlin, Berlin, Germany",
   capacity: "Large",
-  price_cents: 2700,
+  price_cents: 2000,
   status: 0,
-  description: "Hi, I am Otmar. My car is nearly empty, so i can take a few items with me.",
+  description: "Hi, I am Otmar. My car is nearly empty, so i can take a few items with me or one big item such as furniture. I can help with loading and unloading.",
   user: otmar
 )
 
 trip17 = Trip.create!(
-  start_time: "2021-09-30 7:00",
-  end_time: "2021-09-30 10:00",
+  start_time: "2021-09-05 7:00",
+  end_time: "2021-09-05 10:00",
   start_location: "Kreuzweg 19, Berlin, Berlin, Germany",
   end_location: "Kantstraße 9, Hamburg, Hamburg, Germany",
   capacity: "Medium",
-  price_cents: 2700,
+  price_cents: 1600,
   status: 0,
   description: "Hi, I am Paul. My car is nearly empty, so i can take a few items with me.",
   user: paul
@@ -288,8 +288,8 @@ trip17 = Trip.create!(
 booking1 = Booking.create!(
   user: philipp,
   trip: trip1,
-  status: 1,
-  description: "Hi Marie! I would like to send my item with you.",
+  status: 0,
+  description: "Hi Marie! I would like to send my plant with you. It's a small sucullent and the soil will be almost dry so no risk of water damage in your car.",
   size: "Small",
   item: "Plant"
 )
@@ -298,7 +298,7 @@ booking2 = Booking.create!(
   user: philipp,
   trip: trip2,
   status: 0,
-  description: "Hi Marie! Could you take my item on your trip?",
+  description: "Hi Marie! Could you take my box of books on your trip? I can load it into your car and my brother can unload it.",
   size: "Medium",
   item: "Box of books"
 )
@@ -306,8 +306,8 @@ booking2 = Booking.create!(
 booking3 = Booking.create!(
   user: philipp,
   trip: trip3,
-  status: 0,
-  description: "Hi Marie! Could you please take this item with you.",
+  status: 1,
+  description: "Hi Marie! Could you please pick up my suitcase?.",
   size: "Medium",
   item: "Suitcase"
 )
