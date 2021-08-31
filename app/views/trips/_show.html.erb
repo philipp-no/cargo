@@ -24,18 +24,14 @@
             <p class="end-details"><%= trip.end_time.strftime("%k:%M") %> <%= @end_addresses[index] %></p>
           </div>
           <div>
-            <div class="d-flex justify-content-between price">
-              <p>Price for one item:</p>
-              <%= humanized_money_with_symbol trip.price %>
-            </div>
+            <p>Price for one item:</p>
+            <%= humanized_money_with_symbol trip.price %>
           </div>
-          <%= link_to root_path, class: "block-link-text" do %>
-            <div class="driver-details">
-              <%= cl_image_tag trip.user.avatar.key, class: 'avatar' %>
-              <%= trip.user.first_name %> <%=trip.user.last_name%>
-              <%= trip.description %>
-            </div>
-          <% end %>
+          <div class="driver-details">
+            <%= cl_image_tag trip.user.avatar.key, class: 'avatar' %>
+            <%= trip.user.first_name %> <%=trip.user.last_name%>
+            <%= trip.description %>
+          </div>
           <div>
             <p class="bigger-text">Driver will accept</h5>
             <% if trip.capacity == "Large" %>
