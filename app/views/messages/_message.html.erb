@@ -1,4 +1,4 @@
-<div class="message-container <%= message.user == current_user ? "text-danger text-right" : "text-success" %>" id="message-<%= message.id %>">
+<div class="message-container <%= message.user == current_user ? "text-sender text-right" : "text-driver" %>" id="message-<%= message.id %>">
   <i class="author">
     <span><%= message.user.first_name %></span>
     <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>

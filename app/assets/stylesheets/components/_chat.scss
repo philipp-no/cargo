@@ -1,0 +1,49 @@
+.chat-margin {
+  margin-top: 5rem;
+}
+
+.h-position {
+  margin-left: 0;
+  margin-top: 0;
+
+  h5 {
+    color: $gray;
+  }
+}
+#messages {
+  width: 100%;
+}
+
+#new_message {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .message_content {
+    width: 100%;
+    input {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+  .button-chat {
+    border-style: solid;
+    border-width: 3px;
+    border-color: $rose;
+    margin: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-sender {
+  color: black;
+}
+
+.text-driver {
+  font-style: bold;
+  color: black;
+}
