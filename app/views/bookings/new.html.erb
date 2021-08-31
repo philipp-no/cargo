@@ -2,13 +2,13 @@
   <div class="d-flex justify-content-around">
     <div class="mt-5">
       <div class="d-flex align-items-center p-2">
-        <%= link_to :back, class: "back-arrow" do %> 
+        <%= link_to :back, class: "back-arrow" do %>
           <i class="fas fa-chevron-left"></i>
         <% end %> <h2 class="back-arrow-text">Create a booking to</h2>
         </div>
-        <h2 class="back-arrow-text-2">send your item quickly</h2> 
+        <h2 class="back-arrow-text-2">send your item quickly</h2>
         <h2 class="back-arrow-text-2">and sustainably</h2>
-        <%= image_tag('mini2.png', width: "500", height: "400") %>
+        <%= image_tag('parcour.png', width: "500", height: "300", class: "mt-5") %>
     </div>
 
     <div>
@@ -16,9 +16,9 @@
       <p><%= @trip.start_time.strftime("%k:%M") %> <%= @trip.start_location %></p>
       <i class="fas fa-long-arrow-alt-down"></i>
       <p> <%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
-      <div class="d-flex justify-content-between"> 
+      <div class="d-flex justify-content-between">
         <p>Price for one item:</p>
-        <%= humanized_money_with_symbol @trip.price %> 
+        <%= humanized_money_with_symbol @trip.price %>
       </div>
       <div>
         <%= simple_form_for [@trip, @booking] do |f| %>
