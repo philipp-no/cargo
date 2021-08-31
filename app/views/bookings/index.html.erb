@@ -1,27 +1,31 @@
 <div class="container">
 
-  <h1>Your trip form <%= @trip.start_location.split(",")[1] %> to <%= @trip.end_location.split(",")[1] %> on <%= @trip.start_time.strftime("%A, %B %d") %></h1>
-  <div class="booking-cards">
+<div class="booking-cards">
+  <%= link_to :back, class: "back-arrow" do %>
+    <i class="fas fa-chevron-left"></i>
+  <% end %>
+  <h2 class="booking-header">Booking Requests for your trip from <%= @trip.start_location.split(",")[1] %> to <%= @trip.end_location.split(",")[1] %> on <%= @trip.start_time.strftime("%A, %B %d") %></h2>
+  </div>
+  <div class="cards d-flex flex-row justify-space-around flex-wrap">
     <% @bookings.each_with_index do |booking, index| %>
       <div class="booking-card">
         <div class="card-items">
           <div><%= image_tag booking.user.avatar, class: 'avatar' %></div>
-          <h3 id="name"><%= booking.user.first_name %></h3>
+          <h3><%= booking.user.first_name %></h3>
         </div>
         <div class="container">
           <p><i class="fas fa-box-open"></i> <%= booking.item %></p>
           <p><i class="fas fa-compress-alt"></i> <%= booking.size %></p>
-          <p><i class="far fa-heart"></i> needs to be coded</p>
         </div>
         <div class="container">
           <div class="grey-field">
             <%= booking.description %>
           </div>
         </div>
-        <div class="container">
+        <div class="button-container">
           <% if booking.pending? %>
-            <button class="button" id="modal-trigger-button" data-tracker="<%=index%>">Accept</button>
-            <%= link_to "Decline", decline_path(booking), class: "button", method: :patch, controller: :bookings_controller,
+            <a class="button-booking" id="modal-trigger-button" data-tracker="<%=index%>">Accept</a>
+            <%= link_to "Decline", decline_path(booking), class: "button-booking", method: :patch, controller: :bookings_controller,
                 data: { confirm: 'Are you sure you want to decline this booking?' } %>
           <% else %>
             <p>Request <%= booking.status.capitalize %> </p>
