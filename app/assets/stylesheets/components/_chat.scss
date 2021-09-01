@@ -1,5 +1,10 @@
 .chat-margin {
   margin-top: 5rem;
+  .form-inline {
+    .form-group {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .h-position {

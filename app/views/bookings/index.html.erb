@@ -1,6 +1,6 @@
 <div class="container">
 <div class="booking-cards">
-  <%= link_to :back, class: "back-arrow" do %>
+  <%= link_to dashboard_index_path, class: "back-arrow" do %>
     <i class="fas fa-chevron-left"></i>
   <% end %>
   <h2 class="booking-header">Booking Requests for your trip from <%= @trip.start_location.split(",")[1] %> to <%= @trip.end_location.split(",")[1] %> on <%= @trip.start_time.strftime("%A, %B %d") %></h2>
