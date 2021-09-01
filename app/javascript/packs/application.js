@@ -38,7 +38,7 @@ import { initCloseModal } from "../plugins/init_close_modal";
 
 
 document.addEventListener('turbolinks:load', () => {
-  setTimeout(initMapbox, 500)
+  setTimeout(initMapbox, 100)
   if (window.location.pathname == "/users/sign_up" || window.location.pathname == "/trips/new" || window.location.pathname == "/") {
   initAutocomplete();
   }
