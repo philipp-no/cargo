@@ -14,7 +14,7 @@
   margin-left: 100px;
 }
 .header-text {
-  padding: 20px 40px 20px 40px;
+  padding: 20px 40px 20px 20px;
 }
 
 .img-banner {
@@ -24,13 +24,14 @@
 }
 
 .index-h1 {
+  font-size: 3.3rem !important;
   color: white;
-  margin: 100px 100px 10px 100px;
+  margin: 70px 100px 10px 100px;
 }
 
 .index-p {
   color: white;
-  margin:0 100px 10px 100px;
+  margin:0 100px 20px 100px;
 }
 
 .index-button {
@@ -122,4 +123,8 @@ li {
 
 .trip-header {
   width: 500px;
+}
+
+.trip-header-cards {
+  min-width: calc(100% - 730px);
 }

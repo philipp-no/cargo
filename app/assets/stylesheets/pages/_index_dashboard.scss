@@ -243,3 +243,10 @@ li {
     align-self: center;
   }
 }
+
+.dashboard-container-wrapper {
+  display: flex;
+  .dashboard-flex {
+    width: calc(100% - 350px);
+  }
+}
