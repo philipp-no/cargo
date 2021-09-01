@@ -25,7 +25,7 @@
             class: "form-control search-field datepicker"
         %>
          <p class="search-separator">|</p>
-        <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity]),class: "form-control search-field",  prompt: "Select item size ▾") %>
+        <%= select_tag(:capacity, options_for_select(Trip::CAPACITY, params[:capacity]),class: "form-control search-field capacity-pointer",  prompt: "Select item size ▾") %>
         <%= submit_tag "Find a Driver", class: "index-button" %>
     <% end %>
   </div>
