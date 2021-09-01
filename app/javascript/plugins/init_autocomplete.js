@@ -5,7 +5,7 @@ const initAutocomplete = () => {
     const addressInput = document.getElementById('address_input');
     places({ 
       container: addressInput,
-      language: en
+      language: 'en'
     });
   }
   else if (window.location.pathname == "/trips/new") {
@@ -13,7 +13,7 @@ const initAutocomplete = () => {
   addressInputs.forEach((addressInput) => {
     places({ 
       container: addressInput,
-      language: en 
+      language: 'en' 
     });
   });
   }
@@ -22,7 +22,7 @@ const initAutocomplete = () => {
     searchAddressInputs.forEach((addressInput) => {
       places({ 
         container: addressInput,
-        language: en
+        language: 'en'
        });
     });
   };
