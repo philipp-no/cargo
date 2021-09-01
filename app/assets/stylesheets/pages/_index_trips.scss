@@ -123,3 +123,7 @@ li {
 .trip-header {
   width: 500px;
 }
+
+.trip-header-cards {
+  min-width: calc(100% - 730px);
+}
