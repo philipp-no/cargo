@@ -6,15 +6,49 @@ a {
 }
 
 a:hover {
+  color: $rosehover;
   text-decoration: none;
 }
 
-.arrow {
+.link-text {
+  background-color: white;
+  color: $rose;
+  font-weight: bold;
+  border: 0;
+}
+
+.link-text:hover {
+  background-color: white;
+  color: $rosehover;
+  font-weight: bold;
+  border: 0;
+}
+
+.link-text-gray {
+  background-color: white;
+  color: $gray;
+  font-weight: 400;
+  border: 0;
+}
+
+.link-text-gray:hover {
+  background-color: white;
   color: $light-gray;
+  font-weight: 400;
+  border: 0;
+}
+
+.arrow {
+  color: $dark;
+}
+
+.arrow:hover {
+  color: $blue;
 }
 
 .block-link-text {
   color: $gray;
+  font-weight: 400;
 }
 
 body {
@@ -29,12 +63,55 @@ body {
   margin: 5px 0 20px 5px;
 }
 
+.button:hover {
+  background-color: $hoverpurple;
+  color:white;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  margin: 5px 0 20px 5px;
+}
+
+.btn-outline {
+  background-color: white;
+  color: $rose;
+  border: 2px solid $rose;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  margin: 5px 0 20px 5px;
+}
+
+.btn-outline:hover {
+  background-color: $rose;
+  color: white;
+  // border: 2px solid $rose;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  margin: 5px 0 20px 5px;
+}
+
+.cancel-btn {
+  background-color: $light-gray;
+  color:gray;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  margin: 5px 0 20px 5px;
+}
+
+.cancel-btn {
+  background-color: $light-gray;
+  color: $dark;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  margin: 5px 0 20px 5px;
+}
+
 .content {
   padding-top: 100px;
   padding-left: 20px;
   background-color: white;
   color: $gray;
   // margin: 50px 100px 10px 100px;
+  min-height: calc(100vh - 62px);
 }
 
 h1 {
@@ -48,6 +125,14 @@ h2, h3, h4, h5 {
   color: $dark;
   font-family: Quicksand;
 }
-.content {
-  min-height: calc(100vh - 62px);
+
+p {
+  color: $gray;
+}
+
+.status {
+  background-color: white;
+  color: $blue;
+  font-weight: bold;
+  border: 0;
 }
