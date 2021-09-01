@@ -1,4 +1,5 @@
 require "open-uri"
+Chatroom.destroy_all
 Booking.destroy_all
 Trip.destroy_all
 User.destroy_all

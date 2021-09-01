@@ -10,12 +10,12 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal<%=index%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class='modal fade <%= "show d-block" if params[:modal] == "exampleModal#{index}" %>' id="exampleModal<%=index%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5><%= trip.start_time.strftime("%A, %B %d") %></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" id="modal-close-<%=index%>" class="btn-close jessica-btn" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body driver-modal-body">
         <div class="show-trip-body">
@@ -62,9 +62,10 @@
         </div>
           </div>
         <div class="modal-footer">
-          <%= link_to "Select this driver", new_trip_booking_path(trip, size: params[:capacity]), class: "button" %>
+          <%= link_to "Select this driver", new_trip_booking_path(trip, size: params[:capacity], modal:"exampleModal#{index}"  ), class: "button" %>
         </div>
       </div>
     </div>
   </div>
 </div>
+

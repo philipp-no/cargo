@@ -5,6 +5,7 @@ const initFlatpickr = () => {
   const homePage = document.querySelector("#search-bar");
     flatpickr(".datepicker", {
       altInput: true,
+      altFormat: homePage ? "M j, Y" : "l, F j, Y",
       allowInput: true,
       time_24hr: true,
       enableTime: homePage ? false : true

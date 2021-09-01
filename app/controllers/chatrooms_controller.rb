@@ -12,9 +12,6 @@ class ChatroomsController < ApplicationController
       redirect_to chatroom_path(@chatroom)
     else
       @chatroom.save
-      # respond_to do |format|
-      #   format.html { redirect_to @chatroom }
-      #   format.js
     end
   end
 
