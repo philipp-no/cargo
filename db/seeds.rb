@@ -269,7 +269,7 @@ trip10 = Trip.create!(
   price_cents: 2000,
   status: 0,
   description: "I will drive from Berlin to Hamburg and make some stops along the way. Could take a medium size item with me.",
-  user: cheyenne
+  user: paul
 )
 
 trip11 = Trip.create!(
