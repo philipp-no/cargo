@@ -23,9 +23,95 @@
       <div class="new-trip-form">
         <%= simple_form_for [@trip, @booking] do |f| %>
           <% if params[:size] %>
-            <%= f.input :size, as: :radio_buttons, collection: [:small, :medium, :large], label: 'What size is your item?', include_hidden: false, checked: params[:size].downcase.to_sym   %>
+            <fieldset class="form-group radio_buttons required trip_capacity">
+              <legend class="col-form-label pt-0">What size is your item?<abbr title="required">*</abbr></legend>
+              <div class="category-wrapper">
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="booking[size]" id="trip_capacity_small" <%= "checked" if params[:size] == "Small" %>>
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_small">
+                    <div>
+                      <p>Small</p>
+                      <div class="size-examples">
+                        <i class="fas fa-book"></i>
+                        <i class="far fa-futbol"></i>
+                        <i class="fas fa-laptop"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Medium" name="booking[size]" id="trip_capacity_medium" <%= "checked" if params[:size] == "Medium" %>>
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium">
+                    <div>
+                      <p>Medium</p>
+                      <div class="size-examples">
+                        <i class="fas fa-box-open"></i>
+                        <i class="fas fa-guitar"></i>
+                        <i class="fas fa-suitcase"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" <%= "checked" if params[:size] == "Large" %> type="radio" value="Large" name="booking[size]" id="trip_capacity_large">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_large">
+                    <div>
+                      <p>Large</p>
+                      <div class="size-examples">
+                        <i class="fas fa-baby-carriage"></i>
+                        <i class="fas fa-bed"></i>
+                        <i class="fas fa-couch"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           <% else %>
-            <%= f.input :size, as: :radio_buttons, collection: [:small, :medium, :large], label: 'What size is your item?', include_hidden: false  %>
+            <fieldset class="form-group radio_buttons required trip_capacity">
+              <legend class="col-form-label pt-0">What size is your item?<abbr title="required">*</abbr></legend>
+              <div class="category-wrapper">
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="booking[size]" id="trip_capacity_small">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_small">
+                    <div>
+                      <p>Small</p>
+                      <div class="size-examples">
+                        <i class="fas fa-book"></i>
+                        <i class="far fa-futbol"></i>
+                        <i class="fas fa-laptop"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Medium" name="booking[size]" id="trip_capacity_medium">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium">
+                    <div>
+                      <p>Medium</p>
+                      <div class="size-examples">
+                        <i class="fas fa-box-open"></i>
+                        <i class="fas fa-guitar"></i>
+                        <i class="fas fa-suitcase"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+                <div class="category-item">
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Large" name="booking[size]" id="trip_capacity_large">
+                  <label class="form-check-label collection_radio_buttons" for="trip_capacity_large">
+                    <div>
+                      <p>Large</p>
+                      <div class="size-examples">
+                        <i class="fas fa-baby-carriage"></i>
+                        <i class="fas fa-bed"></i>
+                        <i class="fas fa-couch"></i>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           <% end %>
           <%= f.input :item, label: 'What item are you sending?' %>
           <%= f.input :description, label: 'What does the driver need to know?' %>
