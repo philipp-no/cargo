@@ -1,9 +1,12 @@
-<%= link_to trip_path(trip) do %>
-<div class="d-flex justify-contents-between align-items-center popup-details popup-container">
-  <h4><%= humanized_money_with_symbol trip.price %></h4>
-  <div>
-    <p class="not-red"><%= trip.start_time.strftime("%k:%M %a, %b %e")%></p>
-    <p class="not-red"><%= trip.user.first_name %> <%= trip.user.last_name %></p>
+<%= link_to  new_trip_booking_path(trip, size: params[:capacity]) do %>
+<div class="popup-contents">
+  <div class="d-flex justify-contents-between align-items-center popup-details popup-container">
+    <h4 class="popup-price"><%= humanized_money_with_symbol trip.price %></h4>
+    <div class="popup-text">
+      <p><%= trip.start_time.strftime("%k:%M %a, %b %e")%></p>
+      <p><%= trip.user.first_name %> <%= trip.user.last_name %></p>
+    </div>
   </div>
+  <p>Book this Driver</p>
 </div>
 <% end %>
