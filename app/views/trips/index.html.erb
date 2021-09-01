@@ -37,7 +37,7 @@
       <div class="trip-header-cards">
         <div class="trip-header">
           <% date = Date.parse(params[:date]) %>
-          <h5>Trips leaving on <%= date.strftime("%A, %B %d")%></h5>
+          <h5> <%= @trips.count %> trips leaving on <%= date.strftime("%A, %B %d")%></h5>
         </div>
           <% else %>
             <h5>Upcoming trips</h5>
