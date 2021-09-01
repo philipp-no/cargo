@@ -35,26 +35,37 @@
               <% end %>
             </div>
       <% else %>
+        <div class="no-results-container">
           <h5>Items You Are Sending</h5>
           <p>You haven't booked a ride for any of your items.</p>
           <%= link_to "Find a Driver for Your Next Item",  root_path %>
+        </div>
       <% end %>
 
       <% if @past_bookings.count.positive? %>
         <h5>Items You've Sent</h5>
-        <% @past_bookings.each do |past_booking| %>
-          <div class="dash-trip-card">
-            <p class="underline"><strong><%= past_booking.item.capitalize%></strong></p>
-            <p><%= past_booking.trip.start_time.strftime("%A, %B %d") %></p>
-            <p> <strong> <%= past_booking.trip.start_time.strftime("%k:%M") %> </strong> <%= past_booking.trip.start_location.split(',')[1] %></p>
-            <p> <strong> <%= past_booking.trip.end_time.strftime("%k:%M") %></strong><%= past_booking.trip.end_location.split(',')[1] %></p>
-            <div class="name-price">
-              <p><strong>Driver</strong> <%= past_booking.trip.user.first_name %></p>
-              <p> <strong><%= humanized_money_with_symbol past_booking.trip.price %></p></strong>
+        <div class="dash-container">
+          <% @past_bookings.each do |past_booking| %>
+            <div class="dash-trip-card">
+              <p class="underline"><strong><%= past_booking.item.capitalize%></strong></p>
+              <p><%= past_booking.trip.start_time.strftime("%A, %B %d") %></p>
+              <p> <strong> <%= past_booking.trip.start_time.strftime("%k:%M") %> </strong> <%= past_booking.trip.start_location.split(',')[1] %></p>
+              <p> <strong> <%= past_booking.trip.end_time.strftime("%k:%M") %></strong><%= past_booking.trip.end_location.split(',')[1] %></p>
+              <div class="name-price-else">
+                <p><strong>Driver</strong> <%= past_booking.trip.user.first_name %></p>
+                <p> <strong><%= humanized_money_with_symbol past_booking.trip.price %></p></strong>
+              </div>
+              <div class="chat-status-container">
+                <div class="chat-button-container">
+                 <%# if past_booking.accepted? && past_booking.chatroom.present? %>
+                    <%= link_to "Chat", "#" , class: "button-chat" %>
+                    <%# chatroom_path(past_booking.chatroom) %>
+                  <%# end %>
+                </div>
+              </div>
             </div>
-            <p> <strong>Booking Is</strong> <%= past_booking.status.capitalize %> </p>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
 
       <% if @trips.count.positive? %>
@@ -77,7 +88,9 @@
                         <p> <strong>Capacity</strong>  <%= trip.capacity.downcase %></p>
                         <p> <strong><%= humanized_money_with_symbol trip.price %></p></strong>
                       </div>
-                        <div class="status-line"><p class="remove-padding-p"><strong>Trip Is</strong> <%= trip.status %></p></div>
+                        <div class="status-line">
+                          <p class="remove-padding-p"><strong>Trip Is</strong> <%= trip.status %></p>
+                        </div>
                   <% end %>
                     <div class="button-place">
                       <button class="button-edit-cancel" id="modal-trigger-button" data-tracker="<%=index%>">Edit Trip</button>
@@ -94,7 +107,7 @@
               <% end %>
           </div>
       <% else %>
-        <div class="results-container">
+        <div class="no-results-container">
           <h5>Your Upcoming Trips</h5>
           <p>You have no upcoming trips.</p>
           <%= link_to "Create a Trip",  new_trip_path %>
@@ -121,7 +134,7 @@
         </div>
     <% end %>
 
-    <% else %>
+<% else %>
       <% if @bookings.count.positive? %>
           <h5>Items You Are Sending</h5>
             <% @bookings.each do |booking| %>
@@ -135,12 +148,21 @@
                 </div>
                 <p> <strong>Item</strong> <%= booking.item %></p>
                 <p> <strong>Status</strong> <%= booking.status.capitalize %> </p>
+                <div class="chat-status-container">
+                  <div class="chat-button-container">
+                    <% if booking.accepted? && booking.chatroom.present? %>
+                      <%= link_to "Chat", chatroom_path(booking.chatroom), class: "button-chat" %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             <% end %>
       <% else %>
+        <div class="no-results-container">
           <h5>Items You Are Sending</h5>
           <p>You haven't booked a ride for any of your items.</p>
           <%= link_to "Find a Driver for Your Next Item",  root_path %>
+        </div>
       <% end %>
 
       <% if @past_bookings.count.positive? %>
@@ -151,12 +173,18 @@
             <p><%= past_booking.trip.start_time.strftime("%A, %B %d") %></p>
             <p> <strong> <%= past_booking.trip.start_time.strftime("%k:%M") %> </strong> <%= past_booking.trip.start_location.split(',')[1] %></p>
             <p> <strong> <%= past_booking.trip.end_time.strftime("%k:%M") %></strong><%= past_booking.trip.end_location.split(',')[1] %></p>
-            <div class="name-price">
+            <div class="name-price-else">
               <p><strong>Driver</strong> <%= past_booking.trip.user.first_name %></p>
               <p> <strong><%= humanized_money_with_symbol past_booking.trip.price %></p></strong>
             </div>
-            <p> <strong>Booking Is</strong> <%= past_booking.status.capitalize %> </p>
-          </div>
+            <div class="chat-status-container">
+                <div class="chat-button-container">
+                  <%# if past_booking.accepted? && past_booking.chatroom.present? %>
+                    <%= link_to "Chat", "#" , class: "button-chat" %>
+                    <%# chatroom_path(past_booking.chatroom) %>
+                  <%# end %>
+                </div>
+            </div>
         <% end %>
       <% end %>
     <% end %>

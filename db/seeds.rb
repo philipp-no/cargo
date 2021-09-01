@@ -232,18 +232,18 @@ trip7 = Trip.create!(
   price_cents: 2800,
   status: 0,
   description: "Hi, I'm driving from Berlin to Cologne. If you want something to be delivered there, please book this trip.",
-  user: philipp
+  user: adam
 )
 
 trip8 = Trip.create!(
-  start_time: "2021-09-05 07:30",
-  end_time: "2021-09-05 10:30",
-  start_location: "Oranienstraße 4, Berlin, Berlin, Germany",
-  end_location: "Glockengießerwall 5, Hamburg, Hamburg, Germany",
+  start_time: "2021-09-04 07:30",
+  end_time: "2021-09-04 10:30",
+  start_location: "Glockengießerwall 5, Hamburg, Hamburg, Germany",
+  end_location: "Oranienstraße 4, Berlin, Berlin, Germany",
   capacity: "Medium",
   price_cents: 1200,
   status: 0,
-  description: "Hi, I am Jennifer. I am driving from Berlin to Hamburg. I would be very happy to take some more items with me - if they are not too big. My car is already pretty full.",
+  description: "Hi, I am Jennifer. I am driving from Hamburg to Berlin. I would be very happy to take some more items with me - if they are not too big. My car is already pretty full.",
   user: jennifer
 )
 
@@ -298,12 +298,12 @@ trip12 = Trip.create!(
 trip13 = Trip.create!(
   start_time: "2021-09-04 10:00",
   end_time: "2021-09-04 13:00",
-  start_location: "Kantstraße 11, Hamburg, Hamburg, Germany",
+  start_location: "Auguststraße 12, Hamburg, Hamburg, Germany",
   end_location: "Münzstraße 2, Berlin, Berlin, Germany",
   capacity: "Medium",
   price_cents: 1800,
   status: 0,
-  description: "Hi, I am Otmar. My car is already pretty full but I could still take a few small items or one medium iten with me.",
+  description: "Hi, I am Martin. My car is already pretty full but I could still take a few small items or one medium iten with me.",
   user: martin
 )
 
@@ -339,7 +339,7 @@ trip16 = Trip.create!(
   capacity: "Large",
   price_cents: 2000,
   status: 0,
-  description: "Hi, I am Otmar. My car is nearly empty, so i can take a few items with me or one big item such as furniture. I can help with loading and unloading.",
+  description: "Hi, I am Martin. My car is nearly empty, so i can take a few items with me or one big item such as furniture. I can help with loading and unloading.",
   user: martin
 )
 
@@ -357,7 +357,7 @@ trip17 = Trip.create!(
 
 trip18 = Trip.create!(
   start_time: "2021-08-05 12:00",
-  end_time: "2021-09-05 17:00",
+  end_time: "2021-08-05 17:00",
   start_location: "Kreuzweg 19, Berlin, Berlin, Germany",
   end_location: "Kantstraße 9, Hamburg, Hamburg, Germany",
   capacity: "Medium",
@@ -369,7 +369,7 @@ trip18 = Trip.create!(
 
 trip19 = Trip.create!(
   start_time: "2021-08-24 09:00",
-  end_time: "2021-09-05 17:00",
+  end_time: "2021-08-24 17:00",
   start_location: "Holstenwall 11, Hamburg, Hamburg, Germany",
   end_location: "Kreuzweg 19, Berlin, Berlin, Germany",
   capacity: "Large",
@@ -379,26 +379,50 @@ trip19 = Trip.create!(
   user: philipp
 )
 
+trip19 = Trip.create!(
+  start_time: "2021-08-01 09:00",
+  end_time: "2021-08-01 17:00",
+  start_location: "Holstenwall 11, Hamburg, Hamburg, Germany",
+  end_location: "Kreuzweg 19, Berlin, Berlin, Germany",
+  capacity: "Large",
+  price_cents: 2400,
+  status: 2,
+  description: "I will be driving from Hamburg to Berlin to visit family and have room in my car for one large item or several smaller items.",
+  user: jennifer
+)
+
+trip20 = Trip.create!(
+  start_time: "2021-07-20 11:00",
+  end_time: "2021-07-20 20:00",
+  start_location: "Holstenwall 11, Hamburg, Hamburg, Germany",
+  end_location: "Spandauer Damm 22, Berlin, Berlin, Germany",
+  capacity: "Large",
+  price_cents: 2400,
+  status: 2,
+  description: "I will be driving from Hamburg to Berlin to visit family and have room in my car for one large item or several smaller items.",
+  user: cheyenne
+)
+
 booking1 = Booking.create!(
   user: philipp,
-  trip: trip1,
-  status: 0,
-  description: "Hi Marie! I would like to send my plant with you. It's a small sucullent and the soil will be almost dry so no risk of water damage in your car.",
+  trip: trip19,
+  status: 1,
+  description: "Hi Jennifer! I would like to send my plant with you. It's a small sucullent and the soil will be almost dry so no risk of water damage in your car.",
   size: "Small",
   item: "Plant"
 )
 
 booking2 = Booking.create!(
   user: philipp,
-  trip: trip2,
-  status: 0,
-  description: "Hi Marie! Could you take my box of books on your trip? I can load it into your car and my brother can unload it.",
+  trip: trip20,
+  status: 1,
+  description: "Hi Cheyenne! Could you take my box of books on your trip? My brother can load it into your car and I can unload it.",
   size: "Medium",
   item: "Box of books"
 )
 
 booking3 = Booking.create!(
-  user: philipp,
+  user: marie,
   trip: trip3,
   status: 0,
   description: "Hi Marie! Could you please pick up my suitcase?.",
@@ -407,7 +431,7 @@ booking3 = Booking.create!(
 )
 
 booking4 = Booking.create!(
-  user: philipp,
+  user: jennifer,
   trip: trip4,
   status: 0,
   description: "Hi Otmar! Can you please take my little shipment?",
@@ -416,7 +440,7 @@ booking4 = Booking.create!(
 )
 
 booking5 = Booking.create!(
-  user: philipp,
+  user: marie,
   trip: trip5,
   status: 0,
   description: "Hi Otmar! Would be nice if you could manage to take my bike with you.",
