@@ -1,6 +1,11 @@
+.address {
+  margin-top: -15px;
+  margin-bottom: 0;
+}
+
 .bigger-text {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .button {
@@ -11,6 +16,10 @@
   margin-top: 30px;
 }
 
+.btn-close {
+  margin: 0 0 45px !important;
+}
+
 .content {
   margin: 0 !important;
 }
@@ -18,17 +27,31 @@
 .driver-details {
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #E6E6E6;
+  margin: 10px 0 0 30px;
+}
+
+.driver-details-car {
+  margin: 20px 0 20px 0;
+}
+
+.driver-modal-body {
+  padding-bottom: 0;
+}
+
+.drive-p {
+  margin-bottom: 3px;
 }
 
 .end-details {
   margin-top: 10px;
-  border-bottom: 2px solid #E6E6E6;
 }
 
-.fa-check-square {
-  font-size: 20px;
-  color: #7D7C82;
+.end-price {
+  display: flex;
+}
+
+.fas fa-car {
+  padding-bottom: 5px;
 }
 
 .index-card {
@@ -43,11 +66,59 @@
 }
 
 .list-items {
-  margin: 10px;
+  // margin: 10px;
+  // display: inline-block;
+  // text-align: center;
+}
+
+.modal-content{
+  border-radius: 10px;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.modal-footer {
+  padding-bottom: 0;
+}
+
+.modal-header {
+  padding: 5px;
+}
+
+.modal-line {
+  margin: 20px 0 20px 0;
+  // padding: 15px 0 15px 0;
+  // border-bottom: 1px solid $gray;
+  // border-top:1px solid $gray;
+  width: 466px;
+  border-color:$light-gray;
 }
 
 .price {
   border-bottom: 2px solid #E6E6E6;
+}
+
+.price-box {
+  background-color: $blue;
+  text-align: center;
+  color: white;
+  width: 50px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 10px;
+  align-self: flex-end;
+  float: right;
+  margin-right: 12px;
+}
+
+// .show-trip-body {
+//   margin: 10px 0 20px 30px
+// }
+
+.show-trip-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 20px 30px;
 }
 
 ul {

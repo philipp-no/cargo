@@ -14,43 +14,53 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3><%= trip.start_time.strftime("%A, %B %d") %></h3>
+        <h5><%= trip.start_time.strftime("%A, %B %d") %></h5>
         <button type="button" id="modal-close-<%=index%>" class="btn-close jessica-btn" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="trip-details">
-          <div>
-            <p><%= trip.start_time.strftime("%k:%M") %>  <%= @start_addresses[index] %></p>
-            <i class="fas fa-long-arrow-alt-down"></i>
-            <p class="end-details"><%= trip.end_time.strftime("%k:%M") %> <%= @end_addresses[index] %></p>
+      <div class="modal-body driver-modal-body">
+        <div class="show-trip-body">
+          <div class="show-trip-details">
+            <div>
+              <p><i class="fas fa-map-marker-alt "></i><strong> <%= trip.start_time.strftime("%k:%M") %> </strong></p>
+              <p class="address"><%= @start_addresses[index] %></p>
+              <%# <i class="fas fa-long-arrow-alt-down"></i> %>
+              <p class="end-details"><i class="fas fa-flag"></i><strong> <%= trip.end_time.strftime("%k:%M") %></strong></p>
+              <p class="address"> <%= @end_addresses[index] %></p>
+            </div>
+            <div class="price-box">
+              <%# <p>Price for one item:</p> %>
+              <strong><%= humanized_money_with_symbol trip.price %></strong>
+            </div>
           </div>
-          <div>
-            <p>Price for one item:</p>
-            <%= humanized_money_with_symbol trip.price %>
-          </div>
+          <hr class="modal-line">
           <div class="driver-details">
             <%= cl_image_tag trip.user.avatar.key, class: 'avatar' %>
             <%= trip.user.first_name %> <%=trip.user.last_name%>
+            <br>
+            <br>
             <%= trip.description %>
-          </div>
-          <div>
-            <p class="bigger-text">Driver will accept</h5>
+          <%# <hr class="modal-line"> %>
+          <div class="driver-details-car">
+            <p class="drive-p"><strong>I accept</strong></p>
             <% if trip.capacity == "Large" %>
-              <%  sizes = ["Small Items", "Medium Items", "Large Items"] %>
+              <%  sizes = ["Small items", "Medium items", "Large items"] %>
             <% elsif trip.capacity == "Medium" %>
-              <% sizes = ["Small Items", "Medium Items"] %>
+              <% sizes = ["Small items", "Medium items"] %>
             <% else %>
-              <% sizes = ["Small Items"] %>
+              <% sizes = ["Small items"] %>
             <% end %>
             <ul>
+
             <% sizes.each do |size| %>
-              <li class="list-items"><i class="far fa-check-square"></i> <%= size %></li>
+              <li class="list-items drive-p"> <i class="fas fa-box-open"></i> <%= size %></li>
             <% end %>
             </ul>
-            <p><strong>Type of car</strong> <%= trip.user.car_type %></p>
-            <p><strong>Years driving</strong> <%= trip.user.years_driving %></p>
+            <p class="drive-p"><strong>About me</strong></p>
+            <p class="drive-p"><i class="fas fa-car"></i> <%= trip.user.car_type %></p>
+            <p class="drive-p"><i class="fas fa-check-circle"></i> Licensed <%= trip.user.years_driving %> years</p>
           </div>
         </div>
+          </div>
         <div class="modal-footer">
           <%= link_to "Select this driver", new_trip_booking_path(trip, size: params[:capacity], modal:"exampleModal#{index}"  ), class: "button" %>
         </div>
