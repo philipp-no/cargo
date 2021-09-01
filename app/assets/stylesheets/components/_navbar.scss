@@ -39,6 +39,11 @@
   height: 30px;
   background-image: image-url("cargo-logo-white");
   background-size: cover;
+    -webkit-transition: all .30s ease-in-out;
+    -moz-transition: all .30s ease-in-out;
+    -ms-transition: all .30s ease-in-out;
+    -o-transition: all .30s ease-in-out;
+    transition: all .30s ease-in-out; opacity: 1;
 }
 
 .navbar-logo-color {
@@ -46,6 +51,11 @@
   height: 30px;
   background-image: image-url("cargo-logo3.png");
   background-size: cover;
+    -webkit-transition: all .30s ease-in-out;
+    -moz-transition: all .30s ease-in-out;
+    -ms-transition: all .30s ease-in-out;
+    -o-transition: all .30s ease-in-out;
+    transition: all .30s ease-in-out; opacity: 1;
 }
 
 .past-scroll {
