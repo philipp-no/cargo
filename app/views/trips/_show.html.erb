@@ -1,4 +1,4 @@
-<div class="index-card" data-bs-toggle="modal" data-bs-target="#exampleModal<%=index%>">
+<div class="dash-trip-card-link" data-bs-toggle="modal" data-bs-target="#exampleModal<%=index%>">
   <p><%= trip.start_time.strftime("%A, %B %d") %></p>
   <p><%= trip.start_time.strftime("%k:%M")%> <strong><%= trip.start_location.split(",")[1] %></strong></p>
   <p> <%= trip.end_time.strftime("%k:%M")%> <strong><%= trip.end_location.split(",")[1] %></strong></p>
@@ -68,4 +68,3 @@
     </div>
   </div>
 </div>
-

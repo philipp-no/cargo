@@ -23,9 +23,9 @@
         </div>
         <div class="button-container">
           <% if booking.pending? %>
-            <a class="button-booking" id="modal-trigger-button" data-tracker="<%=index%>">Accept</a>
-            <%= link_to "Decline", decline_path(booking), class: "button-booking", method: :patch, controller: :bookings_controller,
+            <%= link_to "Decline", decline_path(booking), class: "cancel-btn", method: :patch, controller: :bookings_controller,
                 data: { confirm: 'Are you sure you want to decline this booking?' } %>
+            <a class="btn-outline" id="modal-trigger-button" data-tracker="<%=index%>">Accept</a>
           <% else %>
             <div><p class="accepted-tag"> <%= booking.status.capitalize %> </p></div>
             <% if booking.accepted? && booking.chatroom.present? %>
