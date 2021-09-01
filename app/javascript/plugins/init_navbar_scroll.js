@@ -7,14 +7,14 @@ const initNavbarScroll = () => {
     const textNodes = document.getElementsByClassName('nav-link')
     document.addEventListener('scroll', (e) => {
       scrollY = window.pageYOffset
-      if (scrollY > 420) {
+      if (scrollY > 420 && window.location.pathname === '/') {
         for (var i = 0; i < textNodes.length; i++) {
           textNodes[i].classList.add('scroll-text')
         }
         navbar.classList.add('past-scroll')
         logo.classList.remove('navbar-logo-white')
         logo.classList.add('navbar-logo-color')
-      } else {
+      } else if (scrollY < 421 && window.location.pathname === '/') {
         for (var i = 0; i < textNodes.length; i++) {
           textNodes[i].classList.remove('scroll-text')
         }
