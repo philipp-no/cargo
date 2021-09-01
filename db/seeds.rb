@@ -90,7 +90,8 @@ cheyenne = User.create!(
   password: "123456",
   car_type: "Toyota Corolla",
   birthday: 1999-11-16,
-  years_driving: 5
+  years_driving: 5,
+  driver: true
 )
 file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630481900/cargo-team/cheyenneSimoleit_oasxif.png")
 cheyenne.avatar.attach(io: file, filename: 'cheyenne.png', content_type: 'image/png')
