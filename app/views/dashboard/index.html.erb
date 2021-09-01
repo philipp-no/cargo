@@ -1,6 +1,6 @@
 <div class="d-flex align-items-center p-2">
   <%= link_to root_path, class: "back-arrow" do %>
-      <i class="fas fa-chevron-left"></i>
+      <i class="fas fa-chevron-left arrow"></i>
   <% end %> <h2 class="back-arrow-text"><%=current_user.first_name%>'s Dashboard</h2>
 </div>
 
@@ -8,39 +8,39 @@
   <div class="dashboard-flex d-flex">
     <div class="bookings-wrapper">
       <% if current_user.driver %>
-      <% if @bookings.count.positive? %>
-          <h5>Items You Are Sending</h5>
-            <div class="dash-container">
-              <% @bookings.each do |booking| %>
-                <div class="dash-trip-card">
-                  <p class="underline"><strong><%= booking.item.capitalize%></strong></p>
-                  <p><%= booking.trip.start_time.strftime("%A, %B %d") %></p>
-                  <p> <strong> <%= booking.trip.start_time.strftime("%k:%M") %> </strong> <%= booking.trip.start_location.split(',')[1] %></p>
-                  <p> <strong> <%= booking.trip.end_time.strftime("%k:%M") %></strong><%= booking.trip.end_location.split(',')[1] %></p>
-                  <div class="name-price-else">
-                    <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
-                    <p><strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
-                  </div>
-                  <div class="chat-status-container">
-                    <div class="chat-button-container">
-                      <% if booking.accepted? && booking.chatroom.present? %>
-                        <%= link_to "Chat", chatroom_path(booking.chatroom), class: "button-chat" %>
-                      <% end %>
+        <% if @bookings.count.positive? %>
+            <h5>Items You Are Sending</h5>
+              <div class="dash-container">
+                <% @bookings.each do |booking| %>
+                  <div class="dash-trip-card">
+                    <p class="underline"><strong><%= booking.item.capitalize%></strong></p>
+                    <p><%= booking.trip.start_time.strftime("%A, %B %d") %></p>
+                    <p> <strong> <%= booking.trip.start_time.strftime("%k:%M") %> </strong> <%= booking.trip.start_location.split(',')[1] %></p>
+                    <p> <strong> <%= booking.trip.end_time.strftime("%k:%M") %></strong><%= booking.trip.end_location.split(',')[1] %></p>
+                    <div class="name-price-else">
+                      <p><strong>Driver</strong> <%= booking.trip.user.first_name %></p>
+                      <p><strong><%= humanized_money_with_symbol booking.trip.price %></p></strong>
                     </div>
-                    <p class="pending-declined">
-                      <%= booking.status.capitalize %>
-                    </p>
+                    <div class="chat-status-container">
+                      <div class="chat-button-container">
+                        <% if booking.accepted? && booking.chatroom.present? %>
+                          <%= link_to "Chat", chatroom_path(booking.chatroom), class: "button-chat" %>
+                        <% end %>
+                      </div>
+                      <p class="status">
+                        <%= booking.status.capitalize %>
+                      </p>
+                    </div>
                   </div>
-                </div>
-              <% end %>
-            </div>
-      <% else %>
-        <div class="no-results-container">
-          <h5>Items You Are Sending</h5>
-          <p>You haven't booked a ride for any of your items.</p>
-          <%= link_to "Find a Driver for Your Next Item",  root_path %>
-        </div>
-      <% end %>
+                <% end %>
+              </div>
+        <% else %>
+          <div class="no-results-container">
+            <h5>Items You Are Sending</h5>
+            <p>You haven't booked a ride for any of your items.</p>
+            <%= link_to "Find a Driver for Your Next Item",  root_path %>
+          </div>
+        <% end %>
 
       <% if @past_bookings.count.positive? %>
         <h5>Items You've Sent</h5>
@@ -67,36 +67,35 @@
           <% end %>
         </div>
       <% end %>
-
-      <% if @trips.count.positive? %>
-        <h5>Your Upcoming Trips</h5>
-          <div class="dash-container dash-details">
-              <% @trips.each_with_index do |trip, index| %>
-                <%= link_to trip_bookings_path(trip), class: "block-link-text" do %>
-                    <div class="dash-trip-card">
-                      <div class="badge-place">
-                        <% if trip.count_pending_bookings.positive? %>
-                          <div class="badge">
-                            <%=  trip.count_pending_bookings %>
-                          </div>
-                        <% end %>
-                      </div>
-                      <p class="underline"><%= trip.start_time.strftime("%A, %B %d") %></p>
-                      <p> <strong><%= trip.start_time.strftime("%k:%M") %> </strong> <%= trip.start_location.split(',')[1] %></p>
-                      <p> <strong><%= trip.end_time.strftime("%k:%M") %> </strong> <%= trip.end_location.split(',')[1] %></p>
-                      <div class="name-price">
-                        <p> <strong>Capacity</strong>  <%= trip.capacity.downcase %></p>
-                        <p> <strong><%= humanized_money_with_symbol trip.price %></p></strong>
-                      </div>
-                        <div class="status-line">
-                          <p class="remove-padding-p"><strong>Trip Is</strong> <%= trip.status %></p>
-                        </div>
-                  <% end %>
-                    <div class="button-place">
-                      <button class="button-edit-cancel" id="modal-trigger-button" data-tracker="<%=index%>">Edit Trip</button>
-                      <%= link_to "Cancel Trip", trip_path(trip), method: :delete, data: { confirm: "Are you sure you want to cancel this trip? This will decline any pending booking requests and cannot be undone." }, class: "button-edit-cancel" %>
+    <% if @trips.count.positive? %>
+      <h5>Your Upcoming Trips</h5>
+        <div class="dash-container dash-details">
+          <% @trips.each_with_index do |trip, index| %>
+            <%= link_to trip_bookings_path(trip), class: "link-text-gray" do %>
+              <div class="dash-trip-card-link">
+                <div class="badge-place">
+                  <% if trip.count_pending_bookings.positive? %>
+                    <div class="badge">
+                        <%=  trip.count_pending_bookings %>
                     </div>
+                  <% end %>
+                </div>
+                <p class="underline"><%= trip.start_time.strftime("%A, %B %d") %></p>
+                <p> <strong><%= trip.start_time.strftime("%k:%M") %> </strong> <%= trip.start_location.split(',')[1] %></p>
+                <p> <strong><%= trip.end_time.strftime("%k:%M") %> </strong> <%= trip.end_location.split(',')[1] %></p>
+                <div class="name-price">
+                  <p> <strong>Capacity</strong>  <%= trip.capacity.downcase %></p>
+                  <p> <strong><%= humanized_money_with_symbol trip.price %></p></strong>
+                </div>
+                  <div class="status-line">
+                    <p class="remove-padding-p"><strong>Trip Is</strong> <%= trip.status %></p>
                   </div>
+              <% end %>
+                  <div class="button-place">
+                    <%= link_to "Cancel Trip", trip_path(trip), method: :delete, data: { confirm: "Are you sure you want to cancel this trip? This will decline any pending booking requests and cannot be undone." }, class: "link-text-gray" %>
+                    <button class="link-text" id="modal-trigger-button" data-tracker="<%=index%>">Edit Trip</button>
+                  </div>
+                </div>
                   <div class="modal-container modal-<%=index%> modal-hidden" id="accept-modal">
                     <div class="modal-inner dash-modal-body">
                       <div class="modal-text dash-modal-content">
@@ -104,7 +103,7 @@
                       </div>
                     </div>
                   </div>
-              <% end %>
+            <% end %>
           </div>
       <% else %>
         <div class="no-results-container">
@@ -118,7 +117,7 @@
       <h5>Trips You've Completed</h5>
         <div class="dash-container">
           <% @past_trips.each do |past_trip| %>
-            <%= link_to trip_bookings_path(past_trip), class: "block-link-text" do %>
+            <%= link_to trip_bookings_path(past_trip), class: "link-text-gray" do %>
               <div class="dash-trip-card">
                 <p class="underline"><%= past_trip.start_time.strftime("%A, %B %d") %></p>
                 <p> <strong><%= past_trip.start_time.strftime("%k:%M") %> </strong> <%= past_trip.start_location.split(',')[1] %></p>
@@ -132,9 +131,8 @@
             <% end %>
           <% end %>
         </div>
-    <% end %>
-
-<% else %>
+      <% end %>
+  <% else %>
       <% if @bookings.count.positive? %>
           <h5>Items You Are Sending</h5>
             <% @bookings.each do |booking| %>
