@@ -67,8 +67,8 @@ file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058540/c
 jennifer.avatar.attach(io: file, filename: 'jenny.png', content_type: 'image/png')
 
 paul = User.create!(
-  first_name: "Paul",
-  last_name: "Intveen",
+  first_name: "Stanislaw",
+  last_name: "Nowikow",
   email: "paul@paul.com",
   phone_number: "01745566911",
   address: "Friedrichstraße 32, Berlin, Berlin, Germany",
@@ -77,8 +77,8 @@ paul = User.create!(
   birthday: 1999-11-16,
   years_driving: 5
 )
-file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
-paul.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630481900/cargo-team/stanislav_mjsarg.png")
+paul.avatar.attach(io: file, filename: 'stanislaw.png', content_type: 'image/png')
 
 cheyenne = User.create!(
   first_name: "Cheyenne",
@@ -91,8 +91,8 @@ cheyenne = User.create!(
   birthday: 1999-11-16,
   years_driving: 5
 )
-file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
-cheyenne.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630481900/cargo-team/cheyenneSimoleit_oasxif.png")
+cheyenne.avatar.attach(io: file, filename: 'cheyenne.png', content_type: 'image/png')
 
 christine = User.create!(
   first_name: "Christine",
@@ -105,8 +105,8 @@ christine = User.create!(
   birthday: 1999-11-16,
   years_driving: 12
 )
-file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
-christine.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630481900/cargo-team/christineChan_ffyst8.png")
+christine.avatar.attach(io: file, filename: 'christine.png', content_type: 'image/png')
 
 james = User.create!(
   first_name: "James",
@@ -119,8 +119,8 @@ james = User.create!(
   birthday: 1999-11-16,
   years_driving: 3
 )
-file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
-james.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630481899/cargo-team/jamesHibbeard_cglo7r.png")
+james.avatar.attach(io: file, filename: 'james.png', content_type: 'image/png')
 
 martin = User.create!(
   first_name: "Martin",
@@ -133,8 +133,8 @@ martin = User.create!(
   birthday: 1999-11-16,
   years_driving: 10
 )
-file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
-martin.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630481899/cargo-team/martinRunge_r1fksd.png")
+martin.avatar.attach(io: file, filename: 'martin.png', content_type: 'image/png')
 
 adam = User.create!(
   first_name: "Adam",
@@ -147,8 +147,8 @@ adam = User.create!(
   birthday: 1999-11-16,
   years_driving: 15
 )
-file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630058541/cargo-team/philipp_egle0j.png")
-adam.avatar.attach(io: file, filename: 'paul.png', content_type: 'image/png')
+file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630482170/cargo-team/adam_xmqtmq.png")
+adam.avatar.attach(io: file, filename: 'adam.png', content_type: 'image/png')
 
 trip1 = Trip.create!(
   start_time: "2021-09-03 21:00",

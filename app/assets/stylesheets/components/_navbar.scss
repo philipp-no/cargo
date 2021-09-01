@@ -14,8 +14,8 @@
   top: 0;
 }
 
-.nav-link {
-  color: white !important;
+.navbar-light .navbar-nav .nav-link {
+  color: white;
 }
 
 .navbar-brand {
@@ -44,16 +44,12 @@
 .navbar-logo-color {
   width: 70px;
   height: 30px;
-  background-image: image-url("cargo-logo-new2.png");
+  background-image: image-url("cargo-logo3.png");
   background-size: cover;
 }
 
 .past-scroll {
   background: white;
-}
-
-.scroll-text {
-  color: $gray !important;
 }
 
 .z-index {

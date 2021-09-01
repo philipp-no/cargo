@@ -7,7 +7,7 @@
           <fieldset class="form-group radio_buttons required trip_capacity">
             <legend class="col-form-label pt-0">How much capacity do you have? <abbr title="required">*</abbr></legend>
             <div class="category-wrapper">
-              <input type="hidden" name="trip[capacity]" value=" <%= trip.capacity %>">
+              <%# <input type="hidden" name="trip[capacity]" value=" <%= trip.capacity %>
                 <div class="category-item">
                   <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="trip[capacity]" id="trip_capacity_small_<%= trip.id %>" <%= "checked" if trip.capacity == "Small" %>>
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_small_<%= trip.id %>">

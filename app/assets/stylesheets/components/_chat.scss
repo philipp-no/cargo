@@ -1,5 +1,10 @@
 .chat-margin {
   margin-top: 5rem;
+  .form-inline {
+    .form-group {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .h-position {
@@ -28,10 +33,13 @@
   .button-chat {
     border-style: solid;
     border-width: 3px;
-    border-color: $rose;
+    border-color: $darkpurple;
     margin: 0;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+  }
+  .button-chat:hover {
+    border: 2px solid $rose;
   }
 }
 
