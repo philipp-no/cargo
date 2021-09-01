@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :trips
+  has_many :trips, dependent: :destroy
   has_many :bookings
   has_one_attached :avatar
   validates :first_name, presence: true

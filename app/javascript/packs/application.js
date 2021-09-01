@@ -33,6 +33,7 @@ import { initAutocomplete} from '../plugins/init_autocomplete';
 import { initModalTrigger } from '../plugins/init_modal_trigger';
 import { initNavbarScroll } from '../plugins/init_navbar_scroll';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initCloseModal } from "../plugins/init_close_modal";
 
 
 
@@ -45,4 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initNavbarScroll();
   initFlatpickr();
+  initCloseModal();
 });
