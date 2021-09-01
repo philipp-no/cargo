@@ -8,7 +8,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: linear-gradient(to right, $rose, #F99FA8);
+  background: linear-gradient(to right, $rose, $rosehover);
   height: 60px;
   position: fixed;
   top: 0;
@@ -50,6 +50,10 @@
 
 .past-scroll {
   background: white;
+}
+
+.scroll-text {
+  color: $gray;
 }
 
 .z-index {

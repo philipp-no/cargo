@@ -1,7 +1,7 @@
 .banner {
   display: flex;
   justify-content: space-around;
-  background: linear-gradient(to right, $rose, #F99FA8);
+  background: linear-gradient(to right, $rose, $rosehover);
   width: auto;
   height: 400px;
   margin-top: -40px;
