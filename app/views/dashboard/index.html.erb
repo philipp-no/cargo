@@ -27,9 +27,16 @@
                           <%= link_to "Chat", chatroom_path(booking.chatroom), class: "button-chat" %>
                         <% end %>
                       </div>
-                      <p class="status">
-                        <%= booking.status.capitalize %>
-                      </p>
+                      <%# <% raise %>
+                      <% if booking.status == "pending" %>
+                        <p class="status-blue">
+                          <%= booking.status.capitalize %>
+                        </p>
+                      <% else %>
+                        <p class="status-dark">
+                          <%= booking.status.capitalize %>
+                        </p>
+                      <% end %>
                     </div>
                   </div>
                 <% end %>
@@ -71,7 +78,7 @@
       <h5>Your Upcoming Trips</h5>
         <div class="dash-container dash-details">
           <% @trips.each_with_index do |trip, index| %>
-            <%= link_to trip_bookings_path(trip), class: "link-text-gray" do %>
+            <%= link_to trip_bookings_path(trip), class: "dash-link-text-gray" do %>
               <div class="dash-trip-card-link">
                 <div class="badge-place">
                   <% if trip.count_pending_bookings.positive? %>
@@ -117,8 +124,8 @@
       <h5>Trips You've Completed</h5>
         <div class="dash-container">
           <% @past_trips.each do |past_trip| %>
-            <%= link_to trip_bookings_path(past_trip), class: "link-text-gray" do %>
-              <div class="dash-trip-card">
+            <%= link_to trip_bookings_path(past_trip), class: "dash-link-text-gray" do %>
+              <div class="dash-trip-card-link">
                 <p class="underline"><%= past_trip.start_time.strftime("%A, %B %d") %></p>
                 <p> <strong><%= past_trip.start_time.strftime("%k:%M") %> </strong> <%= past_trip.start_location.split(',')[1] %></p>
                 <p> <strong><%= past_trip.end_time.strftime("%k:%M") %> </strong> <%= past_trip.end_location.split(',')[1] %></p>
