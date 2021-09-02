@@ -140,6 +140,10 @@ li {
   min-width: calc(100% - 820px);
 }
 
+.trip-header-text {
+  font-weight: bolder;
+}
+
 .trip-details-scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -190,4 +194,3 @@ li {
     transform: scale(2.15);
   }
 }
-

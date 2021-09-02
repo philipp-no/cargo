@@ -10,7 +10,7 @@
   padding: 20px;
   align-items: center;
   background-color: white;
-  margin: 20px 340px 20px;
+  margin: 10px 340px 10px;
   // box-shadow: 0 0 8px rgba(0,0,0,0.15);
 }
 
@@ -51,7 +51,8 @@
   width: 400px;
   font-weight: bolder;
   color: $darkpurple;
-  margin-right: 130px;
+  margin-right: -300px;
+  margin-left: -20px;
 }
 
 .info-box-subheader-driver {
@@ -59,10 +60,10 @@
   font-weight: light;
   color: $darkpurple;
   margin-top: 0;
-  margin-left: 40px;
+  margin-left: -20px;
 }
 
 .img-info-car{
   width: 400px;
-  margin-right: 50px;
+  margin-right: -400px;
 }
