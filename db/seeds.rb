@@ -505,7 +505,7 @@ booking11 = Booking.create!(
 
 booking12 = Booking.create!(
   user: jennifer,
-  trip: trip8,
+  trip: trip12,
   status: 0,
   description: "Hi Marie! I need to water my Monstera, but now stay longer in Berlin. Can you take it for me?",
   size: "Large",
@@ -514,7 +514,7 @@ booking12 = Booking.create!(
 
 booking13 = Booking.create!(
   user: christine,
-  trip: trip8,
+  trip: trip7,
   status: 0,
   description: "Hi Philipp! I forgot my field hockey bag in Hamburg. Now I met a cool field hockey team through Sporty and would like to play more often. Could you pick it up?",
   size: "Medium",
@@ -523,7 +523,7 @@ booking13 = Booking.create!(
 
 booking14 = Booking.create!(
   user: otmar,
-  trip: trip8,
+  trip: trip7,
   status: 0,
   description: "Hi Philipp! I bought a sound system on Ebay-Kleinanzeigen and don't have a car to pick it up right now. If you bring it to me an invitation to the party awaits you",
   size: "Large",
@@ -532,7 +532,7 @@ booking14 = Booking.create!(
 
 booking15 = Booking.create!(
   user: paul,
-  trip: trip8,
+  trip: trip7,
   status: 0,
   description: "Hi Philipp! My roommate unfortunately lost her key. So I send her mine. Can you take it with you to Berlin?",
   size: "Small",
@@ -541,7 +541,7 @@ booking15 = Booking.create!(
 
 booking16 = Booking.create!(
   user: paul,
-  trip: trip8,
+  trip: trip11,
   status: 0,
   description: "Hi Jenny! I had one box left over when I moved. Could you bring it to me?",
   size: "Medium",
