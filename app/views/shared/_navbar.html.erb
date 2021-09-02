@@ -20,6 +20,9 @@
         <li class="nav-item">
           <%= link_to "Find a Driver", root_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "About Us", about_path, class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
           <% if current_user.avatar.attached? %>
               <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -40,6 +43,9 @@
         </li>
         <li class="nav-item">
           <%= link_to "Find a Driver", root_path, class: "nav-link" %>
+        </li>
+         <li class="nav-item">
+          <%= link_to "About Us", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
