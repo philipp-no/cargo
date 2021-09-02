@@ -1,3 +1,7 @@
+.form-control:focus {
+ box-shadow: none !important;
+}
+
 a {
   color: $rose;
   font-weight: 500;
