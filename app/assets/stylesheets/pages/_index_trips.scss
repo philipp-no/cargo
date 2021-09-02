@@ -35,7 +35,7 @@
 }
 
 .index-button {
-  background: linear-gradient(to right, $darkpurple);
+  background: $darkpurple;
   color: white;
   font-weight: bold;
   padding: 10px 30px 10px 30px;
@@ -87,6 +87,7 @@ li {
     display: inline-block;
     border: white;
     border-radius: 30px;
+    border: 0;
   }
 
   .index-button {
@@ -128,5 +129,5 @@ li {
 }
 
 .trip-header-cards {
-  min-width: calc(100% - 730px);
+  min-width: calc(100% - 820px);
 }
