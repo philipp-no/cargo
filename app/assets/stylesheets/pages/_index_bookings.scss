@@ -3,28 +3,29 @@
   position: absolute;
   font-weight: 700;
 }
-.button-booking {
-  background-color: white;
-  color: $darkpurple;
-  padding: 5px 20px 5px 20px;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  margin-top: 15px;
-  font-size: 15px;
-  font-weight: 700;
-  border: 2px solid $darkpurple;
-}
-.button-booking:hover {
-  background-color: $darkpurple;
-  color:white;
-  padding: 5px 20px 5px 20px;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  margin-top: 15px;
-  font-size: 15px;
-  font-weight: 700;
-  border: 2px solid $darkpurple;
-}
+// .button-booking {
+//   background-color: white;
+//   color: $darkpurple;
+//   padding: 5px 20px 5px 20px;
+//   border-radius: 10px;
+//   margin-bottom: 5px;
+//   margin-top: 15px;
+//   font-size: 15px;
+//   font-weight: 700;
+//   border: 2px solid $darkpurple;
+// }
+// .button-booking:hover {
+//   background-color: $darkpurple;
+//   color:white;
+//   padding: 5px 20px 5px 20px;
+//   border-radius: 10px;
+//   margin-bottom: 5px;
+//   margin-top: 15px;
+//   font-size: 15px;
+//   font-weight: 700;
+//   border: 2px solid $darkpurple;
+// }
+
 .booking-cards {
   display: flex;
   margin-left: 0;
@@ -37,7 +38,7 @@
   padding: 20px;
   background-size: cover;
   background-position: center;
-  height: auto;
+  height: 335px;
   width: 300px;
   border-radius: 10px;
   margin:0 0 30px 30px;
