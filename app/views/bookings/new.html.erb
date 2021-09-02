@@ -5,18 +5,18 @@
         <%= link_to trips_path(modal: params[:modal]), class: "back-arrow" do %>
           <i class="fas fa-chevron-left arrow"></i>
         <% end %> <h2 class="back-arrow-text">Create a booking to</h2>
-      </div>
+        </div>
         <h2 class="back-arrow-text-2">send your item quickly</h2>
         <h2 class="back-arrow-text-2">and sustainably</h2>
         <%= image_tag('parcour.png', width: "500", height: "300", class: "mt-5") %>
     </div>
 
-    <div class="p-4 booking-form-container">
-      <h4 class="booking-form-header"><%= @trip.start_time.strftime("%A, %B %d") %></h4>
+    <div class=“p-4 booking-form-container”>
+      <h4 class=“booking-form-header”><%= @trip.start_time.strftime("%A, %B %d") %></h4>
       <p><%= @trip.start_time.strftime("%k:%M") %> <%= @trip.start_location %></p>
-      <i class="fas fa-long-arrow-alt-down"></i>
+      <i class=“fas fa-long-arrow-alt-down”></i>
       <p> <%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
-      <div class="d-flex justify-content-between">
+      <div class=“d-flex justify-content-between”>
         <p>Price for one item:</p>
         <%= humanized_money_with_symbol @trip.price %>
       </div>
@@ -72,7 +72,7 @@
               <legend class="col-form-label pt-0">What size is your item?<abbr title="required">*</abbr></legend>
               <div class="category-wrapper">
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="booking-size" id="trip_capacity_small" required>
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Small" name="booking[size]" id="trip_capacity_small">
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_small">
                     <div>
                       <p>Small</p>
@@ -85,7 +85,7 @@
                   </label>
                 </div>
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Medium" name="booking-size" id="trip_capacity_medium" >
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Medium" name="booking[size]" id="trip_capacity_medium">
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_medium">
                     <div>
                       <p>Medium</p>
@@ -98,7 +98,7 @@
                   </label>
                 </div>
                 <div class="category-item">
-                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Large" name="booking-size" id="trip_capacity_large" >
+                  <input class="form-check-input radio_buttons required category-selector" type="radio" value="Large" name="booking[size]" id="trip_capacity_large">
                   <label class="form-check-label collection_radio_buttons" for="trip_capacity_large">
                     <div>
                       <p>Large</p>

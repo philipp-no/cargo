@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_index_path, notice: 'Your request was received and you will be notified when the driver accepts!'
     else
-      render :new, notice: 'Size is required' 
+      render :new
     end
   end
 
