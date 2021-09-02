@@ -1,53 +1,68 @@
-.img-info-box {
-  width: 400px;
-  margin-right: 300px;
-}
+// .info-box {
+//   display: flex;
+//   justify-content: center;
+// }
 
 .info-box-sender {
   display: flex;
-  width: auto;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 600px;
+  padding: 20px;
   align-items: center;
+  background-color: white;
+  margin: 20px 340px 20px;
+  // box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.img-info-box {
+  width: 400px;
+  // margin-left: px;
 }
 
 .info-box-header-sender {
   width: 400px;
-  margin-left: 300px;
-  font-weight: medium;
+  font-weight: bolder;
   color: $darkpurple;
+  margin-left: 130px;
 }
 
 .info-box-subheader-sender {
   width: 400px;
-  margin-left: 300px;
   font-weight: light;
   color: $darkpurple;
   margin-top: 0;
+  margin-left: 130px;
 }
 
-.img-info-car{
-  width: 400px;
-  margin-left: 300px;
-}
 
 .info-box-driver {
   display: flex;
-  width: auto;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 1425px;
+  padding: 50px;
   align-items: center;
+  background-color: white;
+  margin: 20px 0 50px -20px;
+  // box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  background-color: $steel;
 }
 
 .info-box-header-driver {
   width: 400px;
-  margin-right: 200px;
-  font-weight: medium;
+  font-weight: bolder;
   color: $darkpurple;
+  margin-right: 130px;
 }
 
 .info-box-subheader-driver {
   width: 400px;
-  margin-right: 200px;
   font-weight: light;
   color: $darkpurple;
   margin-top: 0;
+  margin-left: 40px;
+}
+
+.img-info-car{
+  width: 400px;
+  margin-right: 50px;
 }

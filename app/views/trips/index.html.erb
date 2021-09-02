@@ -31,53 +31,67 @@
   </div>
 </div>
 
-<div class="info-box-sender">
-  <div class="info-box-text">
-    <h5 class="info-box-header-sender">Need to send an item from A to B?</h5>
-    <h5 class="info-box-subheader-sender" >Use cargo and book a friendly driver, save money and get your item delivered the same day.</h5>
-  </div>
-  <div>
-    <%= image_tag 'box.png', class: 'img-info-box' %>
-  </div>
-</div>
-
-<div class="info-box-driver">
-  <div>
-    <%= image_tag 'city_driver.png', class: 'img-info-car' %>
-  </div>
-  <div class="info-box-text">
-    <h5 class="info-box-header-driver">Are you driving with your car from A to B?</h5>
-    <h5 class="info-box-subheader-driver">Use cargo and take items on your trip, make money on the go and reduce the amount of empty rides.</h5>
-  </div>
-</div>
-
-<% if @trips.count.positive? %>
-  <% if params[:date] %>
+<% if params[:start_location] || params[:end_location] || params[:date] || params[:capacity] %>
+  <% if @trips.count.positive? %>
     <div class="trip-container">
       <div class="trip-header-cards">
-        <div class="trip-header">
-          <% date = Date.parse(params[:date]) %>
-          <h5> <%= @trips.count %> trips leaving on <%= date.strftime("%A, %B %d")%></h5>
-        </div>
-          <% else %>
-            <h5>Upcoming trips</h5>
-          <% end %>
-            <div class="trip-details">
-              <% @trips.each_with_index do |trip, index| %>
-                <%=  render partial: 'show', locals: {trip: trip, index: index} %>
-              <% end %>
-            </div>
-      </div>
-        <% if params[:start_location] || params[:end_location] || params[:date] || params[:capacity] %>
-          <div id="map"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        <% if params[:date] %>
+          <div class="trip-header">
+            <% date = Date.parse(params[:date]) %>
+            <h5 class="trip-header-text"> <%= @trips.count %> trips leaving on <%= date.strftime("%A, %B %d")%></h5>
           </div>
-      <% end %>
-    </div>
-    <% else %>
-      <div class="results-container">
-        <h5>No upcoming trips match your search criteria</h5>
-        <h5>Please change your criteria and try again!</h5>
+        <% else %>
+          <h5 class="trip-header-text">Upcoming trips</h5>
+        <% end %>
+        <div class="trip-details">
+          <% @trips.each_with_index do |trip, index| %>
+            <%=  render partial: 'show', locals: {trip: trip, index: index} %>
+          <% end %>
+        </div>
       </div>
-    <% end %>
+  <% else %>
+    <div class="results-container">
+      <h5>No upcoming trips match your search criteria</h5>
+      <h5>Please change your criteria and try again!</h5>
+    </div>
+  <% end %>
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+<% else %>
+  <div class="trip-container">
+    <div class="trip-header-cards">
+
+      <div class="info-box-sender">
+        <div class="info-box-text">
+          <h3 class="info-box-header-sender">Send your item on a ride it is so nice. We know you will love it so much, try now.</h3>
+          <p class="info-box-subheader-sender" >Use cargo and book a friendly driver, save money and get your item delivered the same day.</p>
+        </div>
+
+        <div>
+          <%= image_tag 'boxLady.png', class: 'img-info-box' %>
+        </div>
+      </div>
+
+      <div class="info-box-driver">
+        <div>
+          <%= image_tag 'city_driver.png', class: 'img-info-car' %>
+        </div>
+        <div class="info-box-text">
+          <h3 class="info-box-header-driver">Are you driving a car from A to B? Reduce empty rides and do something nice for the planet. It rocks.</h3>
+          <p class="info-box-subheader-driver">Use cargo and take items on your trip, make money on the go and reduce the amount of empty rides.</p>
+        </div>
+      </div>
+
+
+      <h5 class="trip-header-text">Upcoming trips</h5>
+        <div class="trip-details-scrolling-wrapper">
+          <% @trips.each_with_index do |trip, index| %>
+            <%=  render partial: 'show', locals: {trip: trip, index: index} %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+  <% end %>
