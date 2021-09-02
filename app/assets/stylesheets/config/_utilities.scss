@@ -114,6 +114,20 @@ body {
   min-height: calc(100vh - 62px);
 }
 
+.dash-link-text-gray {
+  background-color: white;
+  color: $gray;
+  font-weight: 400;
+  border: 0;
+}
+
+.dash-link-text-gray:hover {
+  background-color: white;
+  color: $gray;
+  font-weight: 400;
+  border: 0;
+}
+
 h1 {
   font-weight: 500;
   font-size: 40px;
@@ -126,9 +140,16 @@ h2, h3, h4, h5 {
   font-family: Quicksand;
 }
 
-.status {
+.status-blue {
   background-color: white;
   color: $blue;
+  font-weight: bold;
+  border: 0;
+}
+
+.status-dark {
+  background-color: white;
+  color: $darkpurple;
   font-weight: bold;
   border: 0;
 }
