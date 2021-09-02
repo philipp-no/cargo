@@ -7,6 +7,7 @@
   margin-top: -40px;
   margin-left: -20px;
 }
+
 .capacity-pointer {
   cursor: pointer
 }
@@ -74,13 +75,16 @@ li {
   width: 920px;
   background-color: white;
   margin-bottom: 0;
+  outline: none;
 
-  .location {
-    margin-top: 5px;
-  }
+  // .location {
+  //   margin-top: 5px;
+  //   outline: none !important;
+  // }
 
   span {
     width: auto;
+    outline: none !important;
   }
 
   .form-control {
@@ -88,6 +92,7 @@ li {
     border: white;
     border-radius: 30px;
     border: 0;
+    outline: none !important;
   }
 
   .index-button {
@@ -103,6 +108,7 @@ li {
   position: relative;
   white-space: nowrap;
   z-index: 1;
+  outline: none !important;
 }
 
 .search-separator {
