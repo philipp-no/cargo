@@ -1,2 +1,101 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>About Team Cargo</h1>
+  <h6>Who built this app for next level delivery</h6>
+
+    <div class="about-container">
+    <div class="flip-card" id="aboutPhilipp">
+      <div class="flip-card-inner" id="aboutPhilippInner">
+        <div class="flip-card-front">
+              <%= image_tag 'aboutPhilipp', class: 'img-about' %>
+        </div>
+        <div class="flip-card-back">
+          <h3>Philipp Nordmeyer</h3>
+          <p>Founder, CEO, Architect & Engineer</p>
+          <p>I study Corporate Management and Economics at Zeppelin University. My focus is on innovation and entrepreneurship. I plan to found a company myself. I am very interested in platform-based solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" id="aboutJenny">
+      <div class="flip-card-inner" id="aboutJennyInner">
+        <div class="flip-card-front">
+              <%= image_tag 'aboutJenny', class: 'img-about' %>
+        </div>
+        <div class="flip-card-back">
+          <h3>Jennifer Glassmyer</h3>
+          <p>Architect & Engineer</p>
+          <p>I worked at a non-profit in Seattle, providing immigration legal and social work services to refugees. After moving to Berlin I hope to transition back into the non-profit/refugee space as a Software Developer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" id="aboutMarie">
+      <div class="flip-card-inner" id="aboutMarieInner">
+        <div class="flip-card-front">
+              <%= image_tag 'aboutMarie', class: 'img-about' %>
+        </div>
+        <div class="flip-card-back">
+          <h3>Marie Hasselberg</h3>
+          <p>Architect & Engineer</p>
+          <p>I studied media practice for social change and communications and joined the marketing team of Too Good To Go. I did the design and all the creative and visual output of the company. My goal is to work as a freelancer or become a founder.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" id="aboutOtmar">
+      <div class="flip-card-inner" id="aboutOtmarInner">
+        <div class="flip-card-front">
+              <%= image_tag 'aboutOtmar', class: 'img-about' %>
+        </div>
+        <div class="flip-card-back">
+          <h3>Otmar Jenner</h3>
+          <p>Architect & Engineer</p>
+          <p>As a journalist, author, musician, health practioneer I worked in different fields. I started coding last year and I am still very excited about the possibilities. The Web Dev Bootcamp at Le Wagon has brought me a lot further. Learning more is an essential for me.</p>
+        </div>
+      </div>
+    </div>
+
+ </div>
+
+<div class="flip-card fifth-card" id="aboutSebastian">
+      <div class="flip-card-inner" id="aboutSebastianInner">
+        <div class="flip-card-front">
+              <%= image_tag 'aboutSebastianRemm', class: 'img-about' %>
+        </div>
+        <div class="flip-card-back">
+          <h3>Sebastian (Sebi) Remm</h3>
+          <p>TA Le Wagon / intern at Cargo</p>
+          <p>Full Stack Web Developer. Was a great help to us. Inspired us with humour and a lot of very good advice. Thank you so much!!!</p>
+        </div>
+      </div>
+    </div>
+
+</div>
+<script>
+const philipp = document.getElementById('aboutPhilipp')
+const innerPhilipp = document.getElementById('aboutPhilippInner')
+philipp.addEventListener('click', () => {
+  innerPhilipp.classList.toggle('active')
+}, false)
+const jenny = document.getElementById('aboutJenny')
+const innerJenny = document.getElementById('aboutJennyInner')
+jenny.addEventListener('click', () => {
+  innerJenny.classList.toggle('active')
+}, false)
+const marie = document.getElementById('aboutMarie')
+const innerMarie = document.getElementById('aboutMarieInner')
+marie.addEventListener('click', () => {
+  innerMarie.classList.toggle('active')
+}, false)
+const otmar = document.getElementById('aboutOtmar')
+const innerOtmar = document.getElementById('aboutOtmarInner')
+otmar.addEventListener('click', () => {
+  innerOtmar.classList.toggle('active')
+}, false)
+const sebastian = document.getElementById('aboutSebastian')
+const innerSebastian = document.getElementById('aboutSebastianInner')
+sebastian.addEventListener('click', () => {
+  innerSebastian.classList.toggle('active')
+}, false)
+</script>
