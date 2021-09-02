@@ -1,6 +1,7 @@
 .img-about {
   height: 300px;
   width: 300px;
+  cursor: pointer;
 }
 
 .about-container {
@@ -40,7 +41,7 @@
   transform-style: preserve-3d;
 }
 
-.active {
+.active-about {
   transform: rotateY(180deg);
 }
 
@@ -74,6 +75,7 @@
   margin:0 30px 10px 30px;
   // border-color: #707c82;
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  cursor: pointer;
 }
 
 .fifth-card {
