@@ -1,14 +1,18 @@
-<div class="dash-trip-card-link" data-bs-toggle="modal" data-bs-target="#exampleModal<%=index%>">
-  <p><%= trip.start_time.strftime("%A, %B %d") %></p>
-  <p><%= trip.start_time.strftime("%k:%M")%> <strong><%= trip.start_location.split(",")[1] %></strong></p>
-  <p> <%= trip.end_time.strftime("%k:%M")%> <strong><%= trip.end_location.split(",")[1] %></strong></p>
-  <p class="line">Accepts <%= trip.capacity.downcase %> items</p>
-  <div class="name-price">
-    <div> <%= image_tag trip.user.avatar, class: "avatar" %></div>
-    <div><p> <%= trip.user.first_name %></p></div>
-    <div><p> <strong><%= humanized_money_with_symbol trip.price %></p></strong></div>
+<% if params[:start_location] || params[:end_location] || params[:date] || params[:capacity] %>
+  <div class="dash-trip-card-link" data-bs-toggle="modal" data-bs-target="#exampleModal<%=index%>">
+<% else %>
+  <div class="dash-trip-card-link-scrolling" data-bs-toggle="modal" data-bs-target="#exampleModal<%=index%>">
+<% end %>
+    <p><%= trip.start_time.strftime("%A, %B %d") %></p>
+    <p><%= trip.start_time.strftime("%k:%M")%> <strong><%= trip.start_location.split(",")[1] %></strong></p>
+    <p> <%= trip.end_time.strftime("%k:%M")%> <strong><%= trip.end_location.split(",")[1] %></strong></p>
+    <p class="line">Accepts <%= trip.capacity.downcase %> items</p>
+    <div class="name-price">
+      <div> <%= image_tag trip.user.avatar, class: "avatar" %></div>
+      <div><p> <%= trip.user.first_name %></p></div>
+      <div><p> <strong><%= humanized_money_with_symbol trip.price %></p></strong></div>
+    </div>
   </div>
-</div>
 
 <div class='modal fade <%= "show d-block" if params[:modal] == "exampleModal#{index}" %>' id="exampleModal<%=index%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -23,12 +27,10 @@
             <div>
               <p><i class="fas fa-map-marker-alt "></i><strong> <%= trip.start_time.strftime("%k:%M") %> </strong></p>
               <p class="address"><%= @start_addresses[index] %></p>
-              <%# <i class="fas fa-long-arrow-alt-down"></i> %>
               <p class="end-details"><i class="fas fa-flag"></i><strong> <%= trip.end_time.strftime("%k:%M") %></strong></p>
               <p class="address"> <%= @end_addresses[index] %></p>
             </div>
             <div class="price-box">
-              <%# <p>Price for one item:</p> %>
               <strong><%= humanized_money_with_symbol trip.price %></strong>
             </div>
           </div>
@@ -39,7 +41,6 @@
             <br>
             <br>
             <%= trip.description %>
-          <%# <hr class="modal-line"> %>
           <div class="driver-details-car">
             <p class="drive-p"><strong>I accept</strong></p>
             <% if trip.capacity == "Large" %>
@@ -50,7 +51,6 @@
               <% sizes = ["Small items"] %>
             <% end %>
             <ul>
-
             <% sizes.each do |size| %>
               <li class="list-items drive-p"> <i class="fas fa-box-open"></i> <%= size %></li>
             <% end %>
