@@ -14,34 +14,6 @@ a:hover {
   text-decoration: none;
 }
 
-.link-text {
-  background-color: white;
-  color: $rose;
-  font-weight: bold;
-  border: 0;
-}
-
-.link-text:hover {
-  background-color: white;
-  color: $rosehover;
-  font-weight: bold;
-  border: 0;
-}
-
-.link-text-gray {
-  background-color: white;
-  color: $gray;
-  font-weight: 400;
-  border: 0;
-}
-
-.link-text-gray:hover {
-  background-color: white;
-  color: $light-gray;
-  font-weight: 400;
-  border: 0;
-}
-
 .arrow {
   color: $dark;
 }
@@ -135,13 +107,41 @@ body {
 h1 {
   font-weight: 500;
   font-size: 40px;
-  color: $dark;
+  color: $darkpurple;
 }
 
 h2, h3, h4, h5 {
   margin: 40px 0 10px 40px;
-  color: $dark;
+  color: $darkpurple;
   font-family: Quicksand;
+}
+
+.link-text {
+  background-color: white;
+  color: $rose;
+  font-weight: bold;
+  border: 0;
+}
+
+.link-text:hover {
+  background-color: white;
+  color: $rosehover;
+  font-weight: bold;
+  border: 0;
+}
+
+.link-text-gray {
+  background-color: white;
+  color: $gray;
+  font-weight: 400;
+  border: 0;
+}
+
+.link-text-gray:hover {
+  background-color: white;
+  color: $light-gray;
+  font-weight: 400;
+  border: 0;
 }
 
 .status-blue {

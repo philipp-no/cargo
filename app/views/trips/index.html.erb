@@ -31,6 +31,26 @@
   </div>
 </div>
 
+<div class="info-box-sender">
+  <div class="info-box-text">
+    <h5 class="info-box-header-sender">Need to send an item from A to B?</h5>
+    <h5 class="info-box-subheader-sender" >Use cargo and book a friendly driver, save money and get your item delivered the same day.</h5>
+  </div>
+  <div>
+    <%= image_tag 'box.png', class: 'img-info-box' %>
+  </div>
+</div>
+
+<div class="info-box-driver">
+  <div>
+    <%= image_tag 'city_driver.png', class: 'img-info-car' %>
+  </div>
+  <div class="info-box-text">
+    <h5 class="info-box-header-driver">Are you driving with your car from A to B?</h5>
+    <h5 class="info-box-subheader-driver">Use cargo and take items on your trip, make money on the go and reduce the amount of empty rides.</h5>
+  </div>
+</div>
+
 <% if @trips.count.positive? %>
   <% if params[:date] %>
     <div class="trip-container">
