@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   patch 'drivers', to: "drivers#update", as: :update_driver
   patch "bookings/:id/accept", to: "bookings#accept", as: :accept
   patch "bookings/:id/decline", to: "bookings#decline", as: :decline
+  get "about_us", to: "pages#about", as: :about
 end
