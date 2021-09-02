@@ -49,16 +49,16 @@
           <% end %>
         </div>
       </div>
-    </div>
   <% else %>
     <div class="results-container">
       <h5>No upcoming trips match your search criteria</h5>
       <h5>Please change your criteria and try again!</h5>
     </div>
   <% end %>
-  <div id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 <% else %>
   <div class="trip-container">
