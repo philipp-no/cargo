@@ -66,8 +66,8 @@
 
       <div class="info-box-sender">
         <div class="info-box-text">
-          <h3 class="info-box-header-sender">Send your item on a ride it is so nice. We know you will love it so much, try now.</h3>
-          <p class="info-box-subheader-sender" >Use cargo and book a friendly driver, save money and get your item delivered the same day.</p>
+          <h3 class="info-box-header-sender">Send any item from one city to another and do something nice for the environment.</h3>
+          <p class="info-box-subheader-sender" >Use cargo to book a driver who is already making the trip, save money on shipping, and get your item delivered the same day.</p>
         </div>
 
         <div>
@@ -80,13 +80,13 @@
           <%= image_tag 'city_driver.png', class: 'img-info-car' %>
         </div>
         <div class="info-box-text">
-          <h3 class="info-box-header-driver">Are you driving a car from A to B? Reduce empty rides and do something nice for the planet. It rocks.</h3>
-          <p class="info-box-subheader-driver">Use cargo and take items on your trip, make money on the go and reduce the amount of empty rides.</p>
+          <h3 class="info-box-header-driver">Driving between cities with room in your car and want to make some gas money?</h3>
+          <p class="info-box-subheader-driver">Use cargo to find peeple who need to send their items on the route you will be driving, fill up your car, and reduce the amount of empty rides.</p>
         </div>
       </div>
 
 
-      <h5 class="trip-header-text">Upcoming trips</h5>
+      <h3 class="trip-header-text">Upcoming trips</h3>
         <div class="trip-details-scrolling-wrapper">
           <% @trips.each_with_index do |trip, index| %>
             <%=  render partial: 'show', locals: {trip: trip, index: index} %>
