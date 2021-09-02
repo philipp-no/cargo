@@ -11,12 +11,12 @@
         <%= image_tag('parcour.png', width: "500", height: "300", class: "mt-5") %>
     </div>
 
-    <div class=“p-4 booking-form-container”>
-      <h4 class=“booking-form-header”><%= @trip.start_time.strftime("%A, %B %d") %></h4>
+    <div class="booking-form-container p-4">
+      <h4 id="booking-form-header"><%= @trip.start_time.strftime("%A, %B %d") %></h4>
       <p><%= @trip.start_time.strftime("%k:%M") %> <%= @trip.start_location %></p>
-      <i class=“fas fa-long-arrow-alt-down”></i>
+      <i class="fas fa-long-arrow-alt-down"></i>
       <p> <%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
-      <div class=“d-flex justify-content-between”>
+      <div class="d-flex justify-content-between">
         <p>Price for one item:</p>
         <%= humanized_money_with_symbol @trip.price %>
       </div>
