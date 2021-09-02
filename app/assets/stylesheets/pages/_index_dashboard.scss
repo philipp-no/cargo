@@ -28,6 +28,7 @@
   font-size: 15px;
   font-weight: 700;
   border: 2px solid $darkpurple;
+  cursor: pointer;
 }
 .button-chat:hover {
   background-color: white;
@@ -258,4 +259,7 @@ li {
 
 .no-results-container a {
   margin: 20px 0 10px 40px;
+}
+.spacing-h5 {
+  margin-bottom: 20px;
 }

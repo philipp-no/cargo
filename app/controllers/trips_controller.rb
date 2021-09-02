@@ -55,7 +55,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     @trip.status = 0
-    if @trip.save!
+    if @trip.save
       redirect_to dashboard_index_path, notice: 'Your trip was created!'
     else
       render :new

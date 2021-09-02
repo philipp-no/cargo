@@ -8,10 +8,10 @@ class BookingsController < ApplicationController
   def create
     @trip = Trip.find(params[:trip_id])
     @booking = Booking.new(booking_params)
-    @booking.size = params[:booking][:size][0]
+    @booking.size = params[:booking][:size]
     @booking.user = current_user
     @booking.trip = @trip
-    @booking.pending!
+    @booking.status = 0
     if @booking.save
       redirect_to dashboard_index_path, notice: 'Your request was received and you will be notified when the driver accepts!'
     else

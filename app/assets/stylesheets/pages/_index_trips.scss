@@ -7,6 +7,7 @@
   margin-top: -40px;
   margin-left: -20px;
 }
+
 .capacity-pointer {
   cursor: pointer
 }
@@ -35,7 +36,7 @@
 }
 
 .index-button {
-  background: linear-gradient(to right, $darkpurple);
+  background: $darkpurple;
   color: white;
   font-weight: bold;
   padding: 10px 30px 10px 30px;
@@ -74,19 +75,24 @@ li {
   width: 920px;
   background-color: white;
   margin-bottom: 0;
+  outline: none;
 
-  .location {
-    margin-top: 5px;
-  }
+  // .location {
+  //   margin-top: 5px;
+  //   outline: none !important;
+  // }
 
   span {
     width: auto;
+    outline: none !important;
   }
 
   .form-control {
     display: inline-block;
     border: white;
     border-radius: 30px;
+    border: 0;
+    outline: none !important;
   }
 
   .index-button {
@@ -102,6 +108,7 @@ li {
   position: relative;
   white-space: nowrap;
   z-index: 1;
+  outline: none !important;
 }
 
 .search-separator {
@@ -128,5 +135,57 @@ li {
 }
 
 .trip-header-cards {
-  min-width: calc(100% - 730px);
+  min-width: calc(100% - 820px);
 }
+
+.trip-details-scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-right: 25px;
+
+  .dash-trip-card-link-scrolling {
+    display: inline-block;
+  }
+}
+
+.dash-trip-card-link-scrolling {
+  padding: 20px;
+  display: block;
+  top: 0px;
+  position: relative;
+  height: auto;
+  width: 300px;
+  border-radius: 10px;
+  margin: 15px 0 30px 30px;
+  text-decoration: none;
+  z-index: 0;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+
+
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    background-color: white;
+  }
+
+  &:before {
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: white;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+
+  &:hover:before {
+    transform: scale(2.15);
+  }
+}
+

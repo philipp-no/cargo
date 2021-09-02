@@ -11,8 +11,8 @@
         <%= image_tag('parcour.png', width: "500", height: "300", class: "mt-5") %>
     </div>
 
-    <div>
-      <h4><%= @trip.start_time.strftime("%A, %B %d") %></h4>
+    <div class="booking-form-container p-4">
+      <h4 id="booking-form-header"><%= @trip.start_time.strftime("%A, %B %d") %></h4>
       <p><%= @trip.start_time.strftime("%k:%M") %> <%= @trip.start_location %></p>
       <i class="fas fa-long-arrow-alt-down"></i>
       <p> <%= @trip.end_time.strftime("%k:%M") %> <%= @trip.end_location %></p>
