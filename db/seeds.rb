@@ -179,7 +179,7 @@ trip2 = Trip.create!(
 trip3 = Trip.create!(
   start_time: "2021-09-04 7:00",
   end_time: "2021-09-04 10:00",
-  start_location: "Ottenser Hauptstraße 3, Hamburg, Germany",
+  start_location: "Ottenser Hauptstraße 3, Hamburg, Hamburg, Germany",
   end_location: "Pariser Platz, Berlin, Berlin, Germany",
   capacity: "Medium",
   price_cents: 1000,
