@@ -64,10 +64,20 @@ li {
   list-style-type: none;
 }
 
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.card-driver {
+  margin:0 0 0 12px;
+}
+
 .name-price {
   width: 230px;
   display: flex;
   align-items: inline;
+  align-items: center;
   justify-content: space-between;
 }
 
