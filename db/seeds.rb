@@ -153,7 +153,7 @@ file = URI.open("https://res.cloudinary.com/dz3pzigor/image/upload/v1630482170/c
 adam.avatar.attach(io: file, filename: 'adam.png', content_type: 'image/png')
 
 trip1 = Trip.create!(
-  start_time: "2021-09-03 21:00",
+  start_time: "2021-09-03 07:00",
   end_time: "2021-09-03 11:59",
   start_location: "Reeperbahn 9, Hamburg, Hamburg, Germany",
   end_location: "Am Schokoladenmuseum 1a, Cologne, North Rhine-Westphalia, Germany",
@@ -165,8 +165,8 @@ trip1 = Trip.create!(
 )
 
 trip2 = Trip.create!(
-  start_time: "2021-09-04 11:00",
-  end_time: "2021-09-04 18:00",
+  start_time: "2021-09-05 11:00",
+  end_time: "2021-09-05 18:00",
   start_location: "Torstraße 123, Berlin, Berlin, Germany",
   end_location: "Riehler Strasse 173, Cologne, North Rhine-Westphalia, Germany",
   capacity: "Large",
@@ -426,7 +426,7 @@ booking3 = Booking.create!(
   user: marie,
   trip: trip3,
   status: 0,
-  description: "Hi Marie! Could you please pick up my suitcase?.",
+  description: "Hi there! Could you please pick up my suitcase?.",
   size: "Medium",
   item: "Suitcase"
 )
