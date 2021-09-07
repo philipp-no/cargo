@@ -1,6 +1,6 @@
 # cargo
 <h3 align="center">
-  <img src="app/assets/images/landingpage.png" width="800px">
+  <img src="https://media.giphy.com/media/z2voXshJYrH5GgABbc/giphy.gif?cid=790b76118c97333a25b4ead46cdfcf40ac0572f20b4f9bf4&rid=giphy.gif&ct=g" width="800px">
 </h3>
 
 Cargo is an app that connects people driving between cities with extra room in their car with users who need to send physical items such as furniture, electronics, and moving boxes. It is fast, efficient, cheaper than traditional shipping, and reduces the environmental impact of transporting items and single passenger vehicles.
